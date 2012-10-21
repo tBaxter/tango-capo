@@ -1,0 +1,233 @@
+// Capo common styles
+
+
+// ------------ IMPORTS ---------------//
+@import '_reset.scss';                       // defines reset and core styles
+@import '_mixins.scss';                      // defines mixins
+@import '_assets.scss';                      // pull in asset helpers
+
+html {background: $base $texture;}
+body {
+  font-family: $base_font;     // root font stack. Baseline grid is defined in reset
+  color:       $inverse;
+  height:100%;
+  //& * { .trans(all, .2s, ease-in) }  
+}
+select,input,textarea {color:$inverse_alt}
+a {color:$accent_alt;
+  &:link{-webkit-tap-highlight-color:$accent_alt}
+  &:hover {color:$accent}
+}
+h1, h2, h3 {font-weight:normal}
+
+::-moz-selection { background: $inverse_alt; color:$base_alt }
+::selection      { background: $inverse_alt; color:$base_alt }
+
+
+
+
+/**************************** Structure ******************************/
+.constrain { margin: 0 auto;
+  @include breakpoint(s) { width: $s + px };
+  @include breakpoint(m) { width: $m + px };
+  @include breakpoint(l) { width: $l + px };
+  @include breakpoint(xl) { width: $xl + px };
+}
+
+body { padding-top:60px;}
+
+body.collapsed {
+  #masthead { @include box-shadow(0, 2px, 2px, .4);
+  	#main_menu { @include breakpoint(xs) { display:none }; 
+  		ul { @include breakpoint(s) { display:none }; }
+  	}
+  }
+}
+
+// regular masthead styles.
+#masthead { @include box-shadow(0, 2px, 2px, .3);
+  position:fixed; 
+  top:0; 
+  width:100%; 
+  z-index:100; 
+  padding: 10px 0; 
+  min-height:60px;
+  border-bottom:2px solid $accent; 
+  @include gradient($accent, 10%, $texture); 
+  hgroup, nav { display:inline-block }
+  hgroup { color: $base; 
+  	text-shadow: 0 1px 2px rgba(0,0,0,.7); 
+  	padding-right:$gutter_width;
+  	@include breakpoint(xs) {
+  		padding-left:$gutter_width;
+  	}
+    h1, h2 { margin:0; display:inline; }
+    a {color:$base}
+  }
+
+  > div .trigger {
+    float:right; 
+    padding:.5em 1.5em; 
+    font-weight: bold; 
+    border-radius:5px; 
+    border:1px inset $accent; 
+    color: $base; 
+    font-size:75%;
+    margin-right: $gutter_width;
+    &.activated { background: $accent_alt}
+  }
+  nav {
+    position:relative; font-size:95%;
+    @include breakpoint(s) {width:70%;};
+    #main_menu {
+      @include breakpoint(xs) {display:none;};
+      > li { padding:.25em 1.33em .125em 0; font-weight:bold;
+        @include breakpoint(l) { width: 12%; }
+        ul { margin-bottom:1em; font-weight:normal; font-size:95%}
+      }
+      a {color: $base_alt }
+    }
+  }
+}
+
+#content {text-shadow: 1px 1px 2px $base;
+  padding: 80px .5em .5em;  
+  
+  h1, figcaption { font-family:$alt_font }
+  figcaption { font-size:80%; padding-bottom:.5em; color:$inverse_alt; font-weight:normal;
+    .author {display:block; text-align:right; font:9px $base_font; text-transform: uppercase; padding-top:.25em}
+  }
+  img {border:1px solid $inverse}
+  #content-main {padding-bottom:1em;}
+}
+
+#footer {clear:both; 
+  h3 {clear:both; padding-top:.5em;}
+  > div {margin:0 .5em}
+  > div > p {text-align:right; display:block}
+}
+
+#searchForm {
+  text-align:right;
+  select {width:120px;}
+  #q {border:1px solid $inverse_alt;
+  -moz-border-radius: 3px; 
+  -webkit-border-radius: 3px;
+  border-radius:3px;
+  padding:3px;
+  margin-right:-8px;
+  width:140px;
+  font-size:13px;
+  }
+  button {border:0; padding:4px 5px; margin:0; font-size:13px; text-transform: uppercase; 
+    @include gradient($base_alt, 10);
+  }  
+  span {font-size:10px; color:$inverse_alt}
+}
+
+
+
+/************************ COMMON CLASSES AND ELEMENTS ********************/
+time {
+  color:$inverse_alt; 
+  font-size:80%; 
+  display:block;
+}
+
+
+
+
+
+
+
+
+/**************************** STORY PAGES  *********************************/
+p.vcard {line-height:1em}
+p.author {font-weight:bold; font-size:80%; margin:0; text-transform: uppercase}
+p.source-org {font-family:$alt_font; font-size:75%}
+
+h2.overline {font-size:1.33em; margin-bottom:0}
+h2.overline + h1 {margin-top:.125em}
+
+.sociallinks {
+  border: solid $base_alt; border-width:2px 0; padding:.25em 0; margin-bottom:0 0 1em;
+  li {list-style:none; display:inline-block; padding:0 .5em; margin:0; font-size:70%; width:24%;}
+  li#social_fb {width:48%}
+  img {border:0; width:24px; padding-right:2px;}
+  iframe {border:none; overflow:hidden; width:90px; height:21px; margin-bottom:-.67em;}
+  a {color:$inverse_alt; font-weight:bold}
+}
+.section_front article > a {
+  color:$inverse;
+  &:hover {color: darken($accent, 5)}
+}
+
+.story_detail {
+  .dateline { font-size: .9em; font-weight: bold; margin-top:.45em;
+    &:after {
+      content: '|'; 
+      color: $inverse_alt;
+      padding: 0 .5em;
+      font-weight:normal
+    }
+  }
+  #top_assets { position:relative; z-index:100;
+    border-bottom:2px solid $base_alt; padding-bottom:.25em; 
+    ul.sociallinks {margin-bottom:.25em}
+    .tabbed > ul {text-align:right; font-size:80%; list-style:none; margin:.25em 0 0; background:transparent;
+      li {display:inline; padding-left:1em; background:transparent;
+        a {background:$inverse_alt; border-radius:1em; color:$base; padding:.25em .5em; text-shadow:none}
+      }
+      li.active a {background:$accent}
+      .preview {position:absolute; width:6em; top:-65px; margin-left:-4em; display:none; min-height:50px; background:$accent; color:$base; line-height:50px; 
+        text-align:center; text-shadow:none; font-weight:bold; border-radius:3px; box-shadow: 0 0 4px rgba(0,0,0, 1); -webkit-box-shadow: 0 0 4px rgba(0,0,0, 1);
+        
+        img {border-color:$accent}
+      }
+      .preview:before {display:inline-block; z-index:1000;
+        content: ' ';
+        height: 0;
+        position: absolute;
+        width: 0;
+
+        border: 7px solid transparent;
+        border-top-color: $accent;
+        top: 100%;
+        left:35px;
+        box-shadow: 0 0 4px rgba(0,0,0, 1);
+      }
+    }
+    blockquote {display:none; font:1.33em $alt_font; border-top:2px solid $base_alt; margin:.25em 0;
+      em {display:inline-block; float:right;  padding-top:.67em; font:13px $base_font; text-align:right; color:$inverse_alt;
+        &:before {content: '— ';}
+      }
+    }
+    object, video {width:100%;}
+  }
+  .shirttail {color:$inverse_alt; border-top:2px solid $base_alt; margin:0; padding:.25em 0; font-size:.8em}
+}
+
+
+
+
+/******************** GALLERIES **********************/
+#gallery_thumbs_hold {
+  display:none;
+  width:100%; overflow:hidden;
+  height:70px; position:relative;
+  li {
+    height:65px; width:65px;
+    margin:0 5px .5em 0;
+    border: 1px solid $inverse;
+    &.current {border-color:$accent; border-width:4px}
+    img {border:0}
+  } 
+}
+#gallery_slides_hold {
+  figure.vertical  {text-align:center;}
+  figcaption {display:none}
+}
+#gallery_info .sociallinks li {width:auto}
+
+
+

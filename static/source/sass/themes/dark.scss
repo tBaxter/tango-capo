@@ -1,0 +1,12 @@
+// Set vars as needed
+$base         : #101010;
+$base_alt     : lighten($base, 5%);
+$inverse      : #f0f0f0;
+$inverse_alt  : darken($inverse, 15%);
+
+@import '../site.scss';
+
+#fakebg {background-color: #000; }
+#masthead {
+  a, nav #main_menu a {color:$inverse_alt}
+}

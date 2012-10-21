@@ -1,0 +1,191 @@
+/********************************************* MEDIA QUERIES ******************************************/
+@media only screen and (max-width:1000px) {
+  .hide_small {display:none}
+}
+@media only screen and (max-width:750px) {
+  #more_articles figure {width:100px}
+}
+
+
+/****** Tablet portrait-ish ******/
+@media only screen and (min-width:750px) {    
+  #masthead {
+    > div, > nav {padding:0}
+    nav {
+      ul {padding:0; font-size:95%;}
+      > ul { clear:none; background:none; height:auto; 
+        font-weight:bold;
+        li {width:auto}
+      }
+      a {color:$base_alt}
+      a:hover, a:active {color:$base}
+    }
+  }
+ 
+  #content {
+    padding: .5em 0;
+    #content-main {float:left; width:445px; }
+    #content-side {float:right; width:300px;
+    }
+  }
+  
+  #more_featured {
+    article { display:inline-block; padding:.5em 10px 0 0; border-top:1px solid $inverse_alt; width:49.5%; vertical-align:top; }
+  }
+  
+  
+  #media_block, .asset_group, .content_block {width:770px;}
+  #media_block {
+    > h2, #photonav {margin-right:20px;}
+    &.has_touts .tabs {width:600px}
+    ul.touts {width:150px; float:right; margin-right:20px;
+      li {display:block; width:100%;}
+    }
+  }
+  
+  #more_articles {
+    > div {padding-right:9px; margin-right:10px; border-right:1px solid $base_alt}
+    
+    > div#second-col, > div#third-col {width:225px;
+        figure {max-width:80px}
+        p {font-size:80%}
+        h1 {font-size:1em; line-height:1.2em}
+      }
+    > div#third-col {margin-right:-10px; border-right:0; padding-right:0}
+  }
+  .story_detail {
+    #photo_assets {float:right; width:290px; margin-left:1em}
+  }
+  
+  #footer {
+    > div {margin:0 auto}
+  }  
+}
+
+@media only screen and (min-width:750px) and (max-width:939px) {
+  .asset_group {
+    .touts, >ul.story_list {float:right; clear:none; width:180px; 
+      > * {display:block; width:100%; padding-bottom:0;}
+    }
+  }
+  #more_articles #first-col {width:300px}
+}
+
+/****** Landscape and larger screens ******/
+@media only screen and (min-width:940px) {
+  .constrain { width:940px; }
+  #content {
+    #content-main {float:left; width:620px; }
+    #content-side {float:right; width:300px;}
+  }
+  #masthead {
+    nav > ul li {padding-right:1.5em}
+  }
+  .story_detail {
+    .entry-content {max-width:380px; float:left; clear:left;
+      #top_assets { width:380px; float:right; margin:0 -240px 1em 1em; 
+        blockquote {display:block;}
+      }
+    }
+    #more_assets {width:230px; float:right; border-left:1px solid $base_alt; padding-left:10px; font-size:90%; 
+      margin-top:-20px; // offsets first h3 margin and squares up. Will be reset anyway if there are top assets.
+      ul {margin: 0 0 1em; padding:0;
+        li {border-bottom:1px solid $base_alt; list-style:none; padding:2px 0 3px; margin:0}
+      }
+      .factbox+.related_story {border-top:2px solid $base_alt;}
+      .related_story { clear:left; 
+        img {float:left; margin-right:10px; max-width:100px; margin-bottom:.5em}
+        img+h3 {margin-left:110px}
+      }
+    }
+  }
+  
+  #content #content-side .html_module {display:block;
+    img {float:right; margin-left:1em}
+    .more {display:block; background:$base_alt; text-align:right; padding:2px 5px}
+  }
+  #more_articles > div#first-col {width:390px;}
+  #gallery_slides_hold {float:right; width:420px;
+    figure {width:100%; cursor: e-resize}
+  }
+  #gallery_info {float: left; width: 180px;
+    #caption_hold {font-size:80%;}
+    .next span, .prev span {display:none}
+  }
+  
+  /************* Calendar Overrides *****************/
+  #small-calendar {float:right; width:150px; display:block}
+  .vevent {margin-right:170px}
+}
+
+@media only screen and (min-width:940px) and (max-width:1179px) {
+  #more_featured {clear:both;}
+  #media_block {
+    &.has_touts .tabs {width:460px}
+    ul.touts {width:140px;display:block;
+      li {width:auto}
+    }
+  }
+  #more_articles > div {width:200px}
+  #more_articles #first-col figure {max-width:80px}
+  #more_articles #first-col h1 {font-size:1em}
+}
+
+/*********** Embiggened screens      ******/
+@media only screen and (min-width:1180px) {
+  .constrain {width:1180px; }
+  #masthead nav > ul li {padding-right:2.5em}
+    
+  #content {
+    #content-main {float:left; width:860px; }
+    #content-side {float:right; width:300px;}
+  }
+  
+  #top_stories_hold {
+    #lead_item {width:540px; float:left;
+      article p {font-size:105%}
+      .assets {clear:right;}
+      &.has_breaking article figure {width:270px; }
+
+    }
+    #more_featured, #lead_item_info {
+      width:300px; float:right;
+      article {display:block; width:auto; padding-right:0; clear:right}
+      article:first-child {border:0}
+    }
+  }
+  
+  .asset_group, #media_block, .content_block { width:880px;}
+  .asset_group, #media_block {
+    & *.touts, > ul.headlines {width:240px; float:right; clear:none}
+    & *.touts li {width:100%; display:block}
+  }
+  
+  
+  .story_detail {
+    .entry-content {max-width:540px;
+      #top_assets { width:460px; margin-right:-320px;}
+    }
+    #more_assets {width:310px;}
+  }
+  
+  #gallery_slides_hold {width:620px;
+    figure.vertical img {max-width:420px}
+  }
+  #gallery_info {width: 220px;}
+  
+  .blog_front {
+    #blog_side {width:220px; padding-top:2em;
+      p {font-size:85%;}
+      ul {list-style:none; margin:0 0 2em; padding-left:0;
+        li {font-size:85%; border-bottom:1px solid $base_alt; padding:.25em 0}
+      }
+    }
+    #more_articles {float:right; width:630px; border-left:1px solid $base_alt; padding-left:10px;
+      article {clear:both;
+      }
+      figure {margin-bottom:.5em; max-width:120px}
+    }
+  }
+  
+}

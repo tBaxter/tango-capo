@@ -1,0 +1,47 @@
+@font-face {
+    font-family: 'BebasNeue';
+    src: url('/media/fonts/bebasNeue/BebasNeue.eot');
+    src: url('/media/fonts/bebasNeue/BebasNeue.eot?#iefix') format('embedded-opentype'),
+         url('/media/fonts/bebasNeue/BebasNeue.woff') format('woff'),
+         url('/media/fonts/bebasNeue/BebasNeue.ttf') format('truetype'),
+         url('/media/fonts/bebasNeue/BebasNeue.svg#BebasRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+  font: 1.125em/1.67em Helvetica,"Arial Unicode MS","Lucida Sans Unicode", 'Arial Unicode', "Droid Sans",Verdana, Arial, "Lucida Grande","Lucida Sans",Tahoma,sans-serif;
+  color:$inverse;
+  text-shadow: 1px 1px 0 transparentize($background, .5)
+}
+
+a {
+  color:$inverse_alt;
+  &:active { color: $inverse_alt; }
+  &:hover  { color: $accent_alt; } 
+}
+
+dl    { 
+  clear:both; font-size:90%; margin-bottom:1em;
+  dt { float:left;  display:block; font-weight:bold; clear:both; margin:1em 0 0; padding:0; font-size:85%;
+      border-bottom:1px dotted $accent; color:$accent;
+    }
+  dd    { float:right; padding:.5em 2% 0; min-height:2em; border-left:1px solid $accent;} 
+  dt+dd { margin-top:.75em; border-top:1px dotted $background_alt2; }
+}
+
+
+#breadcrumbs {
+  font-family: 'BebasNeue';
+  font-size:120%;
+  letter-spacing:1px;
+}
+
+#main h1 {
+  font-family:"BebasNeue";
+}
+
+#main_nav {
+  text-shadow: 1px 1px 0 rgba(0,0,0, .7);
+  li {padding:2px 0;}
+}

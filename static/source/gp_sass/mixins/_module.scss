@@ -1,0 +1,42 @@
+
+
+@mixin module() {
+	-webkit-transition:all .2s ease-in;
+	margin-bottom:1em;
+	padding:0 2% 1em;
+	border-radius:10px;
+	background: transparentize($background, .125);
+	
+	border:1px solid transparentize($inverse, .8);
+	//-webkit-box-shadow: 5px 5px 5px rgba(0,0,0,.3);
+
+	&:hover {
+		background:transparentize($background, .05);
+	}
+}
+
+
+
+@mixin module_light() {
+	background:rgba(230,230,230,.8);
+	background:rgba(241,241,235, .8);
+	border:1px solid rgba(230,230,230,1);
+	border-radius:10px;
+	//-webkit-box-shadow: 1px 1px 3px rgba(0,0,0,.5);
+	text-shadow:1px 1px 1px  rgba(255,255,255,.9);
+	
+	&:hover {
+	//	background:rgba(250,250,250, .95);
+	}
+}
+
+
+
+@mixin reset_module() {
+	background:transparent;
+	border:none;
+	-webkit-box-shadow: none;
+	&:hover {
+		background:transparent; 
+	}
+}

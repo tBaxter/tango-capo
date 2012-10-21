@@ -1,0 +1,77 @@
+// Import styles common to all sites
+@import 'common.less'; 
+
+#breaking_news {
+	margin-bottom:1em; 
+	li { width:49%}
+	li:nth-child(n+7) {display:none}
+	.mo, .d {display:none}
+}
+
+#super_news_alert {
+	background: @inverse;
+	padding:0 10px;
+	margin-bottom:.5em;
+	time {float:left; padding-right:.5em; padding-top:.25em}
+	p {font-size:100%; font-weight:bold; margin-bottom:5px; }
+	img {float:left; width:120px; margin-right:1em; margin-left:-10px;}
+	img+h1+p, img+h2+h1+p {margin-left:138px}
+	a {color:@base_alt; text-shadow:0 1px 0 #000}
+	a:hover {color:@base !important}
+}
+
+#content-side {
+	.html_module, #top_job_widget {background:#fff; border:1px solid @base_alt;
+		ul, form, p {margin:.5em 10px}
+		h2 {margin:0;
+			a {color:@base}
+		}
+		display:block; margin:.5em 0; font-size:90%;
+		img {max-width:100px; width:auto; margin:5px 0; border:0}
+		&#hi-house-ads img {max-width:300px}
+		ul {list-style:none; padding:0;
+			a {color:#111}
+			li {padding:5px 0 4px; border-top:1px solid @base_alt; font-size:12px; line-height:15px; list-style: none;}
+			li:first-child {border:0}
+			li a {color:#333; font-weight:bold}
+		}
+		ul.nav li {border:0}
+	}
+	#BrandingPageForm {margin-bottom:1em;
+		input[type=text] {width:210px;  }
+	}
+	#top_job_widget {
+			form {position:relative;
+				p {line-height:2.5em; border-bottom:1px solid #eee; text-align:right; margin-bottom:0}
+			label { font-size:80%; color:#888; font-weight:bold; text-transform: lowercase}
+			input[type=submit] {float:right; margin-top:1em }
+			input[type=text],  select {width:60%}
+			img {padding:10px 0; border:0}
+			img.left {width:180px; margin-top:5px}
+		}
+		h3 {margin:0}
+		li {color:#666}
+		li a {display:block}
+	}
+}
+
+#top_stories_hold .columned li {padding-bottom:.25em; font-size: 85%}
+	
+@media only screen and (min-width:940px) and (max-width:1179px) {
+	#lead_item {
+		&.has_breaking article {width:380px; float:right; }
+		.assets {clear:both;}
+	}
+	#breaking_news {width:220px; float:left;
+		li {width:100%;}
+	}
+}
+
+@media only screen and (min-width:1180px) {
+	#breaking_news {clear:both; margin-top:1em;
+		li {width:49%;}
+		li:nth-child(n+7) {display:inline-block;}
+	}
+}
+
+

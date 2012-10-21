@@ -1,0 +1,209 @@
+
+// builds scalable menu navigation icon
+// generally, you'll want to put it inside a button element of some kind.
+//<span class="button"><span class='navicon'>≡≡</span></span>
+
+.navicon { font-size:150%; letter-spacing: -.33em; display:block; width:1.75em; color:$base;
+  line-height:1em;
+  
+  &:before {
+    content:"≡";
+    width:.33em; 
+    overflow:hidden; 
+    display:inline-block;
+    color: $base_alt;
+  }
+}
+
+// table is unclassed. It should suit 99% use cases. 
+// In the cases where it doesn't, class the special table.
+table {
+  width:99.9%; margin:1em 0; font-size:95%;
+  caption { border-bottom: 1px solid $base_alt; color:$inverse_alt; text-align: left; font-weight:bold; text-transform: uppercase; font-size:1.25em;}
+  //caption.kicker { display:table-caption }
+  th { font-weight:bold; border-bottom: 2px solid $inverse_alt; text-align:left}
+  td { font-size:95%; border-bottom:1px solid $base_alt2; padding:.5em 5px}
+  td.num {text-align:right} // numbers are right-aligned.
+  col.highlight {background:$base; font-weight:bold; } // allows highlighting a given column
+}
+
+
+.hero { 
+  font-size:125%;
+  position:relative; 
+  z-index:10; 
+  padding:1em $gutter_width;
+  h1 {font-size:3em}
+}
+
+
+/****** GRIDDED CONTENT *******************************
+*  Gridded content. Can have 1-6 columns. 3 is default.
+*  Children can be any element: div, li, section, whatever.
+*  usage:  foo class="columned"
+*  or   :  foo class="columned four-col"
+*  Note: on small screens multiple columns will be reset to a more appropriate width.
+*******************************************************/
+.columned { 
+  margin: 0; padding: 0; list-style: none; position: relative;
+  padding-right:0 !important; // in case it inherits from parent
+  > * {
+    position: relative; display: inline-block; vertical-align: top; 
+    padding-right: $gutter_width;
+    margin-right:-4px; 
+    @include breakpoint(xs) {display:block; width:auto;}
+    @include breakpoint(s) { 
+      width: 33%;
+    }
+  }
+  &.one-col  > * { width: auto; clear:none }
+  &.two-col  > * { width: 50%;  }
+  &.four-col > * { @include breakpoint(xs) {width: 49%;} 
+    @include breakpoint(s) {width: 25%;} }
+  &.five-col > * { width: 20%; }
+  &.six-col  > * { width: 16.5%; }
+  &.auto     > * {
+    @include breakpoint(xs) {width: auto;} 
+    @include breakpoint(s) {width: 49%;} 
+    @include breakpoint(m) {width: 24.9%;} 
+    @include breakpoint(l) {width: 19.9%;} 
+    @include breakpoint(xl) {width: 20%;} 
+  }
+}
+
+
+
+
+// A kicker sits above a headline and acts as a section name, 
+// author name or other short additional information.
+// it is not an overline.
+.kicker {
+  margin-bottom:.125em; 
+  font-size:11px; 
+  text-transform:uppercase; 
+  line-height:1em; 
+  font-weight:bold;
+   display:block;
+   color:$inverse_alt;
+  
+  a {color:$inverse_alt}
+  a:hover {color:$accent}
+}
+.kicker+h1,.kicker+a>h1 {margin-top:0}
+
+
+
+// PAGINATION
+.pager {background:$base_alt; color:$inverse_alt; border-radius:.5em; min-height:2em; margin:0; font-size:90%; list-style:none; padding:0; margin-bottom:1em; text-align:center;
+  li {width:40%; display:inline-block; padding:0 2%; line-height:2em;
+     span, a {color:$inverse;
+       &:hover {color:$accent;}
+     }
+  }
+  li.next, li.prev {width:29%}
+  li.next {float:right; text-align:right; margin-left:-100%;
+    &:after { content:"►"; padding-left:5px; padding-top:2px}
+  }
+  li.prev {float:left; text-align:left; margin-right:-100%;
+    &:before { content:"◀";padding-right:5px}
+  }
+  li.next, li.prev {font-size:90%; margin-top:2px }
+}
+
+
+
+// TABS
+.tabbed > * {
+  display:none; 
+  position:relative;
+  z-index:1;
+  //.trans(all, .3s, ease-in)
+}
+.tabbed >*.activeTab, .tabbed > ul {
+  display:block
+}
+
+#content .tabbed > ul, #content ul.remote_tabs_nav, #content .html_module .tabbed > ul {
+    background:$base_alt; 
+    border:1px solid $inverse_alt; 
+    font-size:90%; 
+    width:auto; 
+    float:none; 
+    height:1.67em; 
+    line-height:1.67em; 
+    padding:0; 
+    margin: 0 0 5px; 
+    clear:both;
+    
+    > li {display:inline; padding:.25em 1em .25em 1em;
+      img {border:0; padding-right:5px;}
+    }
+    li.active {background:#fff; border-bottom:1px solid #fff; border-left:1px solid #ddd; border-right:1px solid #ddd}
+}
+
+
+/******************** Calendars *************************/
+// Override standard table styles for our calendar tables
+.hcal_tables {
+  table tr td {background:transparent; font-weight:normal; padding:0}
+  thead th {text-align:center}
+  td .calDayLabel {padding:.25em; text-align:center;  border-radius:1em; display:block; color:$inverse}
+  td.has_events .calDayLabel {font-weight:bold;}
+  td.calDayToday .calDayLabel {background:$accent;  }
+}
+// some global calendar classes
+.outOfRange, .notInMonth {opacity:.4}
+// small calendars
+#small-calendar {
+  display:none; // note: will be set to block for larger screens
+  .event, .longDays  {display:none}
+  table {font-size:85%;
+    td.has_events .calDayLabel {border:1px solid $base_alt}
+  }
+}
+
+// big calendars
+#big-calendar {
+  .abbrDays, .datebox, .eventDetails {display:none}
+  td {width:14.2857%; padding: 0 .5em .5em; border:1px solid $base_alt; height:90px; 
+    .event {font-size:70%;}
+    .calDayLabel {float:right; margin-left:.25em}
+  }
+}
+// These are for event details that appear on hover
+#small-calendar td:hover .event, #big-calendar td .event:hover .eventDetails {
+    display:block; 
+    position:absolute;
+    z-index:1000; 
+    background:$base;
+    border:1px solid $accent;
+    //.radius(5px);
+    //.box-shadow(2px, 2px, 4px, 0.6);
+    width:170px;
+    font-size:10px; 
+    padding:2px 4px;
+    text-align:left;
+    // IE9 has an issue with box shadow inside tables with border-collapse set (all of them). This fixes it.
+    border-collapse:separate;
+}
+
+
+// Dateboxes  
+.event_times {float:left; width:140px; clear:left;
+  .datebox+.datebox {border-left:1px solid $inverse_alt; margin-left:-1em;}  
+}
+.datebox {background:$base_alt; position:relative; width:70px; text-align:center; float:left; margin-right:1em;
+  span {display:block; color:$inverse_alt}
+  .w, .mo {text-shadow:none;text-transform: uppercase; }
+  .w {background:$inverse; color:$base; font-size:80%; font-weight:bold}
+  .d {font-size:3em; text-align:center; font-weight:bold; padding-left:10px;}
+  .mo {position: absolute; left: -5px; top: 32px; text-align:left; font-size:10px;
+  -webkit-transform: rotate(-90deg); 
+     -moz-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+  }
+}
+.event_info {margin: 0 0 2em 160px;
+   h2, h3, p {margin:0}
+  .org {display:inline; padding-right:1em}
+}

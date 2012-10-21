@@ -1,0 +1,118 @@
+
+.event_list {margin:0; list-style:none;}
+#featured_events li {font-size:110%;}
+
+
+#updates article {margin-bottom:2em}
+
+.giveawayform h4 {font-weight:bold; margin-bottom:1em}
+
+#secondary .giveaway_results {
+	h3 {font-size:1em; line-height:1.25em; float:left; width:38%; font-weight:bold;  text-align:right; margin-top:.25em}
+	ul {margin:1em 0 1em 40%; list-style:none; border-left:1px dotted; padding-left:3%;
+		li {padding:.5em 0; font-size:90%}
+	}
+	p {font-size:90%; clear:left}
+}
+
+
+/*********  datelists **********/
+.datebox, 				
+.datebox .date { display:block; }	                             
+.datebox   { 
+				 width:60px;
+				 min-height:60px; 
+				 float:left;
+				 clear:left; 
+				 text-align: center;
+				 font-size:36px; 
+				 line-height:44px; 
+				 font-weight: bold;
+				 border:1px outset #444;
+				 border-radius:3px;
+				 margin-right:2.08%;
+				 margin-bottom:5px;
+				 background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(119,113,98, .7)), to(rgba(55,55,45, .7))); 
+    			 background: -moz-linear-gradient(0% 0% 270deg,#f6f6f6, #c6c6c6);
+   			-webkit-box-shadow: 0 0 3px rgba(0,0,0,0.5);
+		      	-moz-box-shadow: 0 0 3px rgba(0,0,0,0.5);
+		              box-shadow: 0 0 3px rgba(0,0,0,0.5);
+				text-shadow: rgba(255,255,255, 1) 0px 1px 0;				 
+				}
+.datebox .date { color: #ccc; font-size:10px; line-height:16px; text-transform: uppercase; background:#111; }
+
+
+
+
+
+/* calendars */
+#jhCalendar br {display:block; clear:both; }
+
+table.calTable, .datePicker table {
+	text-align:center;
+	}
+
+#jhCalendar {
+	min-height:156px; text-align: center;
+	}	
+
+table.calTable thead th, 
+.datePicker table th, 
+.datePicker th button  {
+	font-size:10px; 
+	padding:0; 
+	text-align:center; 
+	border:0; 
+	}
+	
+
+table.calTable .calHeader, .date-picker-title {
+        text-transform:uppercase;
+        letter-spacing:2px;
+        text-align:left;
+        }
+
+.calTable .abbrevDays, .date-picker-day-header {text-transform:lowercase}
+
+.shortTable {margin-bottom:28px !important;}
+.calTable td, 
+.datePicker table td {border:1px solid #444; vertical-align:top; position:relative; padding:0}
+
+.outOfRange, .notInMonth { opacity:.4}
+
+.longDays {display:none}
+
+.calTable .event {
+  	display:none;
+  	position:absolute;
+	z-index:1000; 
+	background:#555;
+	text-shadow:none; 
+	border:1px solid #333; 
+	color:#111;
+	width:220px;
+margin-left:-150px;
+	padding:4px 5px;
+	text-align:left; 
+	font-size:85%; 
+	}
+.calTable td:hover .event {display:block}
+.calDayToday, .date-picker-today {
+  background-color:#e4e3de;
+}
+.weekend, .date-picker-highlight {color:#900}
+
+.calDayLabel, .datePicker table td {font-size:12px; }
+.calEventDay > div.calDayLabel {border:1px solid}
+
+
+
+.event-pagination {margin:10px 0; padding:0;  min-height:48px; list-style:none; clear:both;
+	overflow:hidden;
+	
+	li {float:left; width:50%;  font-size:90%; margin-right:-1px; text-align:right;
+		a {font-weight:bold; min-height:53px; padding: 5px 10px; display:block;}
+		.meta {display:block}	
+		&:first-child {text-align:left}	
+	}	
+}

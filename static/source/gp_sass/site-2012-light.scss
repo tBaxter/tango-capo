@@ -1,0 +1,109 @@
+$theme           : 'light';
+
+$background      : #f7f7f7;
+$background_alt  : #fff; // just slightly off background
+$background_alt2 : #E6DFD3; // a bit more off-background. In this case, very light tan
+$inverse         : #312007; // text color and other high-contrast from background -- almost black
+$inverse_alt     : #59401a; // lower contrast items and links
+$accent          : #8b6e3d; // accent color. In this case, medium brown
+$accent_alt      : #914b07;  // alternate accent color. In this case, dark orange
+
+
+
+@import url("core.css?v=3");
+@import "mixins/_typography";
+@import "mixins/_structure";
+@import "mixins/_sizes";
+@import "mixins/_module";
+@import "mixins/misc_snippets";
+
+
+.meta {color:#7f6236}
+
+#main_nav {
+	#menu {
+		section:after {
+			@include fancy_rule;
+		}
+	}
+}
+
+// Per section...
+// watchlist
+#watchlist #main section {
+	@include module;
+	li {border-top:1px dotted $accent;} 
+}
+
+
+// forum
+#topic_list { 
+	article { 
+		section     { border-top: 1px solid $background_alt2;}
+	}
+	.sub_pagination { background: transparentize($background_alt2, .7); color:#accent;
+		.newposts         { background:$accent_alt; border:1px inset $background_alt2; }
+	}
+}
+#postlist, #comment-list {
+	li address {
+		border-bottom: 2px solid $background_alt2; 
+		color:$accent; 			
+	}
+	.post {
+		img {border:1px solid $accent}
+		img.smiley {border:0}
+	}
+	.profile_preview {background: $background_alt; background: transparentize($background_alt, .1); border:1px solid $accent_alt;}
+
+}
+.postcontrols, .postvoting {
+	background:$background_alt2; border:1px inset $background_alt2;
+
+	.reply:hover, .mod span:hover {background:$accent; color:$background_alt}
+	.mod span {border-left:1px solid $background_alt}
+
+	.mod ul {
+		li {border-top:1px solid $background_alt;}
+		a:hover { background: $accent;} 
+		li.quote a { background-image: url(/media/img/icons/iconic/gray_light/comment_fill_12x11.png) }
+		li.edit  a { background-image: url(/media/img/icons/iconic/gray_light/pen_alt2_12x12.png) }
+		li.delete a{ background-image: url(/media/img/icons/iconic/gray_light/trash_fill_12x12.png) }
+	}
+}
+
+
+
+#contact #container {
+	@include reset_module;
+}
+
+// specific to light, so I don't need another icon
+.details_trigger, .tabbed > ul li a {background:$inverse; padding:2px; border-radius:3px;}
+
+
+
+// Media queries
+@media screen and (max-width: 700px), (device-pixel-ratio: 1.5) and (max-device-width: 1200px) {
+	@include max_700
+}
+@media (min-width: 700px) {
+	@include min_700($theme);
+	
+	#container {
+		@include module;
+	}
+}
+
+@media (min-width: 1260px) {
+	@include min_1300($theme)
+}
+
+// events
+#secondary .giveaway_results {
+	color:$accent;
+	&:after {@include fancy_rule;}
+}
+.event-pagination {border-radius:5px; background:$background_alt2; border: 1px solid $background_alt;}
+.event-pagination li:first-child {border-right:1px solid $background_alt}
+
