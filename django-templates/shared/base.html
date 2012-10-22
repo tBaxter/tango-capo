@@ -48,54 +48,11 @@
 			{% block content_bottom %}{% endblock %}
 		</div>
 		<footer id="footer" role="contentinfo">                 
-			<div class="clearfix">
-				<ul id="footer-connect">
-					<li id="connect-subs"><a href="https://customercare.kcstar.com/sub_landing.HTM">Subscribe</a></li>
-					<li id="connect-feed"><a href="{{ feed_urls.items.0.1 }}">News Feeds</a></li>
-					<li id="connect-e"><a href="http://estar.kcstar.com/">e-Star</a></li>
-					<li id="connect-fb"><a href="http://www.facebook.com/kansascitystar">Facebook</a></li>
-					<li id="connect-twit"><a href="http://twitter.com/#!/KCStar">Twitter</a></li>
-					<li id="connect-text"><a href="http://www.kansascity.com/textalerts/">Text alerts</a></li>
-					<li id="connect-letter"><a href="http://www.kansascity.com/reg-bin/int.cgi?mode=register">Newsletters</a></li>
-					<li id="connect-kindle"><a href="http://www.kansascity.com/e-readers/">e-Readers</a></li>
-				</ul>
-				<h3>Stay connected with <a href="http://www.kansascity.com">The Kansas City Star</a></h3>
-				<ul class="columned five-col">
-					{% block site_registration %}
-					<li>{% if user.is_anonymous %}{% facebook_button "Sign in" %}
-								{% else %}
-									{% if user.is_staff %}<a href="/admin/" class="meta right">Admin site</a>
-										{% else %}<a href="/logout/" class="meta right">Logout</a>
-									{% endif %}
-									Hello {{ user.first_name }}
-								{% endif %}
-							</li>
-					<li><div class="fb-like" data-send="true" data-layout="button_count" data-width="150" data-show-faces="false" data-colorscheme="dark"></div></li>   	
-					{% endblock %}
-					{#  REMEMBER TO SET UP A CONTACT FORM WIHT A SLUG MATCHING SETTINGS.PROJECT_NAME #}
-					<li><a href="/contact/{{ project_name }}">Contact Us</a></li>
-					<li><a href="https://subscriberservices.mcclatchy.com/kan/TransactionType.asp">Star Customer Service</a></li>
-					<li><a href="http://www.kansascity.com/about-us/">About the Star</a></li>
-					<li><a href="http://staradvantagekc.com">Star Advantage</a></li>
-					<li><a href="http://www.kcstarsie.com">Star in Education</a></li>
-					<li><a href="http://www.kansascity.com/terms_of_service/">Terms of Service</a></li>
-					<li><a href="http://www.kansascity.com/privacy_policy">Privacy Policy</a></li> 
-					<li><a href="http://www.kansascity.com/privacy_policy#behavioral_targeting">About our ads</a></li>
-				</ul>
-				<p class="meta"><a href="http://www.kansascity.com/copyright">Copyright</a> {{ year }} KansasCity.com</p>
-			</div>
+			<div class="clearfix"></div>
 		</footer>
 	</div> <!-- /#wrapper -->
 	{# Javascript at the bottom for fast page loading #}
-	<script src="http://media.kansascity.com/js/common_min.js"></script>
 	{% block site_js %}{% endblock %}
-	{% if has_ads %}
-		<script src="{{ MEDIA_URL }}js/ads.js"></script>
-		<script src="http://media.kansascity.com/misites/defaults.js"></script>
-		<script src="http://media.kansascity.com/misites/ksc/kc.js"></script>
-		<script src="http://media.kansascity.com/miads/yahoo.js"></script>
-		<script src="http://e.yieldmanager.net/script.js"></script>
-	{% endif %}
 	{% block extrascript %}{% endblock %}
 	{# asynchronous google analytics: mathiasbynens.be/notes/async-analytics-snippet #}
 	<script>
@@ -107,18 +64,5 @@
 		s.parentNode.insertBefore(g, s);
 		})(document, 'script');
 	</script>
-	{% facebook_connect_script %}
-	{# MI STATS. REMEMBER TO ALTER TAXONOMY #}
-	<script src="http://media.kansascity.com/mistats/sites/ksc/kansascity.js"></script>
-	<script src="http://media.kansascity.com/mistats/products/pubsys_s_code.js"></script>
-	<script>
-		mistats.pagename = "CGI: {{ site.name}} {% block omniture %}Home{%endblock %}";
-		mistats.pagelevel = "CGI {% block omniture_level %}{% endblock %}";
-		mistats.channel = "CGI: {{ site.name }} {% block omniture_extra_channel %}{% endblock %}";
-		mistats.contentsource = mistats.sitename + "CGI: {{ site.name }}";
-		mistats.taxonomy = "{{ taxonomy }}";
-	</script>
-	<script src="http://media.kansascity.com/mistats/products/pubsys.js"></script>
-	<script src="http://media.kansascity.com/mistats/finalizestats.js"></script>
 </body>
 </html>
