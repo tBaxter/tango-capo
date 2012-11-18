@@ -11,7 +11,7 @@ body {
   font-family: $base_font;     // root font stack. Baseline grid is defined in reset
   color:       $inverse;
   height:100%;
-  //& * { .trans(all, .2s, ease-in) }  
+  @include trans(all, .2s, ease-in);
 }
 select,input,textarea {color:$inverse_alt}
 a {color:$accent_alt;
@@ -61,7 +61,7 @@ body.collapsed {
   	@include breakpoint(xs) {
   		padding-left:$gutter_width;
   	}
-    h1, h2 { margin:0; display:inline; }
+    h1, h2 { margin:0; float:left; }
     a {color:$base}
   }
 
@@ -82,7 +82,8 @@ body.collapsed {
     #main_menu {
       @include breakpoint(xs) {display:none;};
       > li { padding:.25em 1.33em .125em 0; font-weight:bold;
-        @include breakpoint(l) { width: 12%; }
+        //@include breakpoint(l) { width: 12%; }
+        
         ul { margin-bottom:1em; font-weight:normal; font-size:95%}
       }
       a {color: $base_alt }
@@ -93,7 +94,6 @@ body.collapsed {
 #content {text-shadow: 1px 1px 2px $base;
   padding: 80px .5em .5em;  
   
-  h1, figcaption { font-family:$alt_font }
   figcaption { font-size:80%; padding-bottom:.5em; color:$inverse_alt; font-weight:normal;
     .author {display:block; text-align:right; font:9px $base_font; text-transform: uppercase; padding-top:.25em}
   }
@@ -135,7 +135,7 @@ time {
 }
 
 
-
+.block {display:block}
 
 
 

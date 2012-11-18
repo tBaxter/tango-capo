@@ -3,10 +3,11 @@ $base         : #101010;
 $base_alt     : lighten($base, 5%);
 $inverse      : #f0f0f0;
 $inverse_alt  : darken($inverse, 15%);
-
+$accent_alt   : #d1b78b; // a goldy color for links and other places we don't want the orange.
 @import '../site.scss';
 
 #fakebg {background-color: #000; }
 #masthead {
-  a, nav #main_menu a {color:$inverse_alt}
+  &, hgroup, a, nav #main_menu a, .trigger, .navicon  {color:$inverse}
+  .navicon:before {color:$inverse_alt}
 }

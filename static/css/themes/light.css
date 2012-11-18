@@ -1,281 +1,193 @@
 /* Capo basic reset/normalization styles Based on HTML5 Boilerplate 3.0: h5bp.com/css
 */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\000036}}
 * { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -o-box-sizing: border-box; box-sizing: border-box; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\0000311}}
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\0000312}}
 audio, canvas, video { display: inline-block; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\0000313}}
 audio:not([controls]), [hidden] { display: none; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\0000316}}
 html { font-size: 100%; -webkit-text-size-adjust: 100%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\0000317}}
-body { margin: 0; font-size: 1em; line-height: 1.4; }
+body { margin: 0; font-size: 1em; line-height: 1.5; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\0000320}}
 ::selection { text-shadow: none !important; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\0000321}}
 a:hover, a:active { outline: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\0000326}}
 pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\0000328}}
-q { quotes: none; }
+q { quotes: none; display: block; font-size: 85%; font-family: Georgia, serif; font-style: italic; }
+q:before, q:after { font-size: 3em; position: absolute; margin-top: -0.25em; opacity: .5; font-style: normal; }
+q:before { content: "“"; margin-left: -0.5em; }
+q:after { content: "”"; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\0000329}}
-q:before, q:after { content: ""; content: none; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\0000331}}
 small { font-size: 80%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\0000333}}
 button, input, select, textarea { font-family: sans-serif; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\0000334}}
 a { text-decoration: none; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\0000335}}
 iframe, hr, img, fieldset, legend { border: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\0000336}}
 abbr[title] { border-bottom: 1px dotted; cursor: help; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\0000337}}
 b, strong { font-weight: bold; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\0000338}}
 blockquote { margin: 1em 1.5em; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\0000339}}
 dfn { font-style: italic; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\0000340}}
 hr { display: block; height: 1px; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\0000341}}
 ins { background: #ff9; color: #000; text-decoration: none; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\0000342}}
 mark { background: #ff6; color: #000; font-style: italic; font-weight: bold; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\0000348}}
 sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\0000349}}
 sup { top: -0.5em; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\0000350}}
 sub { bottom: -0.25em; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\0000352}}
 h1 { font-size: 2.5em; line-height: 1em; margin: .25em 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\0000353}}
-h2 { font-size: 2em; line-height: 1.33em; margin: .45em 0 .45em; }
+h2 { font-size: 1.75em; line-height: 1.33em; margin: .45em 0 .45em; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\0000354}}
-h3 { font-size: 1.2em; margin: 1em 0 .33em; }
+h3 { font-size: 1.25em; margin: 1em 0 .33em; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\0000355}}
 p, ol, ul { margin: .25em 0 .75em; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\0000357}}
 p + h2 { margin-top: 1.3em; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\0000358}}
 p + h3 { margin-top: 1.5em; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\0000361}}
 .meta { color: #777; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\0000362}}
 h2.meta { margin-bottom: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\0000363}}
 h2.meta + * { margin-top: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\0000365}}
 #content-side { font-size: 90%; }
 
 /* ============================================================================= Lists ========================================================================== */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\0000371}}
 ul, ol { margin: 1em 0; padding: 0 0 0 1.5em; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\0000372}}
 dd { margin: 0 0 0 1.5em; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\0000373}}
 nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0; }
 
 /* ============================================================================= Embedded content ========================================================================== */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\0000384}}
 img { vertical-align: middle; width: 100%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\0000385}}
 img.noscale, .noscale img { width: auto; }
 
 /* ============================================================================= Figures ========================================================================== */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\0000391}}
 figure { margin: 0; }
 
 /* ============================================================================= Forms ========================================================================== */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\0000397}}
 form, fieldset, button, input, select, textarea { margin: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\0000398}}
 fieldset, legend { padding: 0; }
 
 /* Indicate that 'label' will shift focus to the associated form element */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\00003101}}
 label { cursor: pointer; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\00003102}}
 legend { white-space: normal; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\00003106}}
 button, input, select, textarea { font-size: 100%; vertical-align: baseline; }
 
 /* Define line-height as normal to match FF3/4 (set using !important in the UA stylesheet) */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\00003109}}
 button, input { line-height: normal; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\00003114}}
 button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; }
 
 /* Re-set default cursor for disabled elements */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\00003117}}
 button[disabled], input[disabled] { cursor: default; }
 
 /* Consistent box sizing and appearance */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\00003120}}
 input[type="checkbox"], input[type="radio"] { box-sizing: border-box; padding: 0; *width: 13px; *height: 13px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\00003121}}
 input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\00003122}}
 input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-search-cancel-button { -webkit-appearance: none; }
 
 /* Remove inner padding and border in FF3/4: h5bp.com/l */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\00003125}}
 button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\00003128}}
 textarea { overflow: auto; vertical-align: top; resize: vertical; }
 
 /* Colors for form validity */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\00003131}}
 input:invalid, textarea:invalid { background-color: #f0dddd; }
 
 /* ============================================================================= Tables ========================================================================== */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\00003136}}
 table { border-collapse: collapse; border-spacing: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\00003137}}
 table td { vertical-align: top; }
 
 /* ==|== non-semantic helper classes ======================================= */
 /* Hide from both screenreaders and browsers: h5bp.com/u */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\00003144}}
 .hide { display: none !important; visibility: hidden; }
 
 /* Hide visually and from screenreaders, but maintain layout */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\00003146}}
 .invisible { visibility: hidden; }
 
 /* Hide only visually, but have it available for screenreaders: h5bp.com/v */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\00003148}}
 .visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\00003149}}
 .visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { /* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p */ clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
 
 /* Contain floats: h5bp.com/q */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\00003155}}
 .clearfix:before, .clearfix:after { content: ""; display: table; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\00003156}}
 .clearfix:after { clear: both; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\00003157}}
 .clearfix { *zoom: 1; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\00003159}}
 .debug { background: #ffc; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\00003160}}
 .clear { clear: both; margin: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\00003161}}
 hr.clear { visibility: hidden; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\00003163}}
 .right { float: right; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\00003164}}
 img.right, figure.right { margin-left: 1em; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\00003165}}
 .left { float: left; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\00003166}}
 img.left, figure.left { margin-right: 1em; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\00003168}}
 .ellipse { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 100%; }
 
 /* ==|== print styles ======================================================= Print styles. Inlined to avoid required HTTP connection: h5bp.com/r ========================================================================== */
 @media print { /* Black prints faster: h5bp.com/s */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\00003182}}
   * { background: transparent !important; color: black !important; box-shadow: none !important; text-shadow: none !important; filter: none !important; -ms-filter: none !important; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\00003183}}
   a, a:visited { text-decoration: underline; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\00003184}}
   a[href]:after { content: " (" attr(href) ")"; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\00003185}}
   abbr[title]:after { content: " (" attr(title) ")"; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\00003186}}
   pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\00003187}}
   thead { display: table-header-group; }
   /* h5bp.com/t */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\00003188}}
   tr, img { page-break-inside: avoid; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\00003189}}
   img { max-width: 100% !important; }
   @page { margin: 0.5cm; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\00003191}}
   p, h2, h3 { orphans: 3; widows: 3; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_reset\.scss}line{font-family:\00003192}}
   h2, h3 { page-break-after: avoid; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\000036}}
 .navicon { font-size: 150%; letter-spacing: -0.33em; display: block; width: 1.75em; color: #f9f9f9; line-height: 1em; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\000039}}
 .navicon:before { content: "≡"; width: .33em; overflow: hidden; display: inline-block; color: #ececec; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\0000320}}
 table { width: 99.9%; margin: 1em 0; font-size: 95%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\0000322}}
 table caption { border-bottom: 1px solid #ececec; color: #2b2b2b; text-align: left; font-weight: bold; text-transform: uppercase; font-size: 1.25em; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\0000324}}
 table th { font-weight: bold; border-bottom: 2px solid #2b2b2b; text-align: left; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\0000325}}
 table td { font-size: 95%; border-bottom: 1px solid #aaaaaa; padding: .5em 5px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\0000326}}
 table td.num { text-align: right; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\0000327}}
 table col.highlight { background: #f9f9f9; font-weight: bold; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\0000331}}
-.hero { font-size: 125%; position: relative; z-index: 10; padding: 1em 20px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\0000336}}
-.hero h1 { font-size: 3em; }
+ul.fancy { list-style: none; padding-left: 0; }
+ul.fancy li { margin-bottom: .5em; padding-bottom: .5em; border-bottom: 1px solid #f9f9f9; }
+
+.hero { font-size: 150%; position: relative; z-index: 10; padding: 2em 20px; }
+.hero h1 { font-size: 2.5em; }
 
 /****** GRIDDED CONTENT *******************************
 *  Gridded content. Can have 1-6 columns. 3 is default.
@@ -283,386 +195,221 @@ table col.highlight { background: #f9f9f9; font-weight: bold; }
 *  usage:  foo class="columned"
 *  or   :  foo class="columned four-col"
 *  Note: on small screens multiple columns will be reset to a more appropriate width.
+*  Experiment support for "auto" which sets the number of columns 
+*  according to available sensible width.
 *******************************************************/
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\0000347}}
 .columned { margin: 0; padding: 0; list-style: none; position: relative; padding-right: 0 !important; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\0000350}}
 .columned > * { position: relative; display: inline-block; vertical-align: top; padding-right: 20px; margin-right: -4px; }
-@media (max-width: 779px) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\0000350}}
-  .columned > * { display: block; width: auto; } }
-@media (min-width: 780px) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\0000350}}
-  .columned > * { width: 33%; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\0000359}}
+@media (max-width: 779px) { .columned > * { display: block; width: auto; } }
+@media (min-width: 780px) { .columned > * { width: 33%; } }
 .columned.one-col > * { width: auto; clear: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\0000360}}
 .columned.two-col > * { width: 50%; }
-@media (max-width: 779px) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\0000361}}
-  .columned.four-col > * { width: 49%; } }
-@media (min-width: 780px) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\0000361}}
-  .columned.four-col > * { width: 25%; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\0000363}}
+@media (max-width: 779px) { .columned.four-col > * { width: 49%; } }
+@media (min-width: 780px) { .columned.four-col > * { width: 25%; } }
 .columned.five-col > * { width: 20%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\0000364}}
 .columned.six-col > * { width: 16.5%; }
-@media (max-width: 779px) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\0000365}}
-  .columned.auto > * { width: auto; } }
-@media (min-width: 780px) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\0000365}}
-  .columned.auto > * { width: 49%; } }
-@media (min-width: 980px) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\0000365}}
-  .columned.auto > * { width: 24.9%; } }
-@media (min-width: 1220px) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\0000365}}
-  .columned.auto > * { width: 19.9%; } }
-@media (min-width: 1600px) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\0000365}}
-  .columned.auto > * { width: 20%; } }
+@media (max-width: 779px) { .columned.auto > * { width: auto; } }
+@media (min-width: 780px) { .columned.auto > * { width: 49%; } }
+@media (min-width: 980px) { .columned.auto > * { width: 33.0%; } }
+@media (min-width: 1220px) { .columned.auto > * { width: 19.9%; } }
+.columned.phi > *:nth-child(odd) { width: 61.8%; }
+.columned.phi > *:nth-child(even) { width: 38.19%; }
+.columned.phi.reverse > *:nth-child(even) { width: 61.8%; }
+.columned.phi.reverse > *:nth-child(odd) { width: 38.19%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\0000380}}
 .kicker { margin-bottom: .125em; font-size: 11px; text-transform: uppercase; line-height: 1em; font-weight: bold; display: block; color: #2b2b2b; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\0000389}}
 .kicker a { color: #2b2b2b; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\0000390}}
 .kicker a:hover { color: #d56312; }
+.kicker + h1 { margin-top: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\0000392}}
-.kicker + h1, .kicker + a > h1 { margin-top: 0; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\0000397}}
-.pager { background: #ececec; color: #2b2b2b; border-radius: .5em; min-height: 2em; margin: 0; font-size: 90%; list-style: none; padding: 0; margin-bottom: 1em; text-align: center; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\0000398}}
+.pager { background: #f9f9f9; color: #2b2b2b; border-radius: .5em; min-height: 2em; margin: 0; font-size: 90%; list-style: none; padding: 0; margin-bottom: 1em; text-align: center; }
 .pager li { width: 40%; display: inline-block; padding: 0 2%; line-height: 2em; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\0000399}}
 .pager li span, .pager li a { color: #111111; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\00003100}}
 .pager li span:hover, .pager li a:hover { color: #d56312; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\00003103}}
 .pager li.next, .pager li.prev { width: 29%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\00003104}}
 .pager li.next { float: right; text-align: right; margin-left: -100%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\00003105}}
 .pager li.next:after { content: "►"; padding-left: 5px; padding-top: 2px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\00003107}}
 .pager li.prev { float: left; text-align: left; margin-right: -100%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\00003108}}
 .pager li.prev:before { content: "◀"; padding-right: 5px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\00003110}}
 .pager li.next, .pager li.prev { font-size: 90%; margin-top: 2px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\00003116}}
-.tabbed > * { display: none; position: relative; z-index: 1; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\00003122}}
+.tabbed > * { display: none; position: relative; z-index: 1; -webkit-transition: all 0.3s ease-in; -moz-transition: all 0.3s ease-in; -ms-transition: all 0.3s ease-in; -o-transition: all 0.3s ease-in; transition: all 0.3s ease-in; }
 .tabbed > *.activeTab, .tabbed > ul { display: block; }
+.tabbed > ul { background: #ececec; border: 1px solid #2b2b2b; font-size: 90%; width: auto; float: none; height: 1.67em; line-height: 1.67em; padding: 0; margin: 0 0 5px; clear: both; }
+.tabbed > ul > li { display: inline; padding: .25em 1em .25em 1em; }
+.tabbed > ul > li img { border: 0; padding-right: 5px; }
+.tabbed > ul li.active { background: #fff; border-bottom: 1px solid #fff; border-left: 1px solid #ddd; border-right: 1px solid #ddd; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\00003126}}
-#content .tabbed > ul, #content ul.remote_tabs_nav, #content .html_module .tabbed > ul { background: #ececec; border: 1px solid #2b2b2b; font-size: 90%; width: auto; float: none; height: 1.67em; line-height: 1.67em; padding: 0; margin: 0 0 5px; clear: both; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\00003138}}
-#content .tabbed > ul > li, #content ul.remote_tabs_nav > li, #content .html_module .tabbed > ul > li { display: inline; padding: .25em 1em .25em 1em; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\00003139}}
-#content .tabbed > ul > li img, #content ul.remote_tabs_nav > li img, #content .html_module .tabbed > ul > li img { border: 0; padding-right: 5px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\00003141}}
-#content .tabbed > ul li.active, #content ul.remote_tabs_nav li.active, #content .html_module .tabbed > ul li.active { background: #fff; border-bottom: 1px solid #fff; border-left: 1px solid #ddd; border-right: 1px solid #ddd; }
-
-/******************** Calendars *************************/
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\00003148}}
+/* CALENDARS AND DATE HANDLING *************************/
 .hcal_tables table tr td { background: transparent; font-weight: normal; padding: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\00003149}}
 .hcal_tables thead th { text-align: center; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\00003150}}
 .hcal_tables td .calDayLabel { padding: .25em; text-align: center; border-radius: 1em; display: block; color: #111111; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\00003151}}
 .hcal_tables td.has_events .calDayLabel { font-weight: bold; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\00003152}}
 .hcal_tables td.calDayToday .calDayLabel { background: #d56312; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\00003155}}
 .outOfRange, .notInMonth { opacity: .4; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\00003157}}
 #small-calendar { display: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\00003159}}
 #small-calendar .event, #small-calendar .longDays { display: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\00003160}}
 #small-calendar table { font-size: 85%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\00003161}}
 #small-calendar table td.has_events .calDayLabel { border: 1px solid #ececec; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\00003167}}
 #big-calendar .abbrDays, #big-calendar .datebox, #big-calendar .eventDetails { display: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\00003168}}
 #big-calendar td { width: 14.2857%; padding: 0 .5em .5em; border: 1px solid #ececec; height: 90px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\00003169}}
 #big-calendar td .event { font-size: 70%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\00003170}}
 #big-calendar td .calDayLabel { float: right; margin-left: .25em; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\00003174}}
 #small-calendar td:hover .event, #big-calendar td .event:hover .eventDetails { display: block; position: absolute; z-index: 1000; background: #f9f9f9; border: 1px solid #d56312; width: 170px; font-size: 10px; padding: 2px 4px; text-align: left; border-collapse: separate; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\00003192}}
 .event_times { float: left; width: 140px; clear: left; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\00003193}}
 .event_times .datebox + .datebox { border-left: 1px solid #2b2b2b; margin-left: -1em; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\00003195}}
 .datebox { background: #ececec; position: relative; width: 70px; text-align: center; float: left; margin-right: 1em; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\00003196}}
 .datebox span { display: block; color: #2b2b2b; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\00003197}}
 .datebox .w, .datebox .mo { text-shadow: none; text-transform: uppercase; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\00003198}}
 .datebox .w { background: #111111; color: #f9f9f9; font-size: 80%; font-weight: bold; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\00003199}}
 .datebox .d { font-size: 3em; text-align: center; font-weight: bold; padding-left: 10px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\00003200}}
 .datebox .mo { position: absolute; left: -5px; top: 32px; text-align: left; font-size: 10px; -webkit-transform: rotate(-90deg); -moz-transform: rotate(-90deg); -ms-transform: rotate(-90deg); }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\00003206}}
 .event_info { margin: 0 0 2em 160px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\00003207}}
 .event_info h2, .event_info h3, .event_info p { margin: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_assets\.scss}line{font-family:\00003208}}
 .event_info .org { display: inline; padding-right: 1em; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\000039}}
 html { background: #f9f9f9 url(../../img/site/texture-overlay.png); }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\0000310}}
-body { font-family: "Helvetica", "Arial Unicode", Verdana, Arial, sans-serif; color: #111111; height: 100%; }
+body { font-family: "Helvetica", "Arial Unicode", Verdana, Arial, sans-serif; color: #111111; height: 100%; -webkit-transition: all 0.2s ease-in; -moz-transition: all 0.2s ease-in; -ms-transition: all 0.2s ease-in; -o-transition: all 0.2s ease-in; transition: all 0.2s ease-in; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\0000316}}
 select, input, textarea { color: #2b2b2b; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\0000317}}
 a { color: #a64d0e; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\0000318}}
 a:link { -webkit-tap-highlight-color: #a64d0e; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\0000319}}
 a:hover { color: #d56312; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\0000321}}
 h1, h2, h3 { font-weight: normal; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\0000323}}
 ::-moz-selection { background: #2b2b2b; color: #ececec; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\0000324}}
 ::selection { background: #2b2b2b; color: #ececec; }
 
 /**************************** Structure ******************************/
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\0000330}}
 .constrain { margin: 0 auto; }
-@media (min-width: 780px) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\0000330}}
-  .constrain { width: 780px; } }
-@media (min-width: 980px) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\0000330}}
-  .constrain { width: 980px; } }
-@media (min-width: 1220px) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\0000330}}
-  .constrain { width: 1220px; } }
-@media (min-width: 1600px) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\0000330}}
-  .constrain { width: 1600px; } }
+@media (min-width: 780px) { .constrain { width: 780px; } }
+@media (min-width: 980px) { .constrain { width: 980px; } }
+@media (min-width: 1220px) { .constrain { width: 1220px; } }
+@media (min-width: 1600px) { .constrain { width: 1600px; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\0000337}}
 body { padding-top: 60px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\0000340}}
 body.collapsed #masthead { -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4); -moz-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4); box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4); }
-@media (max-width: 779px) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\0000341}}
-  body.collapsed #masthead #main_menu { display: none; } }
-@media (min-width: 780px) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\0000342}}
-  body.collapsed #masthead #main_menu ul { display: none; } }
+@media (max-width: 779px) { body.collapsed #masthead #main_menu { display: none; } }
+@media (min-width: 780px) { body.collapsed #masthead #main_menu ul { display: none; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\0000348}}
 #masthead { -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3); -moz-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3); box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3); position: fixed; top: 0; width: 100%; z-index: 100; padding: 10px 0; min-height: 60px; border-bottom: 2px solid #d56312; background: #a64d0e url(../../img/site/texture-overlay.png); background: url(../../img/site/texture-overlay.png), -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d56312), color-stop(100%, #a64d0e)); /* Chrome, Safari 4+ */ background: url(../../img/site/texture-overlay.png), -moz-gradient(center top, #d56312 0%, #a64d0e 100%); background: url(../../img/site/texture-overlay.png), -webkit-linear-gradient(top, #d56312 0%, #a64d0e); /* Chrome 10+, Safari 5.1+ */ background: url(../../img/site/texture-overlay.png), -moz-linear-gradient(center top, #d56312 0%, #a64d0e 100%); /* FF 3.6+ */ background: url(../../img/site/texture-overlay.png), -ms-linear-gradient(top, #d56312 0%, #a64d0e 100%); /* IE 10+ */ background: url(../../img/site/texture-overlay.png), -o-linear-gradient(top, #d56312 0%, #a64d0e 100%); /* Opera 11.10+ */ background: url(../../img/site/texture-overlay.png), linear-gradient(top, #d56312 0%, #a64d0e 100%); /* W3C */ }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\0000357}}
 #masthead hgroup, #masthead nav { display: inline-block; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\0000358}}
 #masthead hgroup { color: #f9f9f9; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7); padding-right: 20px; }
-@media (max-width: 779px) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\0000358}}
-  #masthead hgroup { padding-left: 20px; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\0000364}}
-#masthead hgroup h1, #masthead hgroup h2 { margin: 0; display: inline; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\0000365}}
+@media (max-width: 779px) { #masthead hgroup { padding-left: 20px; } }
+#masthead hgroup h1, #masthead hgroup h2 { margin: 0; float: left; }
 #masthead hgroup a { color: #f9f9f9; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\0000368}}
 #masthead > div .trigger { float: right; padding: .5em 1.5em; font-weight: bold; border-radius: 5px; border: 1px inset #d56312; color: #f9f9f9; font-size: 75%; margin-right: 20px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\0000377}}
 #masthead > div .trigger.activated { background: #a64d0e; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\0000379}}
 #masthead nav { position: relative; font-size: 95%; }
-@media (min-width: 780px) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\0000379}}
-  #masthead nav { width: 70%; } }
-@media (max-width: 779px) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\0000382}}
-  #masthead nav #main_menu { display: none; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\0000384}}
+@media (min-width: 780px) { #masthead nav { width: 70%; } }
+@media (max-width: 779px) { #masthead nav #main_menu { display: none; } }
 #masthead nav #main_menu > li { padding: .25em 1.33em .125em 0; font-weight: bold; }
-@media (min-width: 1220px) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\0000384}}
-  #masthead nav #main_menu > li { width: 12%; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\0000386}}
 #masthead nav #main_menu > li ul { margin-bottom: 1em; font-weight: normal; font-size: 95%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\0000388}}
 #masthead nav #main_menu a { color: #ececec; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\0000393}}
 #content { text-shadow: 1px 1px 2px #f9f9f9; padding: 80px .5em .5em; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\0000396}}
-#content h1, #content figcaption { font-family: Georgia, serif; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\0000397}}
 #content figcaption { font-size: 80%; padding-bottom: .5em; color: #2b2b2b; font-weight: normal; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\0000398}}
 #content figcaption .author { display: block; text-align: right; font: 9px "Helvetica", "Arial Unicode", Verdana, Arial, sans-serif; text-transform: uppercase; padding-top: .25em; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\00003100}}
 #content img { border: 1px solid #111111; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\00003101}}
 #content #content-main { padding-bottom: 1em; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\00003104}}
 #footer { clear: both; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\00003105}}
 #footer h3 { clear: both; padding-top: .5em; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\00003106}}
 #footer > div { margin: 0 .5em; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\00003107}}
 #footer > div > p { text-align: right; display: block; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\00003110}}
 #searchForm { text-align: right; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\00003112}}
 #searchForm select { width: 120px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\00003113}}
 #searchForm #q { border: 1px solid #2b2b2b; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; padding: 3px; margin-right: -8px; width: 140px; font-size: 13px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\00003122}}
 #searchForm button { border: 0; padding: 4px 5px; margin: 0; font-size: 13px; text-transform: uppercase; background: lightgrey none; background: none, -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ececec), color-stop(100%, lightgrey)); /* Chrome, Safari 4+ */ background: none, -moz-gradient(center top, #ececec 0%, lightgrey 100%); background: none, -webkit-linear-gradient(top, #ececec 0%, lightgrey); /* Chrome 10+, Safari 5.1+ */ background: none, -moz-linear-gradient(center top, #ececec 0%, lightgrey 100%); /* FF 3.6+ */ background: none, -ms-linear-gradient(top, #ececec 0%, lightgrey 100%); /* IE 10+ */ background: none, -o-linear-gradient(top, #ececec 0%, lightgrey 100%); /* Opera 11.10+ */ background: none, linear-gradient(top, #ececec 0%, lightgrey 100%); /* W3C */ }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\00003125}}
 #searchForm span { font-size: 10px; color: #2b2b2b; }
 
 /************************ COMMON CLASSES AND ELEMENTS ********************/
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\00003131}}
 time { color: #2b2b2b; font-size: 80%; display: block; }
 
+.block { display: block; }
+
 /**************************** STORY PAGES  *********************************/
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\00003145}}
 p.vcard { line-height: 1em; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\00003146}}
 p.author { font-weight: bold; font-size: 80%; margin: 0; text-transform: uppercase; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\00003147}}
 p.source-org { font-family: Georgia, serif; font-size: 75%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\00003149}}
 h2.overline { font-size: 1.33em; margin-bottom: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\00003150}}
 h2.overline + h1 { margin-top: .125em; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\00003152}}
 .sociallinks { border: solid #ececec; border-width: 2px 0; padding: .25em 0; margin-bottom: 0 0 1em; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\00003154}}
 .sociallinks li { list-style: none; display: inline-block; padding: 0 .5em; margin: 0; font-size: 70%; width: 24%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\00003155}}
 .sociallinks li#social_fb { width: 48%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\00003156}}
 .sociallinks img { border: 0; width: 24px; padding-right: 2px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\00003157}}
 .sociallinks iframe { border: none; overflow: hidden; width: 90px; height: 21px; margin-bottom: -0.67em; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\00003158}}
 .sociallinks a { color: #2b2b2b; font-weight: bold; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\00003160}}
 .section_front article > a { color: #111111; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\00003162}}
 .section_front article > a:hover { color: #bd5810; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\00003166}}
 .story_detail .dateline { font-size: .9em; font-weight: bold; margin-top: .45em; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\00003167}}
 .story_detail .dateline:after { content: '|'; color: #2b2b2b; padding: 0 .5em; font-weight: normal; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\00003174}}
 .story_detail #top_assets { position: relative; z-index: 100; border-bottom: 2px solid #ececec; padding-bottom: .25em; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\00003176}}
 .story_detail #top_assets ul.sociallinks { margin-bottom: .25em; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\00003177}}
 .story_detail #top_assets .tabbed > ul { text-align: right; font-size: 80%; list-style: none; margin: .25em 0 0; background: transparent; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\00003178}}
 .story_detail #top_assets .tabbed > ul li { display: inline; padding-left: 1em; background: transparent; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\00003179}}
 .story_detail #top_assets .tabbed > ul li a { background: #2b2b2b; border-radius: 1em; color: #f9f9f9; padding: .25em .5em; text-shadow: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\00003181}}
 .story_detail #top_assets .tabbed > ul li.active a { background: #d56312; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\00003182}}
 .story_detail #top_assets .tabbed > ul .preview { position: absolute; width: 6em; top: -65px; margin-left: -4em; display: none; min-height: 50px; background: #d56312; color: #f9f9f9; line-height: 50px; text-align: center; text-shadow: none; font-weight: bold; border-radius: 3px; box-shadow: 0 0 4px black; -webkit-box-shadow: 0 0 4px black; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\00003185}}
 .story_detail #top_assets .tabbed > ul .preview img { border-color: #d56312; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\00003187}}
 .story_detail #top_assets .tabbed > ul .preview:before { display: inline-block; z-index: 1000; content: ' '; height: 0; position: absolute; width: 0; border: 7px solid transparent; border-top-color: #d56312; top: 100%; left: 35px; box-shadow: 0 0 4px black; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\00003200}}
 .story_detail #top_assets blockquote { display: none; font: 1.33em Georgia, serif; border-top: 2px solid #ececec; margin: .25em 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\00003201}}
 .story_detail #top_assets blockquote em { display: inline-block; float: right; padding-top: .67em; font: 13px "Helvetica", "Arial Unicode", Verdana, Arial, sans-serif; text-align: right; color: #2b2b2b; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\00003202}}
 .story_detail #top_assets blockquote em:before { content: '— '; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\00003205}}
 .story_detail #top_assets object, .story_detail #top_assets video { width: 100%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\00003207}}
 .story_detail .shirttail { color: #2b2b2b; border-top: 2px solid #ececec; margin: 0; padding: .25em 0; font-size: .8em; }
 
 /******************** GALLERIES **********************/
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\00003214}}
 #gallery_thumbs_hold { display: none; width: 100%; overflow: hidden; height: 70px; position: relative; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\00003218}}
 #gallery_thumbs_hold li { height: 65px; width: 65px; margin: 0 5px .5em 0; border: 1px solid #111111; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\00003222}}
 #gallery_thumbs_hold li.current { border-color: #d56312; border-width: 4px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\00003223}}
 #gallery_thumbs_hold li img { border: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\00003227}}
 #gallery_slides_hold figure.vertical { text-align: center; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\00003228}}
 #gallery_slides_hold figcaption { display: none; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/_common\.scss}line{font-family:\00003230}}
 #gallery_info .sociallinks li { width: auto; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/site\.scss}line{font-family:\0000312}}
 body { backgound-image: url(../../img/site/texture-overlay.png); }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/site\.scss}line{font-family:\0000313}}
 #masthead { background: #c6c6c6 url(../../img/site/texture-overlay.png); background: url(../../img/site/texture-overlay.png), -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ececec), color-stop(100%, #c6c6c6)); /* Chrome, Safari 4+ */ background: url(../../img/site/texture-overlay.png), -moz-gradient(center top, #ececec 0%, #c6c6c6 100%); background: url(../../img/site/texture-overlay.png), -webkit-linear-gradient(top, #ececec 0%, #c6c6c6); /* Chrome 10+, Safari 5.1+ */ background: url(../../img/site/texture-overlay.png), -moz-linear-gradient(center top, #ececec 0%, #c6c6c6 100%); /* FF 3.6+ */ background: url(../../img/site/texture-overlay.png), -ms-linear-gradient(top, #ececec 0%, #c6c6c6 100%); /* IE 10+ */ background: url(../../img/site/texture-overlay.png), -o-linear-gradient(top, #ececec 0%, #c6c6c6 100%); /* Opera 11.10+ */ background: url(../../img/site/texture-overlay.png), linear-gradient(top, #ececec 0%, #c6c6c6 100%); /* W3C */ }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/site\.scss}line{font-family:\0000314}}
 #masthead > div { position: relative; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/site\.scss}line{font-family:\0000316}}
 #masthead nav li a { color: #777777; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/site\.scss}line{font-family:\0000317}}
 #masthead nav li a:hover { color: #111111; }
-@media (min-width: 780px) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/site\.scss}line{font-family:\0000319}}
-  #masthead > div .trigger { display: block; position: absolute; bottom: -3em; right: 0; background: #ececec url(../../img/site/texture-overlay.png); border-width: 0 2px 2px; border-radius: 0 0 5px 5px; padding: 0 2em .5em; } }
+@media (min-width: 780px) { #masthead > div .trigger { display: block; position: absolute; bottom: -3em; right: 0; background: #ececec url(../../img/site/texture-overlay.png); border-width: 0 2px 2px; border-radius: 0 0 5px 5px; padding: 0 2em .5em; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/site\.scss}line{font-family:\0000333}}
 #content { min-height: 1000px; padding: 0 20px; border: solid white; border-width: 1px 1px 0; -webkit-box-shadow: 0 -4px 5px rgba(0, 0, 0, 0.5); -moz-box-shadow: 0 -4px 5px rgba(0, 0, 0, 0.5); box-shadow: 0 -4px 5px rgba(0, 0, 0, 0.5); -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; position: relative; z-index: 5; background: #ececec; }
-@media (min-width: 780px) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/site\.scss}line{font-family:\0000333}}
-  #content { background-image: url(http://media.kansascity.com/v3/img/grids/740.jpg); background-repeat: no-repeat; background-position: 20px 20px; } }
-@media (min-width: 980px) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/site\.scss}line{font-family:\0000333}}
-  #content { background-image: url(http://media.kansascity.com/v3/img/grids/940.jpg); } }
-@media (min-width: 1220px) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/site\.scss}line{font-family:\0000333}}
-  #content { background-image: url(http://media.kansascity.com/v3/img/grids/1180.jpg); } }
+@media (min-width: 780px) { #content { background-repeat: no-repeat; background-position: 20px 20px; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/site\.scss}line{font-family:\0000355}}
 #fakebg { position: fixed; padding-top: 80px; width: 100%; min-height: 60%; z-index: 1; border-bottom: 3px solid #d56312; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/site\.scss}line{font-family:\0000359}}
 #herotext { padding-right: 20px; }
-@media (min-width: 1220px) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/site\.scss}line{font-family:\0000359}}
-  #herotext { padding-right: 20%; } }
-@media (min-width: 980px) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/site\.scss}line{font-family:\0000359}}
-  #herotext { padding-right: 30%; } }
-@media (min-width: 780px) { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/site\.scss}line{font-family:\0000359}}
-  #herotext { padding-right: 40%; } }
+@media (min-width: 1220px) { #herotext { padding-right: 20%; } }
+@media (min-width: 980px) { #herotext { padding-right: 30%; } }
+@media (min-width: 780px) { #herotext { padding-right: 40%; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/themes\/light\.scss}line{font-family:\000035}}
 #fakebg { background-color: #fff; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/themes\/light\.scss}line{font-family:\000036}}
 #masthead { background: #8e420c url(../../img/site/texture-overlay.png); background: url(../../img/site/texture-overlay.png), -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d56312), color-stop(100%, #8e420c)); /* Chrome, Safari 4+ */ background: url(../../img/site/texture-overlay.png), -moz-gradient(center top, #d56312 0%, #8e420c 100%); background: url(../../img/site/texture-overlay.png), -webkit-linear-gradient(top, #d56312 0%, #8e420c); /* Chrome 10+, Safari 5.1+ */ background: url(../../img/site/texture-overlay.png), -moz-linear-gradient(center top, #d56312 0%, #8e420c 100%); /* FF 3.6+ */ background: url(../../img/site/texture-overlay.png), -ms-linear-gradient(top, #d56312 0%, #8e420c 100%); /* IE 10+ */ background: url(../../img/site/texture-overlay.png), -o-linear-gradient(top, #d56312 0%, #8e420c 100%); /* Opera 11.10+ */ background: url(../../img/site/texture-overlay.png), linear-gradient(top, #d56312 0%, #8e420c 100%); /* W3C */ }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/themes\/light\.scss}line{font-family:\000037}}
 #masthead nav li a { color: #ececec; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tb026891\/Documents\/capo\/static\/source\/sass\/themes\/light\.scss}line{font-family:\000038}}
 #masthead > div .trigger { background: #8e420c url(../../img/site/texture-overlay.png); }

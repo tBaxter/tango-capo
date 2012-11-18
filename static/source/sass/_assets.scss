@@ -1,8 +1,7 @@
 
-// builds scalable menu navigation icon
+// Navicon is a scalable menu navigation icon
 // generally, you'll want to put it inside a button element of some kind.
-//<span class="button"><span class='navicon'>≡≡</span></span>
-
+// Example: <span class="button"><span class='navicon'>≡≡</span></span>
 .navicon { font-size:150%; letter-spacing: -.33em; display:block; width:1.75em; color:$base;
   line-height:1em;
   
@@ -16,24 +15,27 @@
 }
 
 // table is unclassed. It should suit 99% use cases. 
-// In the cases where it doesn't, class the special table.
+// In the cases where it doesn't, class the special table, not every 'normal' table. Sheesh.
 table {
   width:99.9%; margin:1em 0; font-size:95%;
   caption { border-bottom: 1px solid $base_alt; color:$inverse_alt; text-align: left; font-weight:bold; text-transform: uppercase; font-size:1.25em;}
-  //caption.kicker { display:table-caption }
   th { font-weight:bold; border-bottom: 2px solid $inverse_alt; text-align:left}
   td { font-size:95%; border-bottom:1px solid $base_alt2; padding:.5em 5px}
   td.num {text-align:right} // numbers are right-aligned.
   col.highlight {background:$base; font-weight:bold; } // allows highlighting a given column
 }
 
+ul.fancy {
+  list-style:none; padding-left:0;
+  li {margin-bottom:.5em; padding-bottom:.5em; border-bottom: 1px solid $base}
+}
 
 .hero { 
-  font-size:125%;
+  font-size:150%;
   position:relative; 
-  z-index:10; 
-  padding:1em $gutter_width;
-  h1 {font-size:3em}
+  z-index:10;
+  padding:2em $gutter_width;
+  h1 {font-size:2.5em}
 }
 
 
@@ -43,6 +45,8 @@ table {
 *  usage:  foo class="columned"
 *  or   :  foo class="columned four-col"
 *  Note: on small screens multiple columns will be reset to a more appropriate width.
+*  Experiment support for "auto" which sets the number of columns 
+*  according to available sensible width.
 *******************************************************/
 .columned { 
   margin: 0; padding: 0; list-style: none; position: relative;
@@ -59,48 +63,54 @@ table {
   &.one-col  > * { width: auto; clear:none }
   &.two-col  > * { width: 50%;  }
   &.four-col > * { @include breakpoint(xs) {width: 49%;} 
-    @include breakpoint(s) {width: 25%;} }
+    @include breakpoint(s) {width: 25%;} 
+  }
   &.five-col > * { width: 20%; }
   &.six-col  > * { width: 16.5%; }
   &.auto     > * {
     @include breakpoint(xs) {width: auto;} 
     @include breakpoint(s) {width: 49%;} 
-    @include breakpoint(m) {width: 24.9%;} 
+    @include breakpoint(m) {width: 33.0%;} 
     @include breakpoint(l) {width: 19.9%;} 
-    @include breakpoint(xl) {width: 20%;} 
+  }
+  &.phi > * { // based on golden ratio
+    &:nth-child(odd) {width:61.8%;}
+    &:nth-child(even) {width:38.19%}
+  }
+  &.phi.reverse > * { // based on golden ratio
+    &:nth-child(even) {width:61.8%;}
+    &:nth-child(odd)  {width:38.19%}
   }
 }
 
 
-
-
-// A kicker sits above a headline and acts as a section name, 
+// A kicker sits above a major heading and provies as a section name, 
 // author name or other short additional information.
-// it is not an overline.
 .kicker {
   margin-bottom:.125em; 
   font-size:11px; 
   text-transform:uppercase; 
   line-height:1em; 
   font-weight:bold;
-   display:block;
-   color:$inverse_alt;
+  display:block;
+  color:$inverse_alt;
   
   a {color:$inverse_alt}
   a:hover {color:$accent}
+  &+h1 {margin-top:0}
 }
-.kicker+h1,.kicker+a>h1 {margin-top:0}
-
 
 
 // PAGINATION
-.pager {background:$base_alt; color:$inverse_alt; border-radius:.5em; min-height:2em; margin:0; font-size:90%; list-style:none; padding:0; margin-bottom:1em; text-align:center;
+.pager {background:$base; color:$inverse_alt; 
+  border-radius:.5em; min-height:2em; margin:0; font-size:90%; list-style:none; 
+  padding:0; margin-bottom:1em; text-align:center;
   li {width:40%; display:inline-block; padding:0 2%; line-height:2em;
      span, a {color:$inverse;
        &:hover {color:$accent;}
      }
   }
-  li.next, li.prev {width:29%}
+  li.next, li.prev {width:29%;}
   li.next {float:right; text-align:right; margin-left:-100%;
     &:after { content:"►"; padding-left:5px; padding-top:2px}
   }
@@ -111,19 +121,19 @@ table {
 }
 
 
-
 // TABS
-.tabbed > * {
-  display:none; 
-  position:relative;
-  z-index:1;
-  //.trans(all, .3s, ease-in)
-}
-.tabbed >*.activeTab, .tabbed > ul {
-  display:block
-}
+.tabbed {
+  & > * {
+    display:none; 
+    position:relative;
+    z-index:1;
+    @include trans(all, .3s, ease-in)
+  }
+  & >*.activeTab, & > ul {
+    display:block
+  }
 
-#content .tabbed > ul, #content ul.remote_tabs_nav, #content .html_module .tabbed > ul {
+  & > ul {
     background:$base_alt; 
     border:1px solid $inverse_alt; 
     font-size:90%; 
@@ -139,11 +149,12 @@ table {
       img {border:0; padding-right:5px;}
     }
     li.active {background:#fff; border-bottom:1px solid #fff; border-left:1px solid #ddd; border-right:1px solid #ddd}
+  }
 }
 
 
-/******************** Calendars *************************/
-// Override standard table styles for our calendar tables
+/* CALENDARS AND DATE HANDLING *************************/
+// Note that most of the hcal classes are set via the hcal.js script.
 .hcal_tables {
   table tr td {background:transparent; font-weight:normal; padding:0}
   thead th {text-align:center}
@@ -177,8 +188,6 @@ table {
     z-index:1000; 
     background:$base;
     border:1px solid $accent;
-    //.radius(5px);
-    //.box-shadow(2px, 2px, 4px, 0.6);
     width:170px;
     font-size:10px; 
     padding:2px 4px;

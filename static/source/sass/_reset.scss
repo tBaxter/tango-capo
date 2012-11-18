@@ -14,7 +14,7 @@ audio:not([controls]), [hidden] { display: none; }
 
 // Handle font-size and font size adjustments on device orientation change without disabling user zoom: h5bp.com/g
 html { font-size: 100%; -webkit-text-size-adjust: 100%; }
-body { margin: 0; font-size: 1em; line-height: 1.4; }
+body { margin: 0; font-size: 1em; line-height: 1.5; }
 
 // Focused/selected/active/hovered
 ::selection { text-shadow: none !important; }
@@ -25,8 +25,11 @@ a:hover, a:active { outline: 0; }
 //pre, code, kbd, samp { font-family: monospace, serif; font-size: 1em; }
 pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
 
-q { quotes: none; }
-q:before, q:after { content: ""; content: none; }
+q { quotes: none; display:block; font-size:85%; font-family:$alt_font; font-style: italic;
+  &:before, &:after { font-size:3em; position:absolute; margin-top:-.25em; opacity:.5; font-style:normal}
+  &:before { content: "“"; margin-left:-.5em}
+  &:after { content: "”"; }
+}
 
 small { font-size: 80%; }
 
@@ -50,8 +53,8 @@ sup { top: -0.5em; }
 sub { bottom: -0.25em;}
 
 h1 { font-size:2.5em; line-height:1em; margin:.25em 0; }
-h2 { font-size:2em; line-height:1.33em; margin:.45em 0 .45em }
-h3 { font-size:1.2em; margin:1em 0 .33em}
+h2 { font-size:1.75em; line-height:1.33em; margin:.45em 0 .45em }
+h3 { font-size:1.25em; margin:1em 0 .33em}
 p, ol, ul {margin: .25em 0 .75em}
 
 p+h2 { margin-top:1.3em }
@@ -61,6 +64,7 @@ p+h3 { margin-top:1.5em }
 .meta { color:#777 }
 h2.meta {margin-bottom:0}
 h2.meta+* {margin-top:0}
+
 
 #content-side {font-size:90%}
 
