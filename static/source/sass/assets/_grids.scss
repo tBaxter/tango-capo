@@ -23,6 +23,15 @@
       width: 33%;
     }
   }
+  &.divided > * {
+    border-left: 1px solid $base_alt2;
+    padding-left: $gutter_width;
+
+    &:first-child { // completely naive. Re-do
+      border-left: 0;
+      padding-left:0;
+    }
+  }
   &.one-col  > * { width: auto; clear:none }
   &.two-col  > * { width: 50%;  }
   &.four-col > * { @include breakpoint(xs) {width: 49%;} 
@@ -40,11 +49,13 @@
     &:nth-child(odd) {width:64.8%;}
     &:nth-child(even) {width:35.19%; 
       //@include breakpoint(m) {padding-left:7%}
-      //@include breakpoint(l) {padding-left:10%}
+      @include breakpoint(l) {padding-left: $gutter_width * 2}
     }
   }
   &.phi.reverse > * {
-    &:nth-child(even) {width:61.8%;}
     &:nth-child(odd)  {width:38.19%}
+    &:nth-child(even) {width:61.8%; 
+      @include breakpoint(l) {padding-left: 0; padding-right: $gutter_width * 2}
+    }
   }
 }

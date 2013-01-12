@@ -9,16 +9,19 @@ $accent       : #d56312;              // accent color.
 
 
 // Insert custom site styles.
-body { backgound-image: $texture;  }
+body { backgound-image: $texture; @include trans() }
+
 #masthead { @include gradient($base_alt, 15%, $texture); 
   -moz-background-size: cover; background-size: cover;
   > div { position:relative; }
   nav li a {color:$meta; 
-    text-shadow: 0 1px 1px rgba(0,0,0,.9), 0 0 15px #000, 0 0 7px #000;
+    text-shadow: 0 1px 1px rgba(0,0,0,.9), 0 0 20px #000, 0 0 10px #000, 0 0 5px #000;
   	&:hover {color:$inverse}
   }
-  > div .trigger {
-    background: $accent_alt;
+  #main_menu li.active > a:before {content:"◉"}
+  > div #menu-trigger {
+    background: $accent;
+    z-index:100;
 
     @include breakpoint(s) {
       display:block; // overrides normal hidden
@@ -34,11 +37,11 @@ body { backgound-image: $texture;  }
 }
 
 #content {
-  min-height:1000px; padding:0 $gutter_width; 
-  border:solid lighten($base_alt, 10); 
-  border-width:1px 1px 0;
-  @include box-shadow(0, -4px, 5px, .5);
-  @include radius(5px);
+  //min-height:1000px; padding:0 $gutter_width; 
+  //border:solid lighten($base_alt, 10); 
+  //border-width:1px 1px 0;
+  //@include box-shadow(0, -4px, 5px, .5);
+  //@include radius(5px);
   @include breakpoint(s) {
     //background-image: url(http://media.kansascity.com/v3/img/grids/740.jpg);
     background-repeat:no-repeat;
@@ -51,8 +54,8 @@ body { backgound-image: $texture;  }
     //background-image: url(http://media.kansascity.com/v3/img/grids/1180.jpg);
   }
 
-  position:relative; z-index:5;
-  background: $base_alt
+  //position:relative; z-index:5;
+  //background: $base_alt
 }
 
 #herotext {

@@ -27,10 +27,48 @@ $('a.trigger').each(function(){
   });
 });
 
+// Simple URL jumpbox
+$('.url_selector').change(function() {
+  window.location = $(this).val();
+});
+
+
+// pickadate.js
+$( '.datepicker' ).pickadate({
+    format: 'dddd, dd mmm, yyyy',
+    format_submit: 'yyyy-mm-dd'
+});
+
+
+// Allows deferred loading of images.
+// Parent element must have data-deferred-load=" <src>"
+function load_images() {
+  var big_screen = false; // set this later, maybe.
+  $('*[data-deferred-load]').prepend(function() {
+    var hash = $(this).attr('data-deferred-load');
+    if (big_screen) {
+      hash = hash.replace('160x160','420x420');
+    }
+    var img = document.createElement('img');
+      img.src = hash;
+     return img;
+  });
+}
+load_images();
+
 // function(s) for collapsing/uncollapsing header onscroll
 // can also be used to create conditional 'sticky' header
-var collapsed = true;
-function getYOffset() {
+function collapser() {
+  var collapsed = false;
+  var $body = $('body');
+  var $header = $('#masthead');
+  var navHeight = $header.height();
+  var defaultPadding = $body.css('padding-top');
+  var collapsePoint = (navHeight * 0.4);
+  var uncollapsePoint = (navHeight * 0.3);
+  
+  // Helper for x-browser offset.
+  function getYOffset() {
     var pageY;
     if(typeof(window.pageYOffset) === 'number') {
        pageY=window.pageYOffset;
@@ -39,17 +77,47 @@ function getYOffset() {
        pageY=document.documentElement.scrollTop;
     }
     return pageY;
-}
-$(window).scroll(function () {
-  if (getYOffset() > 120 && collapsed === false) {
+  }
+
+  // nav menu trigger expand/collapse
+  $('#menu-trigger').click(function(e) {
+    e.preventDefault();
+    if (collapsed === true) {
+      uncollapse();
+      window.scrollTo(0, 0);
+    } else {
+      collapse();
+    }
+  });
+
+  function collapse() {
     collapsed = true;
-    $('body').addClass('collapsed');
+    $body.addClass('collapsed');
+    $header.next().css('margin-top', navHeight-20);
   }
-  if (getYOffset() < 80 && collapsed === true) {
+  function uncollapse() {
     collapsed = false;
-    $('body').removeClass('collapsed');
+    $body.removeClass('collapsed');
+    $header.next().css('margin-top', 0);
   }
-});
+
+  $(window).scroll(function () {
+    if (getYOffset() > collapsePoint && collapsed === false) {
+      collapse();
+    }
+    if (getYOffset() < uncollapsePoint && collapsed === true) {
+      uncollapse();
+    }
+  });
+}
+collapser();
+
+
+var $top_assets = $('#top_assets');
+function set_asset_offset() {
+  var offset = $top_assets.height() + 20;
+  $('#more_assets').css('padding-top', offset);
+}
 
 
 /* tabs can be used two ways:
@@ -94,13 +162,11 @@ function tabit() {
         nav_height = 0;
       }
     if (!tabbed.nav) {
-        console.log('could not find tab nav!');
+        //console.log('could not find tab nav!');
         return;
       }
     //tabbed.sections.hide(); // Should be done in css, but fallback for safety.
     tabbed.navitems = tabbed.nav.find('li');
-    //console.log('parent: '+ tabbed.parent().attr('id'))
-    //console.log('navitems size: '+ tabbed.navitems.size())
     
     if (window.location.hash) {
         active = window.location.hash.replace('-view','');
@@ -116,13 +182,13 @@ function tabit() {
       }
     $(active).addClass('activeTab');
     
-    tabbed.nav.find('a').click(function(e) {
+    tabbed.nav.find('a:not(.no-tab)').click(function(e) {
       e.preventDefault();
       var target          = this.hash,
           tabbed_sections = $(target).parent().find('> *').not('ul');
 
       window.location.hash = target + '-view';
-      parent = $(this).parent();
+      var parent = $(this).parent();
       parent.addClass('active');
       var navitems = parent.parent().find('li');
       $(navitems).not(parent).removeClass('active');
@@ -131,8 +197,32 @@ function tabit() {
       // it'll make the css much easier
       tabbed.css('min-height', $(target).height() + nav_height + 'px');
       tabbed_sections.not(target).removeClass('activeTab');
-      //set_asset_offset();
+      set_asset_offset();
     });
   });
 }
 tabit();
+
+if ($top_assets.length > 0) {
+  // functions specific to pages with top assets.
+  // note this is after the tabit() call, so it calculates
+  // based on tabbed top asset height, not default.
+  
+  // create preview tooltips in story detail top assets
+  $top_assets.find('.tabbed ul li a:not(.no-tab)').each(function() {
+    var img = $(this.hash).find('img').eq(0);
+    var preview = '<span class="preview"><img src="'+ $(img).attr('src') + '"></span>';
+    if ($(img).size() === 0) {
+      img = $(this.hash).first('object');
+      preview = '<span class="preview">Video</span>';
+    }
+    $(this).append(preview);
+  });
+  $top_assets.find('.tabbed ul li').hover(function() {
+    $(this).find('.preview').toggle();
+  });
+    // sets top margin for more assets to ensure it's pushed below top assets
+  $(document).ready(function() {
+    set_asset_offset();
+  });
+}

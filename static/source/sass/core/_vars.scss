@@ -26,6 +26,9 @@ $accent_alt   : darken($accent, 10%) !default;
 // meta text
 $meta         : #777;
 
+$alert        : #FFDC59;
+$error        : #D72214;
+
 // a translucent texture overlay, if you'd like one.
 $texture      : url(../../img/site/texture-overlay.png) !default;
 

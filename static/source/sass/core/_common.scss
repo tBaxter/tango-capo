@@ -13,7 +13,6 @@ body {
   color:       $inverse;
   height:100%;
   @include trans(all, .2s, ease-in);
-  padding-top:80px; // to accomodate fixed header
 }
 
 select,input,textarea {color:$inverse_alt}
@@ -39,16 +38,18 @@ h1, h2, h3 {font-weight:normal}
 }
 
 body.collapsed {
-  #masthead { @include box-shadow(0, 2px, 2px, .4);
-  	#main_menu { @include breakpoint(xs) { display:none }; 
-  		ul { @include breakpoint(s) { display:none }; }
-  	}
+  #masthead { @include box-shadow(0, 2px, 2px, .4); position: fixed;
+    hgroup h2 { display: none }
+    #main_menu { @include breakpoint(xs) { display: none }; 
+      ul { 
+        @include breakpoint(s) { display: none }; 
+      }
+    }
   }
 }
 
 // regular masthead styles.
 #masthead { @include box-shadow(0, 2px, 2px, .3);
-  position:fixed; 
   top:0; 
   width:100%; 
   z-index:100; 
@@ -56,18 +57,21 @@ body.collapsed {
   min-height:60px;
   border-bottom:2px solid $accent; 
   @include gradient($accent, 10%, $texture); 
+
   hgroup, nav { display:inline-block }
+  
   hgroup { color: $base; 
   	text-shadow: 0 1px 2px rgba(0,0,0,.7); 
   	padding-right:$gutter_width;
+    width:29%;
+
   	@include breakpoint(xs) {
   		padding-left:$gutter_width;
   	}
-    h1, h2 { margin:0; float:left; }
-    a {color:$base}
+    a { color: $base }
   }
 
-  > div .trigger {
+  > div #menu-trigger {
     float:right; 
     padding:.5em 1.5em; 
     font-weight: bold; 
@@ -76,17 +80,21 @@ body.collapsed {
     color: $base; 
     font-size:75%;
     margin-right: $gutter_width;
-    &.activated { background: $accent_alt}
+
+    &.activated { background: $accent_alt }
   }
   nav {
     position:relative; font-size:95%;
+
     @include breakpoint(s) {width:70%;};
+
     #main_menu {
       @include breakpoint(xs) {display:none;};
       > li { padding:.25em 1.33em .125em 0; font-weight:bold;
         //@include breakpoint(l) { width: 12%; }
-        
-        ul { margin-bottom:1em; font-weight:normal; font-size:95%}
+        ul { margin-bottom:1em; font-weight:normal; font-size:95%;
+          li { line-height: 1em; padding: .25em 0; }
+        }
       }
       a {color: $base_alt }
     }
@@ -95,13 +103,12 @@ body.collapsed {
 
 #content {
   text-shadow: 1px 1px 2px $base;
-  padding: 80px $gutter_width .5em;  
   
   figcaption { font-size:80%; padding-bottom:.5em; color:$inverse_alt; font-weight:normal;
     .author {display:block; text-align:right; font:9px $base_font; text-transform: uppercase; padding-top:.25em}
   }
   #content-main {padding-bottom:1em;
-    p, ul, ol, table {margin-bottom:1em}
+    p, ul, ol, dl, table {margin-bottom:1em}
   }
 }
 
