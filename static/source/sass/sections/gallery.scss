@@ -1,24 +1,26 @@
-@import '_vars.scss';
-@import '_mixins.scss';
+@import '../core/_vars.scss';
+@import '../core/_mixins.scss';
 
 
-#gallery_slides_hold {
+#photoset_slides_hold {
+  
+
   figure.vertical  {text-align:center;}
   figcaption {display:none}
   
   @include breakpoint(s) {
-    float:right; width:420px;
     figure {width:100%; cursor: e-resize}
   }
+
   @include breakpoint(l) {
-    width:620px;
     figure.vertical img {max-width:420px}
   }
 }
-#gallery_info {
+
+#photoset_info {
   @include breakpoint(s) {
-    float: left; width: 180px;
-    #caption_hold {font-size:80%;}
+    #caption_hold {font-size:85%;}
     .next span, .prev span {display:none}
   }
 }
+

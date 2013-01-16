@@ -56,68 +56,8 @@ function load_images() {
 }
 load_images();
 
-// function(s) for collapsing/uncollapsing header onscroll
-// can also be used to create conditional 'sticky' header
-function collapser() {
-  var collapsed = false;
-  var $body = $('body');
-  var $header = $('#masthead');
-  var navHeight = $header.height();
-  var defaultPadding = $body.css('padding-top');
-  var collapsePoint = (navHeight * 0.4);
-  var uncollapsePoint = (navHeight * 0.3);
-  
-  // Helper for x-browser offset.
-  function getYOffset() {
-    var pageY;
-    if(typeof(window.pageYOffset) === 'number') {
-       pageY=window.pageYOffset;
-    }
-    else {
-       pageY=document.documentElement.scrollTop;
-    }
-    return pageY;
-  }
-
-  // nav menu trigger expand/collapse
-  $('#menu-trigger').click(function(e) {
-    e.preventDefault();
-    if (collapsed === true) {
-      uncollapse();
-      window.scrollTo(0, 0);
-    } else {
-      collapse();
-    }
-  });
-
-  function collapse() {
-    collapsed = true;
-    $body.addClass('collapsed');
-    $header.next().css('margin-top', navHeight-20);
-  }
-  function uncollapse() {
-    collapsed = false;
-    $body.removeClass('collapsed');
-    $header.next().css('margin-top', 0);
-  }
-
-  $(window).scroll(function () {
-    if (getYOffset() > collapsePoint && collapsed === false) {
-      collapse();
-    }
-    if (getYOffset() < uncollapsePoint && collapsed === true) {
-      uncollapse();
-    }
-  });
-}
-collapser();
 
 
-var $top_assets = $('#top_assets');
-function set_asset_offset() {
-  var offset = $top_assets.height() + 20;
-  $('#more_assets').css('padding-top', offset);
-}
 
 
 /* tabs can be used two ways:
@@ -203,6 +143,12 @@ function tabit() {
 }
 tabit();
 
+
+var $top_assets = $('#top_assets');
+function set_asset_offset() {
+  var offset = $top_assets.height() + 20;
+  $('#more_assets').css('padding-top', offset);
+}
 if ($top_assets.length > 0) {
   // functions specific to pages with top assets.
   // note this is after the tabit() call, so it calculates

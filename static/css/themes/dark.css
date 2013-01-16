@@ -275,7 +275,7 @@ dl dt + dd { margin-top: -2em; border-top: 1px dotted #363636; }
 #small-calendar table { font-size: 85%; }
 #small-calendar table td.has_events .calDayLabel { background: #363636; }
 #small-calendar table td.has_events .events { position: relative; }
-#small-calendar table td:hover .events { display: block; position: absolute; z-index: 1000; background: #101010; border: 1px solid #d56312; width: 180px; font-size: 10px; padding: 2px 4px; text-align: left; border-collapse: separate; }
+#small-calendar table td:hover .events { display: block; position: absolute; z-index: 1000; background: #101010; border: 1px solid #d56312; width: 180px; margin-left: -90px; font-size: 10px; padding: 2px 4px; text-align: left; border-collapse: separate; }
 
 #big-calendar .abbrDays, #big-calendar .datebox, #big-calendar .eventDetails { display: none; }
 #big-calendar td { width: 14.2857%; padding: 0 .5em .5em; border: 1px solid #1d1d1d; height: 90px; }
