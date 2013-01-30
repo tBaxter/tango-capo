@@ -1,3 +1,20 @@
+// Reliably get window position.
+function getYOffset() {
+  var pageY;
+  if(typeof(window.pageYOffset) === 'number') {
+     pageY=window.pageYOffset;
+  }
+  else {
+     pageY=document.documentElement.scrollTop;
+  }
+  return pageY;
+}
+
+var small_screen = false;
+if (document.width < 800 ){
+  small_screen = true;
+}
+
 /*************
 // Simple trigger handling.
 // Takes hash from trigger link and toggles the object.
@@ -11,7 +28,7 @@
 ********************************/
 $('a.trigger').each(function(){
   var hash = this.hash;
-  // check for child selector
+  // check for child selector. Wait, what?
   if (hash.split(">").length > 1) {
     if (document.width > 1000 ){
       hash = hash.split(">")[0] + ' ' + hash.split(">")[1];
@@ -43,11 +60,10 @@ $( '.datepicker' ).pickadate({
 // Allows deferred loading of images.
 // Parent element must have data-deferred-load=" <src>"
 function load_images() {
-  var big_screen = false; // set this later, maybe.
   $('*[data-deferred-load]').prepend(function() {
     var hash = $(this).attr('data-deferred-load');
-    if (big_screen) {
-      hash = hash.replace('160x160','420x420');
+    if (small_screen) {
+      hash = hash.replace('540x540','360x360');
     }
     var img = document.createElement('img');
       img.src = hash;
@@ -137,7 +153,6 @@ function tabit() {
       // it'll make the css much easier
       tabbed.css('min-height', $(target).height() + nav_height + 'px');
       tabbed_sections.not(target).removeClass('activeTab');
-      set_asset_offset();
     });
   });
 }
@@ -145,10 +160,8 @@ tabit();
 
 
 var $top_assets = $('#top_assets');
-function set_asset_offset() {
-  var offset = $top_assets.height() + 20;
-  $('#more_assets').css('padding-top', offset);
-}
+
+
 if ($top_assets.length > 0) {
   // functions specific to pages with top assets.
   // note this is after the tabit() call, so it calculates
@@ -169,6 +182,5 @@ if ($top_assets.length > 0) {
   });
     // sets top margin for more assets to ensure it's pushed below top assets
   $(document).ready(function() {
-    set_asset_offset();
   });
 }

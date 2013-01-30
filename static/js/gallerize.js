@@ -28,7 +28,7 @@ function gallerize() {
   // This uploads the next img in the gallery, too.
   function load_img(slide) {
     if ($(slide).find('img').length === 0) {
-      //console.log('loading img into next figure: '+ $(next).attr('id'))
+      console.log('loading img into next figure: '+ $(next).attr('id'));
       $(slide).prepend('<img alt="" src="' + $(slide).attr('data-load-on-demand') + '">');
     }
   }

@@ -26,7 +26,7 @@
       display:block; 
       position:absolute;
       z-index:1000; 
-      background:$base;
+      background: $base;
       border:1px solid $accent;
       width:180px;
       margin-left: -90px;
@@ -62,7 +62,7 @@
 }
 
 // Dateboxes  
-.event_times {float:left; width:140px; clear:left;
+.event_times {float:left; width:70px; clear:left;
   .datebox+.hide+.datebox {border-left:0}  
 }
 .datebox {background:$base_alt2; position:relative; width:70px; text-align:center; 
@@ -72,13 +72,13 @@
   .w, .mo {text-shadow:none;text-transform: uppercase; }
   .w {background:$inverse_alt; color:$base; font-size:80%; font-weight:bold}
   .d {font-size:3em; line-height:1.25em; text-align:center; font-weight:bold; padding-left:10px;}
-  .mo {position: absolute; left: -5px; top: 30px; text-align:left; font-size:10px;
+  .mo {position: absolute; width:4em; left: -1em; bottom: 2em; text-align:left; font-size:10px;
   -webkit-transform: rotate(-90deg); 
      -moz-transform: rotate(-90deg);
       -ms-transform: rotate(-90deg);
   }
 }
-.event_info {margin: 0 0 2em 160px;
+.event_info {margin: 0 0 2em 90px;
    h2, h3, p {margin:0}
   .org {display:inline; padding-right:1em}
 }

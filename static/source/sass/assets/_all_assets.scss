@@ -14,7 +14,6 @@
   }
 }
 
-
 @import '_tables.scss';      // table styles
 @import '_lists.scss';       // list styles
 @import '_grids.scss';       // gridded content
@@ -23,11 +22,10 @@
 @import '_calendar.scss';    // calendars, dateboxes and event lists content
 @import '_forms.scss';       // basic form styling
 @import '_icons.scss';       // auto-inserted icons
-
+@import '_sideheads.scss';   // vertical headlines
 
 
 hr.fancy {border:0; @include fancy_rule;}
-
 
 .hero { 
   position:relative; 
@@ -60,34 +58,48 @@ hr.fancy {border:0; @include fancy_rule;}
   input[type=text], input[type=password], textarea {width:67%}
 }
 
-.content-detail {
+.content-body {
+  p {font-size:110%}
+
+  .datebox {margin-right:1em}
+
   @include breakpoint(s) {
-    width:540px; float:left; 
+    width:365px; float:left; 
   }
   @include breakpoint(m) {
-    width:680px;
+    width:460px;
   }
   @include breakpoint(l) {
-    width:760px;
+    width:540px;
+  }
+  @include breakpoint(l) {
+    width:620px;
+  }
+  @include breakpoint(xl) {
+    width:800px;
   }
   #top_assets { 
     position:relative; z-index:100;
-    border-bottom:2px solid $base_alt; padding-bottom:.25em;
+    border-bottom:2px solid $base_alt; 
+    padding-bottom:.25em;
+
+    ul.sociallinks {margin: 0; border-bottom:0}
 
     @include breakpoint(s) {
-      width:360px; float:right; margin:0 -200px 1em 1em; 
+      width: 230px; 
+      float: right; 
+      margin: 0 -160px 1em 1em; 
       blockquote {display:block;}
     }
     @include breakpoint(m) {
-      width:460px; margin-right:-260px;
+      width:380px; margin-right:-160px;
     }
     @include breakpoint(l) {
-      width:540px; margin-right:-420px;
+      width:460px;
     }
-
-  ul.sociallinks {margin-bottom:.25em}
-
-  figure {border:1px solid $accent_alt}
+    @include breakpoint(xl) {
+      width:540px; margin-right:-320px;
+    }
 
   .tabbed > ul {
     text-align:right; 

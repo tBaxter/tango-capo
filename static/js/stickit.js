@@ -28,6 +28,21 @@
 * - stickHeader: false      (if header should not stick)
 * - collapseHeader: false   (no collapsing will be done)
 
+* Relies on getYOffset from main.js.
+if not in place, add this:
+
+// Reliably get window position.
+function getYOffset() {
+  var pageY;
+  if(typeof(window.pageYOffset) === 'number') {
+     pageY=window.pageYOffset;
+  }
+  else {
+     pageY=document.documentElement.scrollTop;
+  }
+  return pageY;
+}
+
 **************************************************/
 
 (function($) {
@@ -106,23 +121,14 @@
         };
       });
 
-      // Reliably get window position.
-      function getYOffset() {
-        var pageY;
-        if(typeof(window.pageYOffset) === 'number') {
-           pageY=window.pageYOffset;
-        }
-        else {
-           pageY=document.documentElement.scrollTop;
-        }
-        return pageY;
-      }
-
       // on scroll, does anything need to change?
       function checkForChanges() {
         winPos = getYOffset();
         if (settings.collapseHeader) {
-          if (collapsed === false && winPos > (contentOffset / 2)) {
+          // collapse when offset is 2/3 of height.
+          // In other words, if the full header is 300px
+          // you want to collapse when the offset is 200px.
+          if (collapsed === false && winPos > (contentOffset / 3)) {
             collapseHeader();
           }
           if (collapsed === true && winPos < (contentOffset / 8)) {

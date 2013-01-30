@@ -2,7 +2,7 @@
 $base         : #101010;
 $base_alt     : lighten($base, 5%);
 $base_alt2    : lighten($base, 15%);
-$inverse      : #f0f0f0;
+$inverse      : #ddd;
 $inverse_alt  : darken($inverse, 15%);
 $accent_alt   : #d1b78b; // a goldy color for links and other places we don't want the orange.
 @import '../site.scss';

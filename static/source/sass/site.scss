@@ -45,7 +45,6 @@ body { backgound-image: $texture; @include trans() }
   @include breakpoint(s) {
     //background-image: url(http://media.kansascity.com/v3/img/grids/740.jpg);
     background-repeat:no-repeat;
-    background-position:20px  20px
   }
   @include breakpoint(m) {
     //background-image: url(http://media.kansascity.com/v3/img/grids/940.jpg);
@@ -53,9 +52,6 @@ body { backgound-image: $texture; @include trans() }
   @include breakpoint(l) {
     //background-image: url(http://media.kansascity.com/v3/img/grids/1180.jpg);
   }
-
-  //position:relative; z-index:5;
-  //background: $base_alt
 }
 
 #herotext {
