@@ -47,13 +47,13 @@
 
         // Check if a value is an array
         isArray = Array.isArray || function( value ) {
-            return {}.toString.call( value ) == '[object Array]'
+            return {}.toString.call( value ) === '[object Array]'
         },
 
         // Check if a value is a function
         // and trigger it, if that
         triggerFunction = function( func, scope, args ) {
-            if ( typeof func == 'function' ) {
+            if ( typeof func === 'function' ) {
                 return func.apply( scope, args )
             }
         },
@@ -95,7 +95,7 @@
 
                 // Trigger the attribute function within the collection scope
                 // and then append the value and "selected" tag as needed
-                var attributes = ( triggerFunction( attributeFunc, collection, [ index ] ) || '' ) + 'value=' + index + ( selectedIndex == index ? ' selected' : '' )
+                var attributes = ( triggerFunction( attributeFunc, collection, [ index ] ) || '' ) + 'value=' + index + ( selectedIndex === index ? ' selected' : '' )
 
                 // Create the month option and add it to the selector
                 selector += createNode( 'option', month, null, null, attributes )
@@ -200,7 +200,7 @@
 
                     // If the element isn't an input field
                     // ensure that we create a hidden element
-                    if ( element.nodeName != 'INPUT' ) {
+                    if ( element.nodeName !== 'INPUT' ) {
                         SETTINGS.format_submit = SETTINGS.format_submit || 'yyyy-mm-dd'
                     }
 
@@ -209,7 +209,7 @@
                     // to remove user-agent stylings,
                     // and set element as readonly
                     else {
-                        element.autofocus = ( element == document.activeElement )
+                        element.autofocus = ( element === document.activeElement )
                         element.type = 'text'
                         element.readOnly = true
                     }
@@ -315,7 +315,7 @@
                     // based on the time being the same as a disabled date
                     // or the day index of the week being within the collection
                     var isDisabledDate = function( date ) {
-                        return this.TIME == date.TIME || ( CALENDAR.disabledDays && DATES_TO_DISABLE.indexOf( this.DAY ) > -1 )
+                        return this.TIME === date.TIME || ( CALENDAR.disabledDays && DATES_TO_DISABLE.indexOf( this.DAY ) > -1 )
                     }
 
 
@@ -379,7 +379,7 @@
 
                         // On tab, close the calendar
                         keydown: function( event ) {
-                            if ( event.keyCode == 9 ) {
+                            if ( event.keyCode === 9 ) {
                                 calendarClose()
                             }
                         },
@@ -623,13 +623,13 @@
 
 
                         // If it's today, add the class
-                        if ( loopDate.TIME == DATE_TODAY.TIME ) {
+                        if ( loopDate.TIME === DATE_TODAY.TIME ) {
                             klassCollection.push( CLASSES.day_today )
                         }
 
 
                         // If it's the selected date, add the class
-                        if ( loopDate.TIME == DATE_SELECTED.TIME ) {
+                        if ( loopDate.TIME === DATE_SELECTED.TIME ) {
                             klassCollection.push( CLASSES.day_selected )
                         }
 
@@ -690,7 +690,7 @@
 
                     // Check if it's the end of a week.
                     // * We add 1 for 0index compensation
-                    if ( ( index % DAYS_IN_WEEK ) + 1 == DAYS_IN_WEEK ) {
+                    if ( ( index % DAYS_IN_WEEK ) + 1 === DAYS_IN_WEEK ) {
 
                         // Wrap the week and append it into the calendar weeks
                         calendarWeeks += createNode( STRING_TR, calendarDates.splice( 0, DAYS_IN_WEEK ) )
@@ -891,7 +891,7 @@
 
 
                 // If there's a targeted node and it's the same month
-                if ( $dayTargeted && DATE_SELECTED.MONTH == MONTH_FOCUSED.MONTH ) {
+                if ( $dayTargeted && DATE_SELECTED.MONTH === MONTH_FOCUSED.MONTH ) {
 
                     // Remove the "selected" state from the selected node
                     $daySelected.removeClass( CLASSES.day_selected )

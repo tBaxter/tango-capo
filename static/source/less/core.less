@@ -5,7 +5,7 @@
 /* =============================================================================
    HTML5 display definitions
    ========================================================================== */
-article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
+article, aside, details, figcaption, figure, footer, header, nav, section { display: block; }
 audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
 audio:not([controls]), [hidden] { display: none; }
 
@@ -50,7 +50,7 @@ pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
 q { quotes: none; }
 q:before, q:after { content: ""; content: none; }
 
-small { font-size: 80%; }
+small { font-size: 75%; }
 
 /////////////
 // Basic Typography
@@ -61,7 +61,7 @@ sup { top: -0.5em; }
 sub { bottom: -0.25em;}
 
 h1,h2,h3,h4,h5,h6 { font-weight:bold }
-h1 { font-size:2em; line-height:1em; margin:.25em 0; }
+h1 { font-size:2em; line-height:1em; margin:.25em 0 .5em; }
 h2 { font-size:1.4em; line-height:1.33em; margin:.45em 0 .45em }
 h3 { font-size:1.2em; margin:1em 0 .33em}
 p, ol, ul {margin: .25em 0 .75em}
@@ -71,8 +71,8 @@ p+h3 {margin-top:1.5em}
 
 // typically (but not always) used as small.meta
 .meta { color:#777 }
-h2.meta {margin-bottom:0}
-h2.meta+* {margin-top:0}
+h2.meta { margin-bottom:0 }
+h2.meta+* { margin-top:0 }
 
 #content-side {font-size:90%}
 

@@ -4,8 +4,9 @@
 *  usage:  foo class="columned"
 *  or   :  foo class="columned four-col"
 *  Note: on small screens multiple columns will be reset to a more appropriate width.
-*  Experiment support for "auto" which sets the number of columns 
-*  according to available sensible width.
+*  Includes support for "auto" which sets the number of columns 
+*  according to available sensible width. 
+*  'Auto' should be considered experimental and used with caution.
 *******************************************************/
 .columned { 
   margin: 0; padding: 0; 
@@ -13,10 +14,14 @@
   position: relative;
   padding-right:0 !important; // in case it inherits from parent
   > * {
-    position: relative; display: inline-block; vertical-align: top; 
+    position: relative; 
+    display: inline-block; 
+    vertical-align: top; 
     padding-right: $gutter_width;
     margin-right:-4px;
-    &:last-child {padding-right:0}
+    // Hack crappy old IEs for inline-block
+    *zoom: 1;
+    *display: inline;
 
     @include breakpoint(xs) {display:block; width:auto;}
     @include breakpoint(s) { 
@@ -48,7 +53,6 @@
   &.phi > * { // loosely based on golden ratio
     &:nth-child(odd) {width:64.8%;}
     &:nth-child(even) {width:35.19%; 
-      //@include breakpoint(m) {padding-left:7%}
       @include breakpoint(l) {padding-left: $gutter_width * 2}
     }
   }
@@ -58,4 +62,16 @@
       @include breakpoint(l) {padding-left: 0; padding-right: $gutter_width * 2}
     }
   }
+}
+
+.grid { // use with columned
+  font-size:90%;
+  h2 {font-size:1em; margin:0}
+  figure {width: 32%; margin-bottom: 1em }
+  small.meta {display:block;}
+
+  > * {
+    padding: 0 $gutter_width 1.5em 0;
+  }
+
 }

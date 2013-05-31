@@ -5,14 +5,19 @@
   @include radius(.5em);
 
   > h2 {padding:.5em 10px 0; color:$accent_alt; font-weight:bold; text-transform: uppercase}
+  label {color: $meta; font-size:85%; font-weight:bold; padding: 10px;}
+  label.nofloat { float:none; width:100%; }
+  .breakout {margin:0 10px;}
+
   p {
     border-bottom:1px dotted $base_alt2; 
     padding:.5em 0; 
     margin-bottom:0; 
     clear:left
+
+    label {float:left;  width:30%}
+
   }
-  label {float:left; color: $meta; padding: 10px; font-size:85%; font-weight:bold; width:30%}
-  label.nofloat {float:none; width:100%}
   input[type=text], input[type=password], textarea {
     @include radius(.5em); 
     width:68%; 
@@ -22,6 +27,7 @@
   }
   
   .helptext {color:$meta; font-size:80%; display:block; margin-left:33%}
+
 
   &.has-fieldsets {
     border: 0;
@@ -37,8 +43,7 @@
 
 .submithold, p.submit {
   text-align:center; border-bottom:0;
-  input {color:$base_alt; border:1px solid $accent_alt; 
-    font-size:1.1em; font-weight:bold; padding:0 1em;
-    @include radius(.6em);
-  }
 }
+
+// Note: Buttons are styled in button.scss
+

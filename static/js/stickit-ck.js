@@ -28,4 +28,20 @@
 * - stickHeader: false      (if header should not stick)
 * - collapseHeader: false   (no collapsing will be done)
 
-**************************************************/(function(e){e.fn.extend({stickit:function(t){function c(){m=!0;v.addClass("collapsed");r.stickHeader&&p();l=r.header.outerHeight()}function h(){m=!1;v.removeClass("collapsed");r.stickHeader&&d();l=r.header.outerHeight()}function p(){r.header.css("position","fixed");a.css("margin-top",f)}function d(){r.header.css("position","static");a.css("margin-top",0)}function y(){o=S.scrollTop();if(r.collapseHeader){o>g&&m===!1&&c();o<g&&m===!0&&h()}n.each(function(){if(this.sticky.topOffset-l-30<o&&S.width()>=this.sticky.breakPoint){u=b(this);E(this,o,u)}else w(this)})}function b(e){return{lowerLimit:r.footer.offset().top+e.sticky.stickyHeight+l,upperLimit:e.sticky.topPos-l+30}}function w(t){e(t).css({position:"static",width:"auto"})}function E(t,n,r){r.lowerLimit<n?e(t).css({top:r.lowerLimit}):e(t).css({position:"fixed",top:r.upperLimit,width:t.sticky.parent.width()})}var n=e(this),r=e.extend({debug:"false",stickHeader:!0,collapseHeader:!0,header:e("#masthead"),footer:e("#footer"),content:e("content-main")},t),i=[];for(var s in r)r[s]||i.push(r[s]);if(i.length){console.warn(i);return!1}var o,u,a=r.header.next(),f=a.offset().top,l=r.header.outerHeight();if(r.collapseHeader||r.stickHeader){var v=e("body");if(r.collapseHeader)var m=v.hasClass("collapsed"),g=f*.6;else r.stickHeader&&p()}n.each(function(){var t=e(this).parent();t.css("position","relative");this.sticky={stickyHeight:e(this).outerHeight(!0),breakPoint:e(this).outerWidth(!0)+e(r.contentID).outerWidth(!0),topMargin:parseInt(e(this).css("margin-top"),10),topOffset:e(this).offset().top,topPos:e(this).position().top,parent:t}});var S=e(window);S.bind({scroll:y,resize:y()});e("#menu-trigger").click(function(e){e.preventDefault();if(m===!0){h();window.scrollTo(0,0)}else c()})}})})(jQuery);
+* Relies on getYOffset from main.js.
+if not in place, add this:
+
+// Reliably get window position.
+function getYOffset() {
+  var pageY;
+  if(typeof(window.pageYOffset) === 'number') {
+     pageY=window.pageYOffset;
+  }
+  else {
+     pageY=document.documentElement.scrollTop;
+  }
+  return pageY;
+}
+
+**************************************************///(function($) {
+$.fn.extend({stickit:function(e){function m(e){p=f.outerHeight();if(n.stickHeader){f.css("position","fixed");e==="collapse"?v=Math.min(d,p):v=Math.max(d,p);a.css("margin-top",v)}}function g(){a.addClass("collapsed");b=!0;m("collapse")}function y(){a.removeClass("collapsed");b=!1;m("uncollapse")}function w(){s=getYOffset();if(n.collapseHeader&&!n.user_collapse_pref){b===!1&&s>d/3&&g();b===!0&&s<d/8&&y()}(s===0||s>v)&&t.each(function(){if(s>this.sticky.topOffset&&u.width()>=980){o=E(this);x(this,s,o)}else S(this)})}function E(e){return{lowerLimit:l.position().top-l.outerHeight(!0)-(p+20),upperLimit:v}}function S(e){f.addClass("stickit-disabled");$(e).css({position:"static",width:"auto"})}function x(e,t,n){n.lowerLimit<t+p?$(e).css({top:-t+n.lowerLimit}):$(e).css({position:"fixed",top:n.upperLimit,width:e.sticky.parent.width()})}var t=$(this);if(!t)return;var n=$.extend({stickHeader:!0,collapseHeader:!0,header:"#masthead",footer:"#footer",content:"#content-main",user_collapse_pref:collapse_header},e),r=[];for(var i in n)n[i]||r.push(n[i]);if(r.length){console.warn(r);return!1}var s,o,u=$(window),a=$("body"),f=$(n.header),l=$(n.footer),c=$(n.content),h=f.next(),p=f.outerHeight(),d=Math.max(h.offset().top,p),v=0;if(n.collapseHeader){var b=a.hasClass("collapsed");b&&a.css("margin-top",d);n.user_collapse_pref&&g();$("#masthead #menu-trigger").on("click",function(e){console.log("clicked menu trigger");e.preventDefault();if(b===!0){y();window.scrollTo(0,0)}else{console.log("should collapse");g()}})}t.each(function(){var e=$(this).parent();e.css("position","relative");this.sticky={stickyHeight:$(this).outerHeight(!0),breakPoint:$(this).outerWidth(!0)+c.outerWidth(!0),topOffset:$(this).offset().top,topPos:$(this).position().top,parent:e}});u.bind({scroll:w,resize:w})}});

@@ -24,18 +24,21 @@ $accent       : #047bc1 !default;
 $accent_alt   : darken($accent, 10%) !default; 
 
 // meta text
-$meta         : #777;
+$meta         : #888;
 
 $alert        : #FFDC59;
-$error        : #D72214;
+$error        : #c63314;
 
 // a translucent texture overlay, if you'd like one.
 $texture      : url(../../img/site/texture-overlay.png) !default;
 
-$base_font    : "Helvetica", "Arial Unicode", Verdana, Arial, sans-serif !default;
+$base_font    : "Helvetica", "Calibri", "Lucida Sans Unicode", "Arial Unicode MS", Verdana, Arial, sans-serif !default;
 $alt_font     : Georgia, serif !default; 
 
 $gutter_width : 20px;
+
+$default_radius: 4px; // a default border radius, to help encourage consistency.
+
 
 // Breakpoints
 $xl : 1600;

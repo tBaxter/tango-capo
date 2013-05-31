@@ -1,3 +1,9 @@
+var $top_assets  = $('#top_assets'),
+    didScroll    = false,
+    touchable    = Modernizr.touch,
+    screenSize   = window.getComputedStyle(document.body,':after').getPropertyValue('content');
+
+
 // Reliably get window position.
 function getYOffset() {
   var pageY;
@@ -8,11 +14,6 @@ function getYOffset() {
      pageY=document.documentElement.scrollTop;
   }
   return pageY;
-}
-
-var small_screen = false;
-if (document.width < 800 ){
-  small_screen = true;
 }
 
 /*************
@@ -28,7 +29,6 @@ if (document.width < 800 ){
 ********************************/
 $('a.trigger').each(function(){
   var hash = this.hash;
-  // check for child selector. Wait, what?
   if (hash.split(">").length > 1) {
     if (document.width > 1000 ){
       hash = hash.split(">")[0] + ' ' + hash.split(">")[1];
@@ -45,35 +45,28 @@ $('a.trigger').each(function(){
 });
 
 // Simple URL jumpbox
-$('.url_selector').change(function() {
+$('.url-selector').change(function() {
   window.location = $(this).val();
 });
-
-
-// pickadate.js
-$( '.datepicker' ).pickadate({
-    format: 'dddd, dd mmm, yyyy',
-    format_submit: 'yyyy-mm-dd'
-});
-
 
 // Allows deferred loading of images.
 // Parent element must have data-deferred-load=" <src>"
 function load_images() {
-  $('*[data-deferred-load]').prepend(function() {
-    var hash = $(this).attr('data-deferred-load');
-    if (small_screen) {
-      hash = hash.replace('540x540','360x360');
+  $('*[data-deferred-load]').each(function() {
+    if ($(this).find('img').length === 0) {
+      $(this).prepend(function(index){
+        var hash = $(this).data('deferred-load');
+        if (screenSize === 'small' || screenSize === 'x-small') {
+          hash = hash.replace('540x540','360x360');
+        }
+        var img = document.createElement('img');
+        img.src = hash;
+        return img;
+      });
     }
-    var img = document.createElement('img');
-      img.src = hash;
-     return img;
   });
 }
 load_images();
-
-
-
 
 
 /* tabs can be used two ways:
@@ -114,16 +107,15 @@ function tabit() {
     var nav_height   = tabbed.nav.height();
 
     if (tabbed.nav.length === 0) {
-        tabbed.nav= $('.remote_tabs_nav');
+        tabbed.nav= $('.remote-tabs-nav');
         nav_height = 0;
       }
     if (!tabbed.nav) {
         //console.log('could not find tab nav!');
         return;
       }
-    //tabbed.sections.hide(); // Should be done in css, but fallback for safety.
     tabbed.navitems = tabbed.nav.find('li');
-    
+
     if (window.location.hash) {
         active = window.location.hash.replace('-view','');
         if (tabbed.nav) {
@@ -137,7 +129,7 @@ function tabit() {
         }
       }
     $(active).addClass('activeTab');
-    
+
     tabbed.nav.find('a:not(.no-tab)').click(function(e) {
       e.preventDefault();
       var target          = this.hash,
@@ -158,29 +150,52 @@ function tabit() {
 }
 tabit();
 
+$(document).on('click', '.post-admin a', function(e) {
+    var $command = $(this);
+    if ($command.data('confirm')) {
+        confirm_msg = $command.data('confirm');
+        if (confirm_msg === 'use_title') {
+          confirm_msg = $command.attr('title');
+        }
+        return confirm(confirm_msg);
+    }
+});
 
-var $top_assets = $('#top_assets');
+// Voting
+$(document).on('click', 'a[href*="/vote/"]', function(e) {
+  e.preventDefault();
+  var container=$(this).parent().find('.votes');
+  $.post(
+    this.href,
+    {csrfmiddlewaretoken:$('input[name|="csrfmiddlewaretoken"]').attr('value')},
+    function(json) {
+      var score = json.score.score;
+      if (score < 1) {
+        score = 'Noted';
+      }
+      container.html(score + ' ✓');
+    }, 'json');
+});
 
 
 if ($top_assets.length > 0) {
   // functions specific to pages with top assets.
   // note this is after the tabit() call, so it calculates
   // based on tabbed top asset height, not default.
-  
   // create preview tooltips in story detail top assets
   $top_assets.find('.tabbed ul li a:not(.no-tab)').each(function() {
     var img = $(this.hash).find('img').eq(0);
     var preview = '<span class="preview"><img src="'+ $(img).attr('src') + '"></span>';
     if ($(img).size() === 0) {
       img = $(this.hash).first('object');
-      preview = '<span class="preview">Video</span>';
+      preview = '<span class="preview">' + $(this).attr('title') + '</span>';
     }
     $(this).append(preview);
   });
   $top_assets.find('.tabbed ul li').hover(function() {
     $(this).find('.preview').toggle();
   });
-    // sets top margin for more assets to ensure it's pushed below top assets
-  $(document).ready(function() {
-  });
 }
+
+// pickadate.js
+$( '.datepicker' ).pickadate();

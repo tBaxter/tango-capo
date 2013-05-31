@@ -1,4 +1,47 @@
+@import '_button.scss';
+
 // TABS
+
+@mixin tab_styles() {
+  font-size:90%; 
+  width:auto; 
+  float:none; 
+  min-height: 2em; 
+  line-height: 2em;; 
+  padding:0; 
+  margin: 0; 
+  clear:both;
+  border-bottom:1px solid $base_alt2;
+  
+  > li {
+    position: relative;
+    text-align:center;
+    text-shadow: 0 1px 1px $button-highlight;
+    padding: 0 1em;
+    line-height:2em;
+    border-radius: .5em .5em 0 0;
+    border: solid $base_alt2;
+    border-width: 1px 1px 0;
+    display: inline-block;
+    background: $base $texture;
+    @include opacity(.7);
+
+    &, a {color: $meta;}
+
+  }
+  li.active {
+    box-shadow: inset 0px 1px 2px $button-highlight , 0px -2px 3px rgba(0,0,0, .4);
+    top:1px;
+    padding-bottom:1px;
+    &, a {color: $inverse;}
+    @include opacity(1)
+  }
+}
+
+.remote-tabs-nav {
+  @include tab_styles
+}
+
 .tabbed {
   & > * {
     display:none; 
@@ -10,20 +53,6 @@
     display:block
   }
   & > ul {
-    font-size:90%; 
-    width:auto; 
-    float:none; 
-    height:1.67em; 
-    line-height:1.67em; 
-    padding:0; 
-    margin: 0 0 5px; 
-    clear:both;
-    
-    > li {display:inline; padding:.25em 1em .25em 1em;}
-    li.active {background:$accent_alt; 
-        border:1px solid $base_alt2;
-        padding:.25em 1em;
-        @include radius(.5em);
-    }
+    @include tab_styles;
   }
 }

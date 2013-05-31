@@ -2,18 +2,41 @@
 @import '../core/_mixins.scss';
 
 
-#photoset_slides_hold {
-  
+/*
+.swipe { <== photoset_slides_hold
+  overflow: hidden;
+  visibility: hidden;
+  position: relative;
+}
+.swipe-wrap { <==photoset_slidees
+  overflow: hidden;
+  position: relative;
+}
+.swipe-wrap > div {
+  float:left;
+  width:100%;
+  position: relative;
+}
+*/
 
+
+#photoset_slides_hold {
+  &, #photoset_slides {
+    position: relative;
+    overflow: hidden;
+  }
+  figure { 
+    width:100%; 
+    cursor: e-resize;
+    position: relative;
+    float: left;
+  }
   figure.vertical  {text-align:center;}
   figcaption {display:none}
-  
-  @include breakpoint(s) {
-    figure {width:100%; cursor: e-resize}
-  }
 
   @include breakpoint(l) {
-    figure.vertical img {max-width:420px}
+    max-width:720px;
+    figure.vertical img {max-width:540px}
   }
 }
 

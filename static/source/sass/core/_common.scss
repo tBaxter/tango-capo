@@ -12,7 +12,8 @@ body {
   font-family: $base_font;     // root font stack. Baseline grid is defined in reset
   color:       $inverse;
   height:100%;
-  @include trans(all, .2s, ease-in);
+  margin-top: 0;
+  @include trans(all, .3s, linear);
 }
 
 select,input,textarea {color:$inverse_alt}
@@ -28,81 +29,92 @@ h1, h2, h3 {font-weight:normal}
 
 
 
-
 /**************************** Structure ******************************/
-.constrain { margin: 0 auto;
-  @include breakpoint(s) { width: ($s - 20) + px };
-  @include breakpoint(m) { width: ($m - 40) + px };
-  @include breakpoint(l) { width: ($l - 40) + px };
+.constrain { 
+  @include breakpoint(xs) { margin:0 20px; width: auto;  };
+  @include breakpoint(s)  { margin: 0 auto; width: ($s - 20) + px };
+  @include breakpoint(m)  { width: ($m - 40) + px };
+  @include breakpoint(l)  { width: ($l - 40) + px };
   @include breakpoint(xl) { width: ($xl - 40) + px };
 }
 
+body { 
+  &:after { display: none; }
+  @include breakpoint(xs) { &:after { content: 'x-small'; } };
+  @include breakpoint(s)  { &:after { content: 'small'; } };
+  @include breakpoint(m)  { &:after { content: 'medium'; } };
+  @include breakpoint(l)  { &:after { content: 'large'; } };
+  @include breakpoint(xl) { &:after { content: 'x-large'; } };
+}
+
 body.collapsed {
-  #masthead { @include box-shadow(0, 2px, 2px, .4); position: fixed; z-index:1000;
-    hgroup h2 { display: none }
+  header[role=banner] { 
+    @include box-shadow(0, 2px, 2px, .4); 
+    position: fixed; z-index:1000;
+    .site-name {
+      h1 {max-width: 200px;}
+      h2 { display: none }
+    }
     #main_menu { @include breakpoint(xs) { display: none }; 
       ul { 
-        @include breakpoint(s) { display: none }; 
+        @include breakpoint(s) { height:0; overflow:hidden; margin:0 }; 
       }
     }
   }
 }
 
 // regular masthead styles.
-#masthead { @include box-shadow(0, 2px, 2px, .3);
+header[role=banner] { 
   top:0; 
   width:100%; 
   z-index:100; 
   padding: 10px 0; 
   min-height:60px;
   border-bottom:2px solid $accent; 
+  @include box-shadow(0, 2px, 2px, .3);
   @include gradient($accent, 10%, $texture); 
 
-  hgroup, nav { display:inline-block }
+  &, * {
+    @include trans(all, .3s, ease);
+  }
+  .site-name, nav { display: block; }
   
-  hgroup { color: $base; 
+  .site-name { 
+    color: $inverse; 
     text-shadow: 0 1px 2px rgba(0,0,0,.7); 
-    padding-right:$gutter_width;
-    width:29%;
+    padding-right: $gutter_width;
 
     @include breakpoint(xs) {
       padding-left:$gutter_width;
     }
     a { color: $base }
+    h1, h2 { margin: 0 }
+    h1 {float: left; width: 32%}
   }
 
-  > div #menu-trigger {
-    float:right; 
-    padding:.5em 1.5em; 
+  > div .navicon {
+    float: right; 
     font-weight: bold; 
-    @include radius(5px);
     border:1px inset $accent; 
     color: $base; 
-    font-size:75%;
     margin-right: $gutter_width;
-
+    @include radius(5px);
+    @include breakpoint(s) {padding:.5em auto; }
     &.activated { background: $accent_alt }
   }
+  
   nav {
-    position:relative; font-size:95%;
+    position:relative; 
+    font-size:95%;
 
-    @include breakpoint(s) {width:70%;};
-
-    #main_menu {
-      @include breakpoint(xs) {display:none;};
-      > li { padding:.25em 1.33em .125em 0; font-weight:bold;
-        //@include breakpoint(l) { width: 12%; }
-        ul { margin-bottom:1em; font-weight:normal; font-size:95%;
-          li { line-height: 1em; padding: .25em 0; }
-        }
-      }
-      a {color: $base_alt }
-    }
+    @include breakpoint(s) {margin-left:31%;}
   }
 }
 
 #content {
   text-shadow: 1px 1px 2px $base;
+  @include breakpoint(s) { padding: 0 2em };
+  @include breakpoint(m) { padding: 0 };
 
   figure {
     img {border:1px solid $accent_alt;}
@@ -121,10 +133,29 @@ body.collapsed {
   }
 }
 
-#footer {clear:both; 
-  h3 {clear:both; padding-top:.5em;}
-  > div {margin:0 .5em}
-  > div > p {text-align:right; display:block}
+header[role=banner], 
+footer[role=contentinfo] {
+  clear:both; 
+  nav {font-size:90%;
+    ul {
+      > li { padding:.25em 1.33em .125em 0; font-weight:bold;
+        ul { margin-bottom:1em; font-weight:normal; font-size:95%;
+          li { line-height: 1.25em; padding: .25em 0; font-weight: normal}
+        }
+      }
+    }
+    .button {margin:0}
+  }
+}
+
+header[role=banner] nav ul {
+  @include breakpoint(xs) {display:none;};
+}
+
+footer[role=contentinfo] {
+  padding:1em 0;
+  border-top:2px solid $accent; 
+  @include box-shadow(0, -2px, 2px, .3);
 }
 
 #searchForm {
@@ -137,9 +168,9 @@ body.collapsed {
   width:140px;
   font-size:13px;
   }
-  button {border:0; padding:4px 5px; margin:0; font-size:13px; text-transform: uppercase; 
+  /*button {border:0; padding:4px 5px; margin:0; font-size:13px; text-transform: uppercase; 
     @include gradient($base_alt, 10);
-  }  
+  }*/
   span {font-size:10px; color:$inverse_alt}
 }
 
@@ -152,32 +183,41 @@ time {
   display:block;
 }
 
-
-
 .block {display:block}
 
-.breakout { // WTF is breakout??
+// for content that needs to be 'broken out' and given more prominence
+.breakout {
   display: block;
   border: 1px solid lighten($base_alt2, 2%);
   @include radius(.5em);
   background: $base_alt2;
   padding: 1em;
-  margin: 1em 0;
-  font-size: 150%;
+  margin: .5em 0;
+  font-size: 125%;
   text-shadow: 0 1px 2px rgba(0,0,0,.8); 
 }
 
-.counter {
+// for objects that we wish to diminish the importance of
+// examples would be events that are recently over, and toxic posts.
+.diminish, .toxic {@include opacity(.6);
+  &:hover {@include opacity(1)}
+}
+
+// for number counts on objects, like recently updated
+.counter { 
   background: rgba($base, 0.9);
   border: 1px solid $base_alt2;
   @include radius(1.5em);
-  padding: .5em;
+  padding: .25em;
   text-align: center;
   font-size: 70%;
+  line-height:1.5em;
   display: inline-block;
-  min-width: 2.5em;
+  min-width: 2em;
   font-weight: normal;
   color: $inverse_alt;
+
+  &.left {margin-right:.5em}
 }
 .avatar {
       width: 80px;
@@ -185,6 +225,47 @@ time {
       border:1px solid $base_alt2;
 }
 a .avatar:hover {border-color: $accent}
+
+
+.errorlist {
+   background: $error;
+   list-style: none; 
+   padding: .25em 1em; 
+   margin: 0; 
+   font-weight: bold; 
+   font-size: 85%;
+}
+
+ul.messages {margin:0 0 1em; padding:0; list-style:none;
+  > li {
+    font-size: 1.25em;
+    border: 1px solid; 
+    padding: .25em 1em;
+    background: $inverse;
+    text-shadow: 1px 1px 0 lighten($inverse, 20%);
+    @include radius($default_radius);
+    &:before {font-size:1.5em}
+
+    a { color: $base }
+  }
+  .error {
+    color: $error;
+     &:before    { content: '\2639'; }
+    }
+  .debug, .warning {
+    background: $alert;
+    &:before    { content: '\26A0'; }
+  }
+  .info {color:#1F21BF;
+    &:before    { content: 'ℹ'; }
+  }
+  .success {
+    color: #0F8C35;
+    &:before    { content: '\263A'; }
+    }
+}
+
+.signature { font-size:80%; border-bottom: 1px solid $base_alt2; }
 
 /********************* CONTENT SECTION FRONTS *****************************/
 #top_stories_hold {
@@ -232,6 +313,7 @@ a .avatar:hover {border-color: $accent}
 }
 #more_articles {
     h1 {font-size:1.5em}
+    figure {width:32%}
   }
 
 
@@ -292,6 +374,7 @@ h2.overline + h1 {margin-top:.125em}
 #gallery_info .sociallinks li {width:auto}
 
 
+
 /******************** user posts and comments **********/
 #comment-list {
   article { 
@@ -299,59 +382,136 @@ h2.overline + h1 {margin-top:.125em}
     position:relative; 
     margin-bottom:2em;
 
-    header, footer {font-size:80%; }
-
+    header, footer {font-size:70%; }
     header {
-      letter-spacing: 1px; 
-      padding-left:100px;
+      letter-spacing: 1px;
+      padding-left: .5em; 
+      margin-bottom:1em;
       border-bottom: 1px solid $base_alt2; 
       color: $accent;
-      margin-bottom:1em;
+      @include breakpoint(s) {
+        padding-left:100px;
+      }
 
-      time {float:right; margin-left:.5em }
-      .counter {position:absolute; margin:-.5em 0 0 -110px; position:absolute }
+      time { 
+        float:right; 
+        margin-left:.5em 
+      }
+      .counter { float:right; margin-left:.5em }
       a[rel=author] { font-weight:bold; }
     } 
     .avatar {
-      margin-left: -100px;  
-      float: left; 
-    }
-    .post {margin:0 0 0 100px; min-height:40px;
-      img.smiley { display:inline; width:auto }
-    }
+      display:none;
 
-    .postcontrols, .postvoting {
-      @include radius(5px);
-      display:inline-block; width:auto;
-      background:$base_alt2; border:1px inset $base_alt2;
-
-      .reply:hover, .mod span:hover {background:$accent; color:$base_alt}
-      .mod span {background: transparentize($accent_alt, .7)}
-
-      .mod ul {
-        li {border-top:1px solid $base_alt;}
-        a:hover { background: $accent;} 
-        li.quote a { background-image: url(/media/img/icons/iconic/gray_light/comment_fill_12x11.png) }
-        li.edit  a { background-image: url(/media/img/icons/iconic/gray_light/pen_alt2_12x12.png) }
-        li.delete a{ background-image: url(/media/img/icons/iconic/gray_light/trash_fill_12x12.png) }
+      @include breakpoint(s) {
+        margin-left: -100px;  
+        float: left; 
+        display: block;
       }
-      
-      a, span, > li {display:inline-block; vertical-align:top; @include radius(5px);}
-      a, span { padding:0 7px; }
-      a.report:hover, a.report:active {background:#600}
-      a.voting:hover, a.voting:active {background:#060}
     }
-    .postcontrols {float:right; list-style:none; margin:0; position:relative;
-      ul {display:none; list-style:none; margin-left:-2.75em; margin-bottom:0}
-      .mod {cursor:pointer; 
-        li {font-size:70%;  }
-        a {display:block; padding:2px 0 2px 24px; background-position: 8px center; background-repeat:no-repeat}
-        span {width:.65em; overflow:hidden; white-space: nowrap; -webkit-transition:all .4s ease-in;}
-         
+    .profile_preview {
+      margin: 0;
+      position: absolute;
+      top: 0;
+      left: 100px;
+      padding: 0 1em;
+      z-index:200;
+      width: 200px;
+      font-weight: normal;
+      background: $base;
+      border:1px solid $meta;
+      @include radius($default_radius);
+    }
+    .post {
+      @include breakpoint(s) {
+        margin:0 0 0 100px; 
+        min-height:40px;
       }
-      .activated > span {width:auto}
+      p {
+        clear:right;
+        @include breakpoint(xs) {
+          font-size: 1rem;
+        }
+      }
+
+      figure, p > img, figure >img {
+        width:auto;
+        float:right; clear:right;
+        margin: 0 0 1em $gutter_width;
+        max-width:320px; 
+        @include breakpoint(m) {
+          max-width:540px;
+        }
+
+        &:after {
+          content: ' '; 
+          display:block;
+          clear:both
+        }
+
+        &.smiley {margin:0; float:none; border:0; display:inline; width:auto }
+        p:last-child {margin-bottom:0}
+      }
+
+      figure:first-child+p {clear:none}
+
+      figure:after, p > img:after  {
+        @include clearfix();
+        }
     }
-    .postvoting {margin-left:45%}
+
+    .postcontrols, .post-voting {
+      a[href*="/downvote/"]:hover, a[href*="/downvote/"]:active { background:#600 }
+      a[href*="/upvote/"]:hover, a[href*="/upvote/"]:active { background:#060 }
+
+    }
+    .postcontrols {
+      position: absolute; right: 0; z-index: 100;
+      //.activated > span {width:auto}
+    }
+    .post-voting {
+      @include breakpoint(m) {
+        margin-left:45%;
+      }
+    }
+  }
+  article.toxic {
+    .avatar, .post, .postcontrols li.icon-quote {display:none}
+    .toxic-message {cursor:pointer;
+      &:before {content: '☢' }
+    }
+  }
+  //article.toxic-visible {
+  //  .avatar, .post, footer {display:block}
+  //}
+}
+
+.markdown {
+  margin:0 .5em;
+  .markItUpHeader ul {
+    padding:0; 
+    margin:0;
+    position:relative;
+    li {
+      @include button();
+      margin:0;
+      font-size:.65em;
+      vertical-align: top; 
+    
+      &.markItUpSeparator, a {display:none}
+    }
+    li.sub-nav {position:absolute; max-width: 7.5em}
   }
 }
 
+
+.new { border-left: 4px solid $accent } // list items and such.
+a.new {                                 // actionable
+  @include radius($default_radius);
+  display: inline-block; 
+  background:$accent;
+  font-size:80%;
+  border:1px inset $base_alt2;
+  text-shadow:none;
+  color: $inverse; 
+}

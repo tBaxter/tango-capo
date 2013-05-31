@@ -7,12 +7,17 @@
        &:hover {color:$accent;}
      }
   }
-  li.next, li.prev {width:29%;}
+  li.next, li.prev {width:29%; font-size:90%; margin-top:2px}
   li.next {float:right; text-align:right; margin-left:-100%;
-    &:after { content:"►"; padding-left:5px; padding-top:2px}
+    & a:before {float:right; content:"►"; padding-left:5px; padding-top:2px;}
   }
   li.prev {float:left; text-align:left; margin-right:-100%;
-    &:before { content:"◀";padding-right:5px}
+    & a:before { float:left; content:"◀"; padding-right:5px; }
   }
-  li.next, li.prev {font-size:90%; margin-top:2px }
+  li.next a:before, li.prev a:after {display:inline-block; }
+
+  &.prev-next {
+    li.next, li.prev {width:49%; float:none; margin:0}
+    li > a {display: block; padding:.5em 0}
+  }
 }

@@ -1,0 +1,38 @@
+/***************************************************/
+/***************************************************/
+/****** Settings & Configuration ************/
+/********************************************/
+/********** END VARIABLES *******************/
+[class*="icon-"]:before { font-style: normal; font-size: 110%; speak: none; }
+
+.button[class*="icon-"] { padding: 0 0.5em; }
+
+.icon-home:before { content: "\2602"; }
+
+.icon-cog:before { content: "\2699"; }
+
+.icon-cw:before { content: "\27f3"; }
+
+.icon-location:before { content: "\2629"; }
+
+.button, input[type="submit"] { position: relative; font-size: 1.1em; text-align: center; text-shadow: 0 1px 1px white; margin: 0.55em; padding: 0 1em; height: 2.2em; line-height: 2.2em; border-radius: 1.1em; background-color: #dddddd; background-image: #aaaaaa none; background-image: none, -webkit-gradient(linear, left top, left bottom, color-stop(0%, #dddddd), color-stop(100%, #aaaaaa)); /* Chrome, Safari 4+ */ background-image: none, -moz-gradient(center top, #dddddd 0%, #aaaaaa 100%); background-image: none, -webkit-linear-gradient(top, #dddddd 0%, #aaaaaa); /* Chrome 10+, Safari 5.1+ */ background-image: none, -moz-linear-gradient(center top, #dddddd 0%, #aaaaaa 100%); /* FF 3.6+ */ background-image: none, -ms-linear-gradient(top, #dddddd 0%, #aaaaaa 100%); /* IE 10+ */ background-image: none, -o-linear-gradient(top, #dddddd 0%, #aaaaaa 100%); /* Opera 11.10+ */ background-image: none, linear-gradient(top, #dddddd 0%, #aaaaaa 100%); /* W3C */ box-shadow: inset 0px 2px 3px white, 0px 2px 4px rgba(0, 0, 0, 0.4); }
+.button a, .button, input[type="submit"] a, input[type="submit"] { text-decoration: none; color: #666666; min-width: 2.2em; display: inline-block; }
+.button a:focus, .button:focus, input[type="submit"] a:focus, input[type="submit"]:focus { outline: none; }
+.button:active, input[type="submit"]:active { box-shadow: inset 0px 2px 3px white, 0px 1px 1px rgba(0, 0, 0, 0.4); }
+.button:hover, input[type="submit"]:hover { color: #dd6600; }
+.button:after, input[type="submit"]:after { content: ""; display: block; position: absolute; top: -0.36667em; left: -0.36667em; bottom: -0.36667em; right: -0.36667em; z-index: -1; border-radius: 1.375em; border-top: 1px solid rgba(255, 255, 255, 0.25); border-bottom: 1px solid rgba(0, 0, 0, 0.05); box-shadow: inset 0px 0.25em 1em rgba(0, 0, 0, 0.1); }
+.button:active:after, input[type="submit"]:active:after { border: 1px solid #dd6600; background: -moz-radial-gradient(center, ellipse cover, #dd6600 0%, transparent 100%); /* FF3.6+ */ background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #dd6600), color-stop(100%, rgba(0, 0, 0, 0))); /* Chrome,Safari4+ */ background: -webkit-radial-gradient(center, ellipse cover, #dd6600 0%, transparent 100%); /* Chrome10+,Safari5.1+ */ background: -o-radial-gradient(center, ellipse cover, #dd6600 0%, transparent 100%); /* Opera 12+ */ background: -ms-radial-gradient(center, ellipse cover, #dd6600 0%, transparent 100%); /* IE10+ */ background: radial-gradient(ellipse at center, #dd6600 0%, transparent 100%); /* W3C */ }
+.button.thinline, input[type="submit"].thinline { line-height: 1.65em; height: 1.65em; }
+.button.icon-text, input[type="submit"].icon-text { padding: 0 1em; }
+.button.icon-text:before, input[type="submit"].icon-text:before { padding-right: .5em; }
+.button.sub-buttons, input[type="submit"].sub-buttons { padding-right: 0.36667em; }
+.button.sub-buttons a, input[type="submit"].sub-buttons a { border-radius: 1.1em; border-top: 1px solid #aaaaaa; border-bottom: 1px solid white; background: #aaaaaa; color: #333333; font-size: 0.726em; line-height: 1.375em; position: relative; top: -0.1375em; padding: 0 0.55em; min-width: 1.1em; }
+.button.sub-buttons a:first-child, input[type="submit"].sub-buttons a:first-child { margin-left: 1.1em; }
+.button.sub-buttons a:hover, input[type="submit"].sub-buttons a:hover { background: #dd6600; color: white; }
+.button.sub-nav, input[type="submit"].sub-nav { min-width: 10em; height: auto; }
+.button.sub-nav li, input[type="submit"].sub-nav li { list-style: none; margin: 0; }
+.button.sub-nav ul, input[type="submit"].sub-nav ul { display: none; font-size: 0.825em; line-height: 1.65em; border-top: 1px solid #c4c4c4; }
+.button.sub-nav:hover ul, input[type="submit"].sub-nav:hover ul { display: block; }
+.button .divide-left, .button .divide-right, input[type="submit"] .divide-left, input[type="submit"] .divide-right { display: inline-block; }
+.button .divide-left, input[type="submit"] .divide-left { border-left: 1px solid #c4c4c4; padding-left: 0.55em; margin-left: 0.275em; float: right; }
+.button .divide-right, input[type="submit"] .divide-right { border-right: 1px solid #c4c4c4; padding-right: 0.55em; margin-right: 0.55em; float: left; }

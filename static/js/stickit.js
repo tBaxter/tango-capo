@@ -18,7 +18,6 @@
 *
 * $(window).load(function() {
     $('.sticky').stickit({
-    content: '#content-main', // your main content wrapper (not the sidebar)
     footer:  '#footer',
     header:  '#header'
   });
@@ -45,105 +44,102 @@ function getYOffset() {
 
 **************************************************/
 
-(function($) {
+//(function($) {
   $.fn.extend({
     stickit: function(options) {
       var $stickyElements = $(this);
+      if (!$stickyElements) {
+        return;
+      }
       var settings = $.extend({
-        //'debug': 'false',
         'stickHeader': true,
         'collapseHeader': true,
         'header':  '#masthead',
         'footer':  '#footer',
-        'content': '#content-main'
+        'user_collapse_pref': true
       }, options);
 
-      var errors = [];
-      for (var key in settings) {
-        if (!settings[key]) {
-          errors.push(settings[key]);
-        }
-      }
-      if (errors.length) {
-        console.warn(errors);
-        return false;
-      }
-      // we're going to compute the content top position
-      // based on the first element AFTER the header,
-      // in case there is any margin/padding oddness.
-      var winPos;
-      var limits;
-      var $win = $(window);
-      var $body = $('body');
-      var $header = $(settings.header);
-      var $footer = $(settings.footer);
-      var $content = $(settings.content);
-      var $firstContent = $header.next();
-      var contentOffset = $firstContent.offset().top;
-      var headerHeight = $header.outerHeight();
+      var limits,
+          winPos,
+          $win          = $(window),
+          $body         = $('body'),
+          $header       = $(settings.header),
+          $firstContent = $header.next(),
+          defaultHeaderOffset  = Math.max($firstContent.offset().top, $header.outerHeight()),
+          collapsedHeaderOffset = 0,
+          stickPoint    = 0,
+          $footer       = $(settings.footer);
 
-      // if we're sticking the header.
-      function calcContentTop() {
-        headerHeight = $header.outerHeight();
-        if (settings.stickHeader) {
-          $header.css('position', 'fixed');
-          $firstContent.css('margin-top', Math.max(contentOffset, headerHeight));
-        }
+      // if we're sticking the header, make sure it's stuck.
+      if (settings.stickHeader) {
+        $header.css('position', 'fixed');
+        $body.css('padding-top', defaultHeaderOffset);
       }
 
-      // if we're collapsing the header.
+      // if we're collapsing the header, do we need to collapse it on init.
       if (settings.collapseHeader) {
         var collapsed = $body.hasClass('collapsed');
+        $body.css('min-height', $win.height());
+
+        if (collapsed || settings.user_collapse_pref) {
+          collapseHeader();
+        }
+        // Init nav menu trigger expand/collapse
+        $header.find('#menu-trigger').on('click', function(e){
+          if (collapsed === true) {
+            window.scrollTo(0, 0);
+            unCollapseHeader();
+          } else {
+            collapseHeader();
+          }
+          e.preventDefault();
+        });
       }
 
       // Header helpers
       function collapseHeader() {
-        $body.addClass('collapsed');
         collapsed = true;
-        calcContentTop();
+        $body.addClass('collapsed');
+        if (collapsedHeaderOffset === 0) {
+          collapsedHeaderOffset = Math.min($firstContent.offset().top, $header.outerHeight());
+        }
+        stickPoint = defaultHeaderOffset - $header.outerHeight();
       }
       function unCollapseHeader() {
-        $body.removeClass('collapsed');
         collapsed = false;
-        calcContentTop();
+        $body.removeClass('collapsed');
+        stickPoint = defaultHeaderOffset - $header.outerHeight();
       }
 
-      // Build sticky elements
+      // Init sticky elements
       $stickyElements.each(function() {
-        var $thisParent = $(this).parent();
-        $thisParent.css('position', 'relative');
-        this.sticky = {
-          'stickyHeight': $(this).outerHeight(true),
-          'breakPoint': $(this).outerWidth(true) + $content.outerWidth(true),
-          'topOffset': $(this).offset().top, // measured from window top...
-          'topPos': $(this).position().top,  // measured from parent.
-          'parent': $thisParent
-        };
+        this.parent = $(this).parent();
+        this.parent.css('position', 'relative');
+        this.topPos = $(this).position().top;
       });
 
       // on scroll, does anything need to change?
       function checkForChanges() {
         winPos = getYOffset();
-        if (settings.collapseHeader) {
-          // collapse when offset is 2/3 of height.
-          // In other words, if the full header is 300px
-          // you want to collapse when the offset is 200px.
-          if (collapsed === false && winPos > (contentOffset / 3)) {
+
+        if (settings.collapseHeader && !settings.user_collapse_pref) {
+          if (collapsed === false && winPos > (defaultHeaderOffset * 0.3)) {
             collapseHeader();
-          }
-          if (collapsed === true && winPos < (contentOffset / 8)) {
+          } else if (collapsed === true && winPos < (defaultHeaderOffset * 0.3)) {
             unCollapseHeader();
           }
         }
 
         // if we're in position to have sticky sidebar elements...
-        if (winPos === 0 || winPos > contentOffset) {
+        if (winPos === 0 || winPos > defaultHeaderOffset ) {
           $stickyElements.each(function() {
-            if (this.sticky.topOffset - headerHeight < winPos && $win.width() >= this.sticky.breakPoint) {
+            this.stickPoint = stickPoint + this.topPos;
+            if ($win.width() >= 980) {
               limits = calculateLimits(this);
               setFixedSidebar(this, winPos, limits);
-            } else {
-              setStaticSidebar(this);
+            }
+            if (winPos < this.stickPoint) {
+              $(this).css('position', 'static');
             }
           });
         }
@@ -152,29 +148,22 @@ function getYOffset() {
       //  Calculates the limits top and bottom limits for the sidebar
       function calculateLimits(elem) {
         return {
-          lowerLimit: ($footer.offset().top + elem.sticky.stickyHeight) + headerHeight,
-          upperLimit: elem.sticky.topPos - headerHeight // offset in parent - header height
+          lowerLimit: $footer.position().top - $(elem).outerHeight(true) - 20,
+          upperLimit: stickPoint - $header.outerHeight()
         };
       }
-      // sets sidebar to a static positioned element
-      function setStaticSidebar(elem) {
-        $(elem).css({
-          'position': 'static',
-          'width': 'auto'
-        });
-      }
-      // Sets sidebar to fixed position
+
       function setFixedSidebar(elem, winPos, limits) {
-        if (limits.lowerLimit < winPos) {
-          // avoid overlap with footer
-          $(elem).css({
-          top: limits.lowerLimit
+        $this = $(elem);
+        if (limits.lowerLimit < (winPos + $header.outerHeight())) {
+          $this.css({
+            top: - winPos + limits.lowerLimit // avoid overlap with footer
           });
-        } else { // normal fixed sidebar
-          $(elem).css({
+        } else {
+          $this.css({
             position: 'fixed',
-            top: limits.upperLimit,
-            width: elem.sticky.parent.width()
+            top: limits.upperLimit, // avoid overlap with header
+            width: $this.parent().width()
           });
         }
       }
@@ -182,21 +171,8 @@ function getYOffset() {
       // Listen for window scroll and check for changes.
       $win.bind({
         'scroll': checkForChanges,
-        'resize': checkForChanges()
-      });
-
-      // nav menu trigger expand/collapse
-      $('#menu-trigger').click(function(e) {
-        e.preventDefault();
-        if (collapsed === true) {
-          window.scrollTo(0, 0);
-          unCollapseHeader();
-        } else {
-          collapseHeader();
-          window.scrollTo(0, headerHeight-30);
-        }
-        $firstContent.css('margin-top', headerHeight);
+        'resize': checkForChanges
       });
     }
   });
-})(jQuery);
+//})(jQuery);

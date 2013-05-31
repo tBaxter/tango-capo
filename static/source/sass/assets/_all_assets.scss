@@ -2,15 +2,25 @@
 // Navicon is a scalable menu navigation icon
 // generally, you'll want to put it inside a button element of some kind.
 // Example: <span class="button"><span class='navicon'>≡≡</span></span>
-.navicon { font-size:150%; letter-spacing: -.33em; display:block; width:1.75em; color:$base;
-  line-height:1em;
-  
+.navicon { 
+  font-size: 1.5rem; 
+  letter-spacing: -.33em; 
+  display: block; 
+  width: 3em; 
+  color: $base;
+  text-align: center;
+
   &:before {
-    content:"≡";
-    width:.33em; 
-    overflow:hidden; 
-    display:inline-block;
+    content: "≡";
+    width: .33em; 
+    overflow: hidden; 
+    display: inline-block;
     color: $base_alt;
+    vertical-align: top;
+  }
+  &, &:before {
+    height: 1.5em; 
+    line-height: 1.5em
   }
 }
 
@@ -23,7 +33,7 @@
 @import '_forms.scss';       // basic form styling
 @import '_icons.scss';       // auto-inserted icons
 @import '_sideheads.scss';   // vertical headlines
-
+@import '_button.scss';   // vertical headlines
 
 hr.fancy {border:0; @include fancy_rule;}
 
@@ -34,12 +44,11 @@ hr.fancy {border:0; @include fancy_rule;}
   h1 {font-size:2.5em}
 }
 
-
 // A kicker sits above a major heading and provies as a section name, 
 // author name or other short additional information.
 .kicker {
-  margin-bottom:.125em; 
-  font-size:85%; 
+  margin-bottom:.25em; 
+  font-size:65%; 
   text-transform:uppercase; 
   line-height:1em; 
   font-weight:bold;
@@ -58,8 +67,20 @@ hr.fancy {border:0; @include fancy_rule;}
   input[type=text], input[type=password], textarea {width:67%}
 }
 
+blockquote, q {
+  color: $meta; 
+  display: block;
+  font-size: 85%;  
+  padding: .5em 0 .5em 2em; 
+  margin-bottom: 1em;
+  border-left: 4px solid $base_alt2; 
+  @include clearfix();
+  footer {font-style: italic;}
+  img {max-width:30% !important}
+}
+
 .content-body {
-  p {font-size:110%}
+  p {font-size:105%}
 
   .datebox {margin-right:1em}
 
@@ -78,6 +99,7 @@ hr.fancy {border:0; @include fancy_rule;}
   @include breakpoint(xl) {
     width:800px;
   }
+  
   #top_assets { 
     position:relative; z-index:100;
     border-bottom:2px solid $base_alt; 
@@ -88,7 +110,7 @@ hr.fancy {border:0; @include fancy_rule;}
     @include breakpoint(s) {
       width: 230px; 
       float: right; 
-      margin: 0 -160px 1em 1em; 
+      margin: 0 -160px 1em $gutter_width; 
       blockquote {display:block;}
     }
     @include breakpoint(m) {
@@ -98,7 +120,7 @@ hr.fancy {border:0; @include fancy_rule;}
       width:460px;
     }
     @include breakpoint(xl) {
-      width:540px; margin-right:-320px;
+      width:540px; margin-right:-240px;
     }
 
   .tabbed > ul {
@@ -145,6 +167,8 @@ hr.fancy {border:0; @include fancy_rule;}
   }
 }
 
+
+/*
 #more_assets {float:right;
   @include breakpoint(s) {
     width:180px;
@@ -156,3 +180,4 @@ hr.fancy {border:0; @include fancy_rule;}
     width:380px;
   }
 }
+*/
