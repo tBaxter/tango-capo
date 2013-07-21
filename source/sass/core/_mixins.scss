@@ -62,6 +62,21 @@
           transition: none;
 }
 
+
+// transforms
+@mixin transform ($transforms) {
+  -webkit-transform: $transforms;
+     -moz-transform: $transforms;
+      -ms-transform: $transforms;
+       -o-transform: $transforms;
+          transform: $transforms;
+}
+
+@mixin rotate ($deg) {
+  @include transform(rotate(#{$deg}deg));
+}
+
+
 @mixin scroll_horiz() {
   &::-webkit-scrollbar {
     height: 8px;

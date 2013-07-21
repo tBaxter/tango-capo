@@ -11,11 +11,12 @@
 "use strict";
 
 var ver = '3.0.1';
+var jQuery = $;
 
 function debug(s) {
 	if ($.fn.cycle.debug)
 		log(s);
-}		
+}
 function log() {
 	if (window.console && console.log)
 		console.log('[cycle] ' + Array.prototype.join.call(arguments,' '));
@@ -33,7 +34,7 @@ $.expr[':'].paused = function(el) {
 // the arg2 arg can be...
 //   the name of an fx (only used in conjunction with a numeric value for 'options')
 //   the value true (only used in first arg == 'resume') and indicates
-//	 that the resume should occur immediately (not wait for next timeout)
+//   that the resume should occur immediately (not wait for next timeout)
 
 $.fn.cycle = function(options, arg2) {
 	var o = { s: this.selector, c: this.context };
@@ -59,7 +60,6 @@ $.fn.cycle = function(options, arg2) {
 			return;
 
 		opts.updateActivePagerLink = opts.updateActivePagerLink || $.fn.cycle.updateActivePagerLink;
-		
 		// stop existing slideshow for this container (if there is one)
 		if (this.cycleTimeout)
 			clearTimeout(this.cycleTimeout);
@@ -147,7 +147,7 @@ function handleArguments(cont, options, arg2) {
 				log('options not found, "prev/next" ignored');
 				return false;
 			}
-			if (typeof arg2 == 'string') 
+			if (typeof arg2 === 'string')
 				opts.oneTimeFx = arg2;
 			$.fn.cycle[options](opts);
 			return false;
@@ -179,7 +179,7 @@ function handleArguments(cont, options, arg2) {
 		return false;
 	}
 	return options;
-	
+
 	function checkInstantResume(isPaused, arg2, cont) {
 		if (!isPaused && arg2 === true) { // resume now!
 			var options = $(cont).data('cycle.opts');
@@ -209,7 +209,7 @@ function destroy(cont, opts) {
 		$(opts.next).unbind(opts.prevNextEvent);
 	if (opts.prev)
 		$(opts.prev).unbind(opts.prevNextEvent);
-	
+
 	if (opts.pager || opts.pagerAnchorBuilder)
 		$.each(opts.pagerAnchors || [], function() {
 			this.unbind().remove();
@@ -263,7 +263,7 @@ function buildOptions($cont, $slides, els, options, o) {
 		opts.startingSlide = parseInt(opts.startingSlide,10);
 		if (opts.startingSlide >= els.length || opts.startSlide < 0)
 			opts.startingSlide = 0; // catch bogus input
-		else 
+		else
 			startingSlideSpecified = true;
 	}
 	else if (opts.backwards)
@@ -312,10 +312,10 @@ function buildOptions($cont, $slides, els, options, o) {
 	// stretch slides
 	if (opts.fit) {
 		if (!opts.aspect) {
-	        if (opts.width)
-	            $slides.width(opts.width);
-	        if (opts.height && opts.height != 'auto')
-	            $slides.height(opts.height);
+            if (opts.width)
+                $slides.width(opts.width);
+            if (opts.height && opts.height != 'auto')
+                $slides.height(opts.height);
 		} else {
 			$slides.each(function(){
 				var $slide = $(this);
@@ -356,7 +356,7 @@ function buildOptions($cont, $slides, els, options, o) {
 			});
 		});
 	}
-		
+
 	// stretch container
 	var reshape = (opts.containerResize || opts.containerResizeHeight) && !$cont.innerHeight();
 	if (reshape) { // do this only if container has no size http://tinyurl.com/da2oa9
@@ -436,7 +436,7 @@ function buildOptions($cont, $slides, els, options, o) {
 			opts.speed = $.fx.speeds[opts.speed] || parseInt(opts.speed,10);
 		if (!opts.sync)
 			opts.speed = opts.speed / 2;
-		
+
 		var buffer = opts.fx == 'none' ? 0 : opts.fx == 'shuffle' ? 500 : 250;
 		while((opts.timeout - opts.speed) < buffer) // sanitize timeout
 			opts.timeout += opts.speed;
@@ -694,7 +694,7 @@ function go(els, opts, manual, fwd) {
 		};
 
 		debug('tx firing('+fx+'); currSlide: ' + opts.currSlide + '; nextSlide: ' + opts.nextSlide);
-		
+
 		// get ready to perform the transition
 		opts.busy = 1;
 		if (opts.fxFn) // fx function provided?
@@ -749,7 +749,7 @@ function go(els, opts, manual, fwd) {
 	}
 	if (changed && opts.pager)
 		opts.updateActivePagerLink(opts.pager, opts.currSlide, opts.activePagerClass);
-	
+
 	function queueNext() {
 		// stage the next transition
 		var ms = 0, timeout = opts.timeout;
@@ -846,7 +846,7 @@ $.fn.cycle.createPagerAnchor = function(i, el, $p, els, opts) {
 	}
 	else
 		a = '<a href="#">'+(i+1)+'</a>';
-		
+
 	if (!a)
 		return;
 	var $a = $(a);
@@ -868,7 +868,7 @@ $.fn.cycle.createPagerAnchor = function(i, el, $p, els, opts) {
 
 	opts.pagerAnchors =  opts.pagerAnchors || [];
 	opts.pagerAnchors.push($a);
-	
+
 	var pagerFn = function(e) {
 		e.preventDefault();
 		opts.nextSlide = i;
@@ -883,30 +883,30 @@ $.fn.cycle.createPagerAnchor = function(i, el, $p, els, opts) {
 		go(els,opts,1,opts.currSlide < i); // trigger the trans
 //		return false; // <== allow bubble
 	};
-	
+
 	if ( /mouseenter|mouseover/i.test(opts.pagerEvent) ) {
 		$a.hover(pagerFn, function(){/* no-op */} );
 	}
 	else {
 		$a.bind(opts.pagerEvent, pagerFn);
 	}
-	
+
 	if ( ! /^click/.test(opts.pagerEvent) && !opts.allowPagerClickBubble)
 		$a.bind('click.cycle', function(){return false;}); // suppress click
-	
-	var cont = opts.$cont[0];
-	var pauseFlag = false; // https://github.com/malsup/cycle/issues/44
+
+	var cont = opts.$cont[0],
+		pauseFlag = false; // https://github.com/malsup/cycle/issues/44
 	if (opts.pauseOnPagerHover) {
 		$a.hover(
-			function() { 
+			function() {
 				pauseFlag = true;
-				cont.cyclePause++; 
+				cont.cyclePause++;
 				triggerPause(cont,true,true);
-			}, function() { 
+			}, function() {
 				if (pauseFlag)
-					cont.cyclePause--; 
+					cont.cyclePause--;
 				triggerPause(cont,true,true);
-			} 
+			}
 		);
 	}
 };
@@ -979,7 +979,7 @@ $.fn.cycle.custom = function(curr, next, opts, cb, fwd, speedOverride) {
 	};
 	$l.animate(opts.animOut, speedOut, easeOut, function() {
 		$l.css(opts.cssAfter);
-		if (!opts.sync) 
+		if (!opts.sync)
 			fn();
 	});
 	if (opts.sync) fn();
@@ -993,7 +993,7 @@ $.fn.cycle.transitions = {
 			$.fn.cycle.commonReset(curr,next,opts);
 			opts.cssBefore.opacity = 0;
 		});
-		opts.animIn	   = { opacity: 1 };
+		opts.animIn    = { opacity: 1 };
 		opts.animOut   = { opacity: 0 };
 		opts.cssBefore = { top: 0, left: 0 };
 	}
@@ -1072,7 +1072,7 @@ $.fn.cycle.defaults = {
  * This script is a plugin for the jQuery Cycle Plugin
  * Examples and documentation at: http://malsup.com/jquery/cycle/
  * Copyright (c) 2007-2010 M. Alsup
- * Version:	 2.73
+ * Version: 2.73
  * Dual licensed under the MIT and GPL licenses:
  * http://www.opensource.org/licenses/mit-license.php
  * http://www.gnu.org/licenses/gpl.html
@@ -1533,7 +1533,7 @@ $.fn.cycle.transitions.wipe = function($cont, $slides, opts) {
 		})();
 	});
 	$.extend(opts.cssBefore, { display: 'block', opacity: 1, top: 0, left: 0 });
-	opts.animIn	   = { left: 0 };
+	opts.animIn    = { left: 0 };
 	opts.animOut   = { left: 0 };
 };
 

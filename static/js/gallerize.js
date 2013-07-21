@@ -23,7 +23,7 @@ function gallerize() {
       photo_slider;
 
   if ($photoset_photos.size() < 2) {
-    console.log("photo count is < 2, aborting..." );
+    //console.log("photo count is < 2, aborting..." );
     return false;
   }
 
@@ -40,18 +40,18 @@ function gallerize() {
   $photoset_photos.each(function() {
     $(this).attr('title','Click or swipe for next photo');
   });
-  
+
   // Determine which gallery engine to use.
   if ( Modernizr.csstransforms ) {
     console.log('swipe.js. (csstransforms supported)');
     photo_slider = use_swipe();
 
-    console.log('slide callback is not auto-run on init, so...');
+    //console.log('slide callback is not auto-run on init, so...');
     slide_callback($photoset_photos.eq(idx));
     // then decrement idx, since we just effectively increased it.
     idx = idx - 1;
   } else {
-    console.log('cycle.js (no csstransforms)');
+    //console.log('cycle.js (no csstransforms)');
     photo_slider = use_cycle();
   }
 
@@ -179,8 +179,7 @@ function gallerize() {
       }
     });
     // cycle on image click
-    $photoset_photos.on('click', function() {
-      //console.log('triggered next click');
+    $photoset_photos.on('click touchend', function() {
       $photoset_next.click();
     });
     // cycle on key (arrow) press

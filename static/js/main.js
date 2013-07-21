@@ -1,17 +1,40 @@
+/*jslint browser: true*/
+/*global  $*/
+/*global  Modernizr*/
+
 var $top_assets  = $('#top_assets'),
-    didScroll    = false,
-    touchable    = Modernizr.touch,
-    screenSize   = window.getComputedStyle(document.body,':after').getPropertyValue('content');
+  didScroll    = false,
+  touchable    = Modernizr.touch;
+
+// Ugly IE8 hack to force getComputedStyle.
+if (!window.getComputedStyle) {
+  window.getComputedStyle = function(el, pseudo) {
+    this.el = el;
+    this.getPropertyValue = function(prop) {
+        var re = /(\-([a-z]){1})/g;
+        if (prop == 'float') prop = 'styleFloat';
+        if (re.test(prop)) {
+            prop = prop.replace(re, function () {
+                return arguments[2].toUpperCase();
+            });
+        }
+        return el.currentStyle[prop] ? el.currentStyle[prop] : null;
+    };
+    return this;
+  };
+}
+
+var screenSize = window.getComputedStyle(document.body, ':after').getPropertyValue('content');
 
 
 // Reliably get window position.
 function getYOffset() {
+  "use strict";
   var pageY;
-  if(typeof(window.pageYOffset) === 'number') {
-     pageY=window.pageYOffset;
-  }
-  else {
-     pageY=document.documentElement.scrollTop;
+  if (typeof (window.pageYOffset) === 'number') {
+    pageY = window.pageYOffset;
+  } else {
+    pageY = document.documentElement.scrollTop;
   }
   return pageY;
 }
@@ -27,39 +50,41 @@ function getYOffset() {
 // Note that the child selector does not have to be a direct descendant.
 // It will toggle any matching children of the main selector.
 ********************************/
-$('a.trigger').each(function(){
-  var hash = this.hash;
+$('a.trigger').each(function() {
+  "use strict";
+  var hash = this.hash,
+      $this = $(this);
+
   if (hash.split(">").length > 1) {
-    if (document.width > 1000 ){
+    if (document.width > 1000) {
       hash = hash.split(">")[0] + ' ' + hash.split(">")[1];
     } else {
       hash = hash.split(">")[0];
     }
   }
   $(hash).hide();
-  $(this).click(function(e) {
-    e.preventDefault();
+  $this.on('click', function(e) {
     $(hash).toggle();
-    $(this).toggleClass('activated');
+    $this.toggleClass('activated');
+    e.preventDefault();
   });
 });
 
 // Simple URL jumpbox
-$('.url-selector').change(function() {
+$(document).on('change', '.url-selector', function(e) {
+  "use strict";
   window.location = $(this).val();
 });
 
 // Allows deferred loading of images.
 // Parent element must have data-deferred-load=" <src>"
 function load_images() {
+  "use strict";
   $('*[data-deferred-load]').each(function() {
     if ($(this).find('img').length === 0) {
-      $(this).prepend(function(index){
-        var hash = $(this).data('deferred-load');
-        if (screenSize === 'small' || screenSize === 'x-small') {
-          hash = hash.replace('540x540','360x360');
-        }
-        var img = document.createElement('img');
+      $(this).prepend(function() {
+        var hash = $(this).data('deferred-load'),
+          img = document.createElement('img');
         img.src = hash;
         return img;
       });
@@ -97,48 +122,52 @@ load_images();
   And remember to call tabit()
  */
 function tabit() {
+  "use strict";
   $('.tabs').each(function() {
+    //console.log('tabbing');
     var tabbed       = $(this),
-        active       = '';
+      active       = '',
+      nav_height   = 0;
 
     tabbed.addClass('tabbed');
-    tabbed.sections  = $(this).find('> *').not('ul');
+    tabbed.sections  = tabbed.find('> *').not('ul');
     tabbed.nav       = tabbed.find('> ul');
-    var nav_height   = tabbed.nav.height();
+    nav_height       = tabbed.nav.height();
 
     if (tabbed.nav.length === 0) {
-        tabbed.nav= $('.remote-tabs-nav');
-        nav_height = 0;
-      }
+      tabbed.nav = $('.remote-tabs-nav');
+      nav_height = 0;
+    }
     if (!tabbed.nav) {
-        //console.log('could not find tab nav!');
-        return;
-      }
+      //console.log('could not find tab nav!');
+      return;
+    }
     tabbed.navitems = tabbed.nav.find('li');
 
     if (window.location.hash) {
-        active = window.location.hash.replace('-view','');
-        if (tabbed.nav) {
-          tabbed.navitems.removeClass('active');
-          tabbed.nav.find('a[href='+active+']').parent().addClass('active');
-        }
-      } else { // no hash available. check if one was pre-defined.
-        active = tabbed.nav.find('li.active a').hash;
-        if (!active) { // or set it to first item
-          active = tabbed.navitems.eq(0).addClass('active').find('a').get(0).hash;
-        }
+      active = window.location.hash.replace('-view', '');
+      if (tabbed.nav) {
+        tabbed.navitems.removeClass('active');
+        tabbed.nav.find('a[href=' + active + ']').parent().addClass('active');
       }
+    } else { // no hash available. check if one was pre-defined.
+      active = tabbed.nav.find('li.active a').hash;
+      if (!active) { // or set it to first item
+        active = tabbed.navitems.eq(0).addClass('active').find('a').get(0).hash;
+      }
+    }
     $(active).addClass('activeTab');
 
     tabbed.nav.find('a:not(.no-tab)').click(function(e) {
       e.preventDefault();
       var target          = this.hash,
-          tabbed_sections = $(target).parent().find('> *').not('ul');
+        tabbed_sections = $(target).parent().find('> *').not('ul'),
+        parent = $(this).parent(),
+        navitems = parent.parent().find('li');
 
       window.location.hash = target + '-view';
-      var parent = $(this).parent();
       parent.addClass('active');
-      var navitems = parent.parent().find('li');
+
       $(navitems).not(parent).removeClass('active');
       $(target).addClass('activeTab');
       // ensure the container height will be at least the target height...
@@ -150,33 +179,49 @@ function tabit() {
 }
 tabit();
 
-$(document).on('click', '.post-admin a', function(e) {
-    var $command = $(this);
-    if ($command.data('confirm')) {
-        confirm_msg = $command.data('confirm');
-        if (confirm_msg === 'use_title') {
-          confirm_msg = $command.attr('title');
-        }
-        return confirm(confirm_msg);
+// Post admin
+$(document).on('click', '.post-admin a', function() {
+  "use strict";
+  var $command = $(this),
+    confirm_msg = $command.data('confirm');
+  if (confirm_msg) {
+    if (confirm_msg === 'use_title') {
+      confirm_msg = $command.attr('title');
     }
+    return confirm(confirm_msg);
+  }
 });
 
 // Voting
-$(document).on('click', 'a[href*="/vote/"]', function(e) {
+$(document).on('click touchend', 'a[href*="/vote/"]', function(e) {
+  "use strict";
   e.preventDefault();
-  var container=$(this).parent().find('.votes');
+  var container = $(this).parent().find('.votes');
   $.post(
     this.href,
-    {csrfmiddlewaretoken:$('input[name|="csrfmiddlewaretoken"]').attr('value')},
+    {csrfmiddlewaretoken: $('input[name|="csrfmiddlewaretoken"]').attr('value')},
     function(json) {
       var score = json.score.score;
       if (score < 1) {
         score = 'Noted';
       }
       container.html(score + ' ✓');
-    }, 'json');
+    },
+    'json'
+  );
 });
 
+// Toxic post toggle
+$('#comment-list article.toxic header').each(function() {
+  var $this = $(this);
+  $this.append('<em class="note toxic-message">This comment has been collapsed</em>');
+  $this.click(function(){
+    console.log('registered click');
+    var $parent = $(this).parent();
+    $parent.toggleClass('toxic');
+    //$parent.find('section').slideToggle('fast');
+  });
+});
 
 if ($top_assets.length > 0) {
   // functions specific to pages with top assets.
@@ -184,8 +229,9 @@ if ($top_assets.length > 0) {
   // based on tabbed top asset height, not default.
   // create preview tooltips in story detail top assets
   $top_assets.find('.tabbed ul li a:not(.no-tab)').each(function() {
-    var img = $(this.hash).find('img').eq(0);
-    var preview = '<span class="preview"><img src="'+ $(img).attr('src') + '"></span>';
+    "use strict";
+    var img = $(this.hash).find('img').eq(0),
+      preview = '<span class="preview"><img src="' + $(img).attr('src') + '"></span>';
     if ($(img).size() === 0) {
       img = $(this.hash).first('object');
       preview = '<span class="preview">' + $(this).attr('title') + '</span>';
@@ -193,9 +239,17 @@ if ($top_assets.length > 0) {
     $(this).append(preview);
   });
   $top_assets.find('.tabbed ul li').hover(function() {
+    "use strict";
     $(this).find('.preview').toggle();
   });
 }
 
 // pickadate.js
-$( '.datepicker' ).pickadate();
+$('.datepicker').pickadate();
+
+
+if (screenSize === 'small' || screenSize === 'x-small') {
+  var $header = $('#header');
+  $header.style.position = 'fixed';
+  $('body').style.paddingTop = $header.outerHeight();
+}

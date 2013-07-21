@@ -87,6 +87,7 @@
     section.t { // this is the topic (first) section
       h1 {
         font-size: 1.125em;
+        font-family: $base_font;
         margin:0
       }
       @include breakpoint(m) {
@@ -127,40 +128,57 @@
   }
 }
 
-
-/* POST LIST */
-#posts {
+// I believe everything in here is deprecated
+/* POST LIST 
+#posts { 
   #comment-list {
-    #reply {width:100%; float:none} 
+    #reply {
+      width: 100%;
+      float: none;
+
+      textarea { width: 100% }
+    } 
 
     .bad-post {
       .avatar, .post, .postcontrols, .button {display:none}
       .bad-post-message {cursor:pointer}  
     }
     .post {
-      object, embed {width:100%; max-width:480px}
+      object, embed {
+        width:100%;
+        max-width:480px
+      }
     }
   }
   ul.sociallinks {
-    clear:both;
-    height:auto;
-    float:right;
-    width:20%;
-    li {float:none; width:100%; min-height:48px; line-height:1.25em}
+    clear: both;
+    height: auto;
+    float: right;
+    width: 20%;
+
+    li {
+      float: none;
+      width: 100%;
+      min-height: 48px;
+      line-height: 1.25em
+    }
   }
   .button.add_topic {
-    margin-top:-.75em;
-    margin-right:-1%;
-    line-height:1.25em;
     @include radius(15px);
+    margin-top: -0.75em;
+    margin-right: -1%;
+    line-height: 1.25em;
     &:hover {
       text-shadow: none !important;
     }
   }
-  #reply {width:78%; float:left; 
-    .submithold {text-align:right}
+  #reply {
+    width: 78%;
+    float: left; 
+    .submithold {text-align: right }
   }
 }
+*/
 
 #forum_search {
   display:none; 

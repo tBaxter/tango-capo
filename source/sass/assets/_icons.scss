@@ -28,7 +28,7 @@
   display: inline-block;
   text-decoration: inherit;
   width: 1em;
-  padding-right:.33em;
+  padding-right: 0.33em;
 }
 
 [class^="icon-"]:before,
@@ -40,9 +40,6 @@
 
 //.icon-picture:before { content: '🌄'; } /* '\1f304' */
 
-.icon-video:before {content: '🎦'}
-
-
 .icon-add:before    { content: '\2b'; } /* '+' */
 .icon-audio:before  { content: '🔊'}
 .icon-bold:before   { content: '\e0ce'; } /* '' */
@@ -53,47 +50,44 @@
 .icon-edit:before   { content: '✎'; }
 .icon-facebook:before { content: '\f09a'; } /* '' */
 .icon-grid:before   { content: '\e800'; } /* '' */
-.icon-heart-empty:before   { content: '\2661'; } /* '♡' */
-.icon-italic:before        { content: '\e086'; } /* '' */
-.icon-list:before          { content: '\e782'; } /* '' */
+.icon-heart-empty:before { content: '\2661'; } /* '♡' */
+.icon-italic:before      { content: '\e086'; } /* '' */
+.icon-list:before        { content: '\e782'; } /* '' */
 .icon-ul:before     { content: '\f0ca'; } /* '' */
 .icon-ol:before     { content: '\f0cb'; } /* '' */
 .icon-list-details:before  { content: '\e003'; } /* '' */
 .icon-map:before    { content: '📍'}
 .icon-menu:before   { content: '\2630'; } /* '☰' */
 .icon-menu-large:before { content: '\f0c9'; } /* '' */
-
 .icon-photo:before {content: '📷'}
 .icon-camera:before { content: '📷'; } /* '\1f4f7' */
-
 .icon-picture:before { content: '🌄'; } /* '\1f304' */
 .icon-comment:before { content: '\e718'; } // 💬
 .icon-quote:before { content: '\e718'; }   // 💬
-
 .icon-thumb-list:before { content: '\e801'; } /* '' */
 .icon-twitter:before      { content: '\f099'; } /* '' */
-
 .icon-user-1:before { content: '\e802'; } /* '' */
 .icon-lock:before { content: '\1f512'; }   // 🔒 
 .icon-unlock:before { content: '\1f513'; } // 🔓
 .icon-link:before { content: '\1f517'; }   // 🔗
+//.icon-video:before {content: '🎦'}
 .icon-video:before { content: '🎬'; } /* '\1f3ac' */
 .icon-sticky:before {content: '\1F4CC'; }  // 📌
 
 
-
-
 [class^="emoticon-"]:before,
 [class*=" emoticon-"]:before {
+  @include radius(1em);
+  background: lighten($accent, 15%);
+  color: $base;
   font-family: 'emoticons';
-  @include radius(1.5em);
-  padding-left:.25em; 
-  min-width:1.125em;
-  margin:0 .25em;
- // background:#fe9;
- // color:#000;
- // font-size:.8em;
-
+  font-size: 0.667em;
+  line-height: 1.5em;
+  min-width: 1.5em;
+  margin: 0 0.125em;
+  padding: 0.25em 0.33em;
+  text-align: center;
+  text-shadow: none;
 }
 
 .emoticon-happy:before { content: '\e800'; } /* '' */
