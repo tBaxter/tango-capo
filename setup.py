@@ -15,5 +15,4 @@ setup(
     long_description=open('README.md').read(),
     include_package_data=True,
     zip_safe=False,
-    update_submodules=True,
 )
