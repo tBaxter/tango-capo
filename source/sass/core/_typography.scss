@@ -164,14 +164,13 @@ sub, sup {
 sup { top: -0.5em; }
 sub { bottom: -0.25em;}
 
-h1, h2, h3, h4, h5, h6 { font-weight: bold; margin: 0 }
+h1, h2, h3, h4, h5, h6, p, ol, ul { margin: 0 }
+h1, h2, h3, h4, h5, h6 { font-weight: bold; }
 
 #content {
   p, ol, ul { @extend .margin-bottom }
-  p+h2, p+ h3 { margin-top: $wideMargin }
+  p+h2, p+h3 { margin-top: $wideMargin }
 }
-
-
 
 // typically (but not always) used as small.meta
 .meta { color: $meta }
@@ -184,6 +183,7 @@ label {
 .hero { 
   @extend .small-header;
   h1 { @extend .super-text; }
+  p { margin: $defaultMargin 0; }
 }
 
 // special headlines
