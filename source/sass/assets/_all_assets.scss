@@ -4,7 +4,7 @@
 // Example: <span class="button"><span class='navicon'>≡≡</span></span>
 .navicon { 
   font-size: 1.5rem; 
-  letter-spacing: -.33em; 
+  letter-spacing: -0.33em; 
   display: block; 
   width: 3em; 
   color: $base;
@@ -33,7 +33,8 @@
 @import '_forms.scss';       // basic form styling
 @import '_icons.scss';       // auto-inserted icons
 @import '_sideheads.scss';   // vertical headlines
-@import '_button.scss';   // vertical headlines
+@import '_button.scss';      // buttons
+@import '../core/_typography.scss';
 
 hr.fancy {border:0; @include fancy_rule;}
 
@@ -41,23 +42,16 @@ hr.fancy {border:0; @include fancy_rule;}
   position:relative; 
   z-index:10;
   padding:2em 0 0;
-  h1 {font-size:2.5em}
 }
 
 // A kicker sits above a major heading and provies as a section name, 
 // author name or other short additional information.
 .kicker {
   margin-bottom:.25em; 
-  font-size:65%; 
-  text-transform:uppercase; 
-  line-height:1em; 
-  font-weight:bold;
-  display:block;
   color:$inverse_alt;
   
   a {color:$inverse_alt}
   a:hover {color:$accent}
-  &+h1 {margin-top:0}
 }
 
 
@@ -68,19 +62,19 @@ hr.fancy {border:0; @include fancy_rule;}
 }
 
 blockquote, q {
+  @extend .sub-text;
+  @extend .margin-top-bottom;
+  @include clearfix();
+
+  padding-left: $gutter;
   color: $meta; 
   display: block;
-  font-size: 85%;  
-  padding: .5em 0 .5em 2em; 
-  margin-bottom: 1em;
   border-left: 4px solid $base_alt2; 
-  @include clearfix();
   footer {font-style: italic;}
   img {max-width:30% !important}
 }
 
 .content-body {
-  p {font-size:105%}
 
   .datebox {margin-right:1em}
 
@@ -124,10 +118,11 @@ blockquote, q {
     }
 
   .tabbed > ul {
-    text-align:right; 
-    font-size:80%; 
-    list-style:none; 
-    margin:.25em 0 0; 
+    @extend .sub-text;
+
+    text-align: right; 
+    list-style: none; 
+    margin: 0; 
     background:transparent;
 
     > li {background:transparent; padding:0;

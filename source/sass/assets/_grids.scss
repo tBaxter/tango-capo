@@ -76,11 +76,8 @@
 }
 
 .grid { // use with columned
-  font-size: 90%;
-  h2 {
-    font-size:1em;
-    margin:0
-  }
+  @extend .sub-text;
+  
   figure { 
     width: 32%; 
     margin-bottom: 1em 
