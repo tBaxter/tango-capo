@@ -47,8 +47,8 @@ hr.fancy {border:0; @include fancy_rule;}
 // A kicker sits above a major heading and provies as a section name, 
 // author name or other short additional information.
 .kicker {
-  margin-bottom:.25em; 
-  color:$inverse_alt;
+  margin-bottom: $thinMargin; 
+  color: $inverse_alt;
   
   a {color:$inverse_alt}
   a:hover {color:$accent}
@@ -76,7 +76,7 @@ blockquote, q {
 
 .content-body {
 
-  .datebox {margin-right:1em}
+  .datebox {margin-right: $gutter; }
 
   @include breakpoint(s) {
     width:365px; float:left; 
@@ -96,25 +96,27 @@ blockquote, q {
   
   #top_assets { 
     position:relative; z-index:100;
-    border-bottom:2px solid $base_alt; 
-    padding-bottom:.25em;
+    border-bottom: 2px solid $base_alt; 
+    @extend .pad-bottom;
 
-    ul.sociallinks {margin: 0; border-bottom:0}
+    ul.sociallinks { margin: 0; border-bottom:0 }
 
     @include breakpoint(s) {
       width: 230px; 
       float: right; 
-      margin: 0 -160px 1em $gutter_width; 
+      margin: 0 -160px $defaultMargin $gutter; 
       blockquote {display:block;}
     }
     @include breakpoint(m) {
-      width:380px; margin-right:-160px;
+      width:380px; 
+      margin-right: -160px;
     }
     @include breakpoint(l) {
       width:460px;
     }
     @include breakpoint(xl) {
-      width:540px; margin-right:-240px;
+      width:540px; 
+      margin-right: -240px;
     }
 
   .tabbed > ul {
@@ -132,7 +134,7 @@ blockquote, q {
     > li.active {border:0;
       a {background:$accent}
     }
-    .preview {position:absolute; width:6em; top:-65px; margin-left:-4em; 
+    .preview {position:absolute; width:6em; top:-65px; margin-left: -4em; 
       display:none; min-height:50px; background:$accent; color:$base; line-height:50px; 
       text-align:center; text-shadow:none; font-weight:bold; 
       @include radius(3px); 

@@ -1,9 +1,14 @@
 ul.fancy, ol.fancy {
-  li {margin-bottom:.25em; padding-bottom:.25em; border-bottom: 1px solid $base}
+  li {
+    margin-bottom: $baseline; 
+    padding-bottom: $baseline; 
+    border-bottom: 1px solid $base
+  }
 }
 
 ul.fancy {
-  list-style:none; padding-left:0;
+  list-style:none; 
+  padding-left: 0;
 }
 
 dl {
@@ -15,17 +20,22 @@ dl {
     max-width: 300px; 
   }
 
-  dt {float:left; display:block; font-weight:bold; clear:left; margin:0; 
-      padding:.5em 0 0;
-      color: $meta;
-      border-top:1px dotted $base_alt2; 
-      width:30%;
-    }
+  dt {
+    float:left; 
+    display:block; 
+    font-weight:bold; 
+    clear:left; 
+    margin:0; 
+    padding: $baseline 0 0;
+    color: $meta;
+    border-top:1px dotted $base_alt2; 
+    width: 30%;
+  }
   dd { 
-    padding:.5em $gutter_width 1em; 
+    padding: $baseline $gutter $defaultMargin; 
     margin-left: 30%;
     min-height:2em; 
-    border-left:1px solid $base_alt2;
+    border-left: 1px solid $base_alt2;
   } 
   dt+dd { border-top:1px dotted $base_alt2; }
 }
@@ -36,7 +46,12 @@ section.list { // often used in conjunction with a grid (column) view in tabs
     display: table;
     width: 100%;
     
-    > * {display:table-cell; border-bottom: 1px solid $base_alt2; padding:.5em 0; min-height:60px;}
+    > * {
+      @extend .pad-top-bottom;
+      display: table-cell; 
+      border-bottom: 1px solid $base_alt2; 
+      min-height:60px;
+    }
 
     .third {width:33%;
       .url-selector {width:100%;}
