@@ -1,9 +1,14 @@
 
 @import 'core/_vars.scss';
+
+// Now override any vars you need to...
+// $accent: #A91616;
+
+// now import common
 @import 'core/_common.scss';
 
 
-// Insert custom site styles.
+// And add custom site styles.
 body { backgound-image: $texture; @include trans() }
 
 header[role=banner], 
