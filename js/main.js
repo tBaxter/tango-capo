@@ -216,10 +216,9 @@ $('#comment-list article.toxic header').each(function() {
   var $this = $(this);
   $this.append('<em class="note toxic-message">This comment has been collapsed</em>');
   $this.click(function(){
-    console.log('registered click');
-    var $parent = $(this).parent();
-    $parent.toggleClass('toxic');
-    //$parent.find('section').slideToggle('fast');
+    if (confirm('Are you sure you want to see this? It could get ugly.')) {
+      $(this).parent().toggleClass('toxic');
+    }
   });
 });
 
