@@ -1,5 +1,12 @@
-include README.md
-recursive-include css/ *
-recursive-include js/ *
-recursive-include img/ *
-recursive-include fonts/ *
+include LICENSE README.md
+recursive-include static *.css
+recursive-include static *.eot
+recursive-include static *.svg
+recursive-include static *.ttf
+recursive-include static *.woff
+recursive-include static *.js
+recursive-include static *.jpg
+recursive-include static *.png
+recursive-include static *.scss
+
+
