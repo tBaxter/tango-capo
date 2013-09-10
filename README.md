@@ -1,7 +1,7 @@
-capo
+tango-capo
 ====
 
-A very loose framework-y collection of css/javascript and template code I tend to always use.
+A django implementation of Capo: A very loose framework-y collection of css/javascript and template code I tend to always use.
 
 Includes stickit.js, a jQuery plugin that:
 
