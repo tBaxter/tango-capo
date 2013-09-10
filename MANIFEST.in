@@ -1,12 +1,12 @@
 include LICENSE README.md
-recursive-include static *.css
-recursive-include static *.eot
-recursive-include static *.svg
-recursive-include static *.ttf
-recursive-include static *.woff
-recursive-include static *.js
-recursive-include static *.jpg
-recursive-include static *.png
-recursive-include static *.scss
+recursive-include tango_capo *.css
+recursive-include tango_capo *.eot
+recursive-include tango_capo *.svg
+recursive-include tango_capo *.ttf
+recursive-include tango_capo *.woff
+recursive-include tango_capo *.js
+recursive-include tango_capo *.jpg
+recursive-include tango_capo *.png
+recursive-include tango_capo *.scss
 
 
