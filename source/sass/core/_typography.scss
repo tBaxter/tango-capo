@@ -14,17 +14,21 @@
     ( @defaultMargin * 2 );
 **********************************************/
 
-// baseline
+// baseline is 12 px. Default text is set at 16/24.
 $baseline: 12px;
+
+// vertical spacing
 $gutter: 20px;
 $halfGutter: $gutter/2;
 
-// top, bottom margins
+// horizontal spacing
 $thinMargin: $baseline;
 $defaultMargin: $baseline * 2;
 $wideMargin: $baseline * 4;
 
+
 html, button, input, select, textarea { font-family: $base_font }
+
 // Correct font-size not inheriting in all browsers
 button, input, select, textarea { font-size: 100%; }
 
@@ -39,6 +43,8 @@ html {
 @mixin sub-text {
   font-size: 14px;
   font-size: 0.875rem;
+  line-height: 18px;
+  line-height: 1.125rem;
 }
 
 

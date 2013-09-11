@@ -23,4 +23,5 @@ footer[role=contentinfo] {
   }
   .navicon:before { color: $inverse_alt }
 }
-#footer {background-position: bottom right}
+
+footer[role=contentinfo] { background-position: bottom right; }

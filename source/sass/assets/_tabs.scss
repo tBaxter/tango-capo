@@ -44,14 +44,17 @@
 
 .tabbed {
   & > * {
-    display:none; 
-    position:relative;
-    z-index:1;
+    display: none; 
+    position: relative;
+    z-index: 1;
     @include trans(all, .3s, ease-in)
   }
-  & >*.activeTab, & > ul {
+
+  & > *.activeTab, 
+  & > ul {
     display:block
   }
+  
   & > ul {
     @include tab_styles;
   }

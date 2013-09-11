@@ -8,37 +8,39 @@
 @import '_layout.scss';                      // layouts
 @import '../assets/_all_assets.scss';        // pull in asset helpers
 
+
 html { background: $base $texture; }
+
 body {
-  font-family: $base_font;     // root font stack. Baseline grid is defined in reset
-  color:       $inverse;
+  @include trans(all, .3s, linear);
+  font-family: $base_font;     // root font stack.
+  color: $inverse;
   height: 100%;
   margin-top: 0;
-  @include trans(all, .3s, linear);
-}
 
-select, input, textarea {color:$inverse_alt}
+  &.collapsed {
+    header[role=banner] { 
+      @include box-shadow(0, 2px, 2px, .4); 
+      position: fixed; 
+      z-index: 1000;
+      
+      h1 { max-width: 200px; }
+      h2 { display: none }
+      
+      [role="navigation"] { 
+        @include breakpoint(xs) { display: none }; 
+        
+        ul { 
+          @include breakpoint(s) { 
+            height: 0;
+            overflow:hidden;
+            margin:0 
+          }; 
+        }
+      }
+    }
+  }
 
-a { color:$accent_alt;
-  &:link{-webkit-tap-highlight-color: $accent_alt}
-  &:hover { color:$accent }
-}
-h1, h2, h3 { font-weight:normal }
-
-::-moz-selection { background: $inverse_alt; color:$base_alt }
-::selection      { background: $inverse_alt; color:$base_alt }
-
-
-/**************************** Structure ******************************/
-.constrain { 
-  @include breakpoint(xs) { margin:0 20px; width: auto;  };
-  @include breakpoint(s)  { margin: 0 auto; width: ($s - 20) + px };
-  @include breakpoint(m)  { width: ($m - 40) + px };
-  @include breakpoint(l)  { width: ($l - 40) + px };
-  @include breakpoint(xl) { width: ($xl - 40) + px };
-}
-
-body { 
   &:after { display: none; }
   @include breakpoint(xs) { &:after { content: 'x-small'; } };
   @include breakpoint(s)  { &:after { content: 'small'; } };
@@ -47,23 +49,20 @@ body {
   @include breakpoint(xl) { &:after { content: 'x-large'; } };
 }
 
-body.collapsed {
-  header[role=banner] { 
-    @include box-shadow(0, 2px, 2px, .4); 
-    position: fixed; 
-    z-index: 1000;
-    .site-name {
-      h1 {max-width: 200px;}
-      h2 { display: none }
-    }
-    #main_menu { 
-      @include breakpoint(xs) { display: none }; 
-      ul { 
-        @include breakpoint(s) { 
-          height: 0;
-          overflow:hidden;
-          margin:0 
-        }; 
+header[role=banner], 
+footer[role=contentinfo] {
+  clear: both; 
+  nav {
+    [role=menu] { 
+      margin: 0;
+      > li {
+        @extend .margin-bottom;
+        font-weight: bold;
+        
+        li { 
+          @extend .sub-text;
+          font-weight: normal
+        }
       }
     }
   }
@@ -72,38 +71,53 @@ body.collapsed {
 // regular masthead styles.
 header[role=banner] { 
 
-  &, * {
+  &, > * {
     @include trans(all, .3s, ease);
   }
-  .site-name,
-  nav { display: block; }
+
+  h1, h2, nav { display: block; }
   
-  .site-name { 
+  h1, h2  { 
+    margin: 0;
     color: $inverse; 
     text-shadow: 0 1px 2px rgba(0,0,0,.7); 
     @include breakpoint(xs) { padding-left: $gutter; }
 
     a { color: $base }
-    h1, h2 { margin: 0 }
-    h1 { float: left; width: 32% }
   }
 
-  > div .navicon {
+  h1 { 
+      float: left; 
+      width: 32%;
+  }
+
+  .navicon {
     @include radius(5px);
+    @include breakpoint(s) { padding: 0.5em auto; }
     float: right; 
     font-weight: bold; 
     border: 1px inset $accent; 
     color: $base; 
     margin-right: $gutter;
-    @include breakpoint(s) { padding: 0.5em auto; }
+
     &.activated { background: $accent_alt }
+  }
+  [role=menu] {
+    @include breakpoint(xs) { display: none; }
   }
 }
 
-#content {
-  text-shadow: 1px 1px 2px $base;
+footer[role=contentinfo] {
+  @include box-shadow(0, -2px, 2px, .3);
+  @extend .pad-top;
+  border-top: 2px solid $accent; 
+}
+
+// applies to both main and complementary
+#content-wrapper {
   @include breakpoint(s) { padding: 0 2em };
   @include breakpoint(m) { padding: 0 };
+  text-shadow: 1px 1px 2px $base;
 
   figure {
     img { border: 1px solid $accent_alt; }
@@ -131,55 +145,32 @@ header[role=banner] {
   }
 }
 
-header[role=banner], 
-footer[role=contentinfo] {
-  clear:both; 
-  nav {
-    ul { margin: 0 }
-    [role=menu] > li {
-      font-weight: bold;
-      @extend .margin-bottom;
-      ul { 
-        li { 
-          @extend .sub-text;
-          font-weight: normal
-        }
-      }
-    }
-    .button { margin: 0 }
-  }
-}
-
-header[role=banner] nav ul {
-  @include breakpoint(xs) { display: none; };
-}
-
-footer[role=contentinfo] {
-  @include box-shadow(0, -2px, 2px, .3);
-  padding: 1em 0;
-  border-top: 2px solid $accent; 
-}
-
-#searchForm {
-  text-align: right;
-  select { width:120px; }
-  #q {
-    @include radius(3px);
-    @extend .sub-text;
-    border: 1px solid $inverse_alt;
-    padding: 3px;
-    margin-right: -8px;
-    width: 140px;
-  }
-  span {
-    @extend .small-text;
-    color: $inverse_alt
-  }
-}
-
 
 
 /************************ COMMON CLASSES AND ELEMENTS ********************/
+select, input, textarea { color: $inverse_alt; }
+
+a { 
+  color: $accent_alt;
+
+  &:link{ -webkit-tap-highlight-color: $accent_alt; }
+  &:hover { color: $accent }
+}
+
+h1, h2, h3 { font-weight:normal }
+
+::-moz-selection { background: $inverse_alt; color:$base_alt }
+::selection      { background: $inverse_alt; color:$base_alt }
+
+// control element width to available max size
+.constrain { 
+  @include breakpoint(xs) { margin: 0 20px; width: auto;  };
+  @include breakpoint(s)  { margin: 0 auto; width: ($s - 20) + px };
+  @include breakpoint(m)  { width: ($m - 40) + px };
+  @include breakpoint(l)  { width: ($l - 40) + px };
+  @include breakpoint(xl) { width: ($xl - 40) + px };
+}
+
 time {
   @extend .sub-text;
   color: $inverse_alt; 
@@ -192,18 +183,22 @@ time {
 .breakout {
   @include radius(.5em);
   @extend .breakout-text;
+  @extend .margin-sides;
+  @extend .pad-all;
   display: block;
   border: 1px solid lighten($base_alt2, 2%);
   background: $base_alt2;
-  padding: 1em;
-  margin: .5em 0;
-  text-shadow: 0 1px 2px rgba(0,0,0,.8); 
+  text-shadow: 0 1px 2px rgba(0,0,0, 0.8); 
 }
 
-// for objects that we wish to diminish the importance of
-// examples would be events that are recently over, and toxic posts.
-.diminish, .toxic {@include opacity(.6);
-  &:hover {@include opacity(1)}
+// For objects that we wish to diminish the importance of.
+// Examples would be events that are recently over, and toxic posts.
+.diminish, .toxic { 
+  @include opacity(.6);
+  
+  &:hover {
+    @include opacity(1)
+  }
 }
 
 // for number counts on objects, like recently updated
@@ -223,33 +218,38 @@ time {
 
   &.left { margin-right: 0.5em }
 }
+
 .avatar {
-      width: 80px;
-      display: block;
-      border:1px solid $base_alt2;
+  width: 80px;
+  display: block;
+  border: 1px solid $base_alt2;
 }
 a .avatar:hover {border-color: $accent}
 
 
 .errorlist {
   @extend .sub-text;
+  @extend .pad-all;
   background: $error;
-   list-style: none; 
-   padding: .25em 1em; 
-   margin: 0; 
-   font-weight: bold; 
-   
+  list-style: none; 
+  margin: 0; 
+  font-weight: bold; 
 }
 
-.messages {margin:0 0 1em; padding:0; list-style:none;
+.messages {
+  margin: 0 0 $defaultMargin; 
+  padding: 0; 
+  list-style: none;
+
   > li, .message {
+    @include radius($default_radius);
     @extend .breakout-text;
+    @extend .pad-all;
     border: 1px solid; 
-    padding: .25em 1em;
     background: $inverse;
     color: $base_alt2;
     text-shadow: 1px 1px 0 lighten($inverse, 20%);
-    @include radius($default_radius);
+    
     &:before {font-size:1.5em}
 
     a { color: $base }
@@ -278,6 +278,8 @@ a .avatar:hover {border-color: $accent}
   border-bottom: 1px solid $base_alt2;
   text-align: right;
 }
+
+
 
 /********************* CONTENT SECTION FRONTS *****************************/
 #top_stories_hold {

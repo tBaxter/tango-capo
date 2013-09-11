@@ -5,11 +5,11 @@ from setuptools import find_packages
 
 setup(
     name='capo',
-    version='0.1',
+    version='0.2',
     author=u'Tim Baxter',
     author_email='mail.baxter@gmail.com',
     packages=find_packages(),
-    url='https://github.com/tBaxter/Tango',
+    url='https://github.com/tBaxter/capo',
     license='BSD licence, see LICENCE.txt',
     description='A very loose framework-y collection of css and javascript.',
     long_description=open('README.md').read(),
