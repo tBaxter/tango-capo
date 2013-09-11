@@ -156,7 +156,7 @@ html { font-size: 1em; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100
 
 .sub-text, q, label, [role=complementary], table, dl, section.list ul dt, section.list ul dd, section.list dl dt, section.list dl dd, .grid, .pager, .pager li.next, .pager li.prev, .remote-tabs-nav, .tabbed > ul, .boxedform p.required label, blockquote, .content-body #top_assets .tabbed > ul, header[role=banner] nav [role=menu] > li li, footer[role=contentinfo] nav [role=menu] > li li, #content-wrapper figure figcaption, time, .errorlist, #top_stories_hold #more_featured p, p.author, .story_detail .dateline { font-size: 14px; font-size: 0.875rem; }
 
-.body-text, .split div[role=complementary], #top_stories_hold article + article p, body { font-size: 16px; font-size: 1em; line-height: 24px; line-height: 1.5rem; }
+.body-text, .split [role=complementary], #top_stories_hold article + article p, body { font-size: 16px; font-size: 1em; line-height: 24px; line-height: 1.5rem; }
 
 .x-small-header, h5, .breakout-text, .breakout, .messages > li, .messages .message { font-size: 16px; font-size: 1.142857rem; }
 
@@ -237,21 +237,21 @@ h1, h2, h3, h4, h5, h6 { font-weight: bold; }
 
 small { display: inline-block; }
 
-@media (min-width: 780px) { div[role=main], div[role=complementary] { display: inline-block; vertical-align: top; } }
+@media (min-width: 780px) { [role=main], [role=complementary] { display: inline-block; vertical-align: top; } }
 
-@media (min-width: 780px) { div[role=main] { width: 67%; } }
+@media (min-width: 780px) { [role=main] { width: 67%; } }
 
-@media (min-width: 780px) { div[role=complementary] { width: 32.2%; padding-left: 20px; } }
-@media (min-width: 1220px) { div[role=complementary] { padding-left: 40px; } }
+@media (min-width: 780px) { [role=complementary] { width: 32.2%; padding-left: 20px; } }
+@media (min-width: 1220px) { [role=complementary] { padding-left: 40px; } }
 
-.wide div[role=main] { width: 100%; }
-.wide div[role=complementary] { display: none; }
+.wide [role=main], .wide [role=complementary] { width: 100%; }
+.wide [role=complementary] { padding-left: 0; }
 
-.split div[role=main], .split div[role=complementary] { width: 49.8%; }
+.split [role=main], .split [role=complementary] { width: 49.8%; }
 
-@media (min-width: 780px) { .reverse div[role=main] { float: right; } }
-@media (min-width: 780px) { .reverse div[role=complementary] { float: left; padding-left: 0; padding-right: 20px; } }
-@media (min-width: 1220px) { .reverse div[role=complementary] { padding-right: 40px; } }
+@media (min-width: 780px) { .reverse [role=main] { float: right; } }
+@media (min-width: 780px) { .reverse [role=complementary] { float: left; padding-left: 0; padding-right: 20px; } }
+@media (min-width: 1220px) { .reverse [role=complementary] { padding-right: 40px; } }
 
 .navicon { font-size: 1.5rem; letter-spacing: -0.33em; display: block; width: 3em; color: #101010; text-align: center; }
 .navicon:before { content: "≡"; width: .33em; overflow: hidden; display: inline-block; color: #1d1d1d; vertical-align: top; }
@@ -649,7 +649,7 @@ html { font-size: 1em; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100
 
 .sub-text, q, label, [role=complementary], table, dl, section.list ul dt, section.list ul dd, section.list dl dt, section.list dl dd, .grid, .pager, .pager li.next, .pager li.prev, .remote-tabs-nav, .tabbed > ul, .boxedform p.required label, blockquote, .content-body #top_assets .tabbed > ul, header[role=banner] nav [role=menu] > li li, footer[role=contentinfo] nav [role=menu] > li li, #content-wrapper figure figcaption, time, .errorlist, #top_stories_hold #more_featured p, p.author, .story_detail .dateline { font-size: 14px; font-size: 0.875rem; }
 
-.body-text, .split div[role=complementary], #top_stories_hold article + article p, body { font-size: 16px; font-size: 1em; line-height: 24px; line-height: 1.5rem; }
+.body-text, .split [role=complementary], #top_stories_hold article + article p, body { font-size: 16px; font-size: 1em; line-height: 24px; line-height: 1.5rem; }
 
 .x-small-header, h5, .breakout-text, .breakout, .messages > li, .messages .message { font-size: 16px; font-size: 1.142857rem; }
 
