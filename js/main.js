@@ -30,13 +30,11 @@ var screenSize = window.getComputedStyle(document.body, ':after').getPropertyVal
 // Reliably get window position.
 function getYOffset() {
   "use strict";
-  var pageY;
   if (typeof (window.pageYOffset) === 'number') {
-    pageY = window.pageYOffset;
+    return window.pageYOffset;
   } else {
-    pageY = document.documentElement.scrollTop;
+    return document.documentElement.scrollTop;
   }
-  return pageY;
 }
 
 /*************
