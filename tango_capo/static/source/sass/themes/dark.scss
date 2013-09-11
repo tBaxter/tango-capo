@@ -7,7 +7,7 @@ $inverse_alt  : darken($inverse, 15%);
 $accent_alt   : #d1b78b; // a goldy color for links and other places we don't want the orange.
 
 @import '../site.scss';
-@import '../layout_snippets/horizontal_navigation.scss';
+@import '../layout_snippets/_horizontal_navigation.scss';
 
 header[role=banner], 
 footer[role=contentinfo] {
@@ -23,4 +23,5 @@ footer[role=contentinfo] {
   }
   .navicon:before { color: $inverse_alt }
 }
-#footer {background-position: bottom right}
+
+footer[role=contentinfo] { background-position: bottom right; }

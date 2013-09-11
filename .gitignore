@@ -4,3 +4,10 @@
 /source/sass/assets/css/
 /source/css/
 /_site/
+/dist/tango-capo-0.1.tar.gz
+/tango_capo.egg-info/dependency_links.txt
+/tango_capo.egg-info/not-zip-safe
+/tango_capo.egg-info/PKG-INFO
+/tango_capo.egg-info/SOURCES.txt
+/tango_capo.egg-info/top_level.txt
+/tango_capo/__init__.pyc

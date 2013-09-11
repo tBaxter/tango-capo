@@ -19,8 +19,16 @@ header[role=banner] {
       }
     }
   }
+  > div {
+    @extend .constrain;
+  }
   nav {
-    position: relative; 
     @include breakpoint(s) { margin-left: 31%; }
+    position: relative; 
+
+    [role=menu] {
+      @extend .columned;
+      @extend .five-col;
+    }
   }
 }
