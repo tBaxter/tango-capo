@@ -2,8 +2,7 @@ header[role=banner] {
   top: 0; 
   width: 100%; 
   z-index: 100; 
-  padding: 10px 0; 
-  min-height: 60px;
+  padding: 10px 0 8px; 
   border-bottom: 2px solid $accent; 
   
   .site-name {
@@ -28,7 +27,7 @@ header[role=banner] {
 
     [role=menu] {
       @extend .columned;
-      @extend .five-col;
+      @extend .six-col;
     }
   }
 }

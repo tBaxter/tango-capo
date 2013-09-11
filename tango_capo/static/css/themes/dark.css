@@ -239,9 +239,9 @@ small { display: inline-block; }
 
 @media (min-width: 780px) { [role=main], [role=complementary] { display: inline-block; vertical-align: top; } }
 
-@media (min-width: 780px) { [role=main] { width: 67%; } }
+@media (min-width: 780px) { [role=main] { width: 70%; } }
 
-@media (min-width: 780px) { [role=complementary] { width: 32.2%; padding-left: 20px; } }
+@media (min-width: 780px) { [role=complementary] { width: 29%; padding-left: 20px; } }
 @media (min-width: 1220px) { [role=complementary] { padding-left: 40px; } }
 
 .wide [role=main], .wide [role=complementary] { width: 100%; }
@@ -730,7 +730,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: bold; }
 
 small { display: inline-block; }
 
-hr.fancy { border: 0; content: ""; display: block; clear: both; height: 5px; background: rgba(255, 255, 255, 0.2); border-radius: 6px; -webkit-box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.5); -moz-box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.4); box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.5); }
+hr.fancy { border: 0; content: ""; display: block; clear: both; height: 5px; background: rgba(255, 255, 255, 0.2); border-radius: 5px; -webkit-box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.5); -moz-box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.4); box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.5); }
 
 .hero { position: relative; z-index: 10; padding: 2em 0 0; }
 

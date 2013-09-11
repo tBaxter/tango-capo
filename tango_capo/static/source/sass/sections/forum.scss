@@ -10,18 +10,20 @@
   h1 {
     @include sideheds;
 
-    font-size:250%;
-    opacity:.3
+    font-size: 250%;
+    opacity: .3
   }
-  dl {margin-bottom:3em; margin-top:2em;
+  dl {
+    margin-bottom: 3em; 
+    margin-top:2em;
     &:after  {
       display: block;
-      margin-bottom:4em;
+      margin-bottom: 4em;
       clear:both;
       content: '';
     }
   }
-  dl > * {display:block; }
+  dl > * { display:block; }
   dt { font-weight:bold; width:42%; margin:0; border-bottom-style:solid; padding-right:1%}
   dd { padding:0; }
   dd.desc {width:42%; float:left; margin:.3em 0 -100% -.5em; 

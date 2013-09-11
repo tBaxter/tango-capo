@@ -2,6 +2,7 @@
    Based on HTML5 Boilerplate 3.0: h5bp.com/css
 */
 @import '_mixins.scss';
+@import '_typography.scss';
 
 // Reset box model
 * { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -o-box-sizing: border-box; box-sizing: border-box; }
@@ -27,7 +28,9 @@ pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
 q { 
   @extend .sub-text;
   quotes: none; 
-  display:block; font-family:$alt_font; font-style: italic;
+  display:block; 
+  font-family: $alt_font; 
+  font-style: italic;
   // &:before, &:after { font-size:3em; position:absolute; margin-top:-.25em; opacity:.5; font-style:normal}
   // &:before { content: "“"; margin-left:-.5em}
   // &:after { content: "”"; }
@@ -38,36 +41,31 @@ a { text-decoration:none }
 iframe, hr, img, fieldset, legend { border:0 }
 abbr[title] { border-bottom: 1px dotted; cursor:help}
 b, strong { font-weight: bold; }
-blockquote { margin: 1em 1.5em; }
+blockquote { @include margin(all); }
 dfn { font-style: italic; }
-hr { display: block; height: 1px; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+hr { 
+  @include margin(top-bottom);
+  display: block; 
+  height: 1px; 
+  border-top: 1px solid #ccc; 
+  padding: 0; 
+}
 ins { background: #ff9; color: #000; text-decoration: none; }
 mark { background: #ff6; color: #000; font-style: italic; font-weight: bold; }
 address {font-style: normal }
 
-/*//////////
-// Basic Typography
 
-// Position subscript and superscript content without affecting line-height: h5bp.com/k
-sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
-sup { top: -0.5em; }
-sub { bottom: -0.25em;}
-
-h1 { font-size:2em; line-height:1em; margin:.25em 0; }
-h2 { font-size:1.5em; line-height:1.33em; margin:.45em 0 .45em }
-h3 { font-size:1.25em; margin:1em 0 .33em}
-
-// typically (but not always) used as small.meta
-.meta { color:#777; }
-h2.meta {margin-bottom:0}
-h2.meta+* {margin-top:0}
-*/
 /* =============================================================================
    Lists
    ========================================================================== */
 
-ul, ol { margin: 1em 0; padding: 0 0 0 1.5em; }
-dd { margin: 0 0 0 1.5em; }
+ul, ol { 
+  @include margin(top-bottom);
+  padding: 0 0 0 $gutter; 
+}
+dd { 
+  margin: 0 0 0 $gutter; 
+}
 nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0; }
 
 
@@ -128,12 +126,7 @@ button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
 /* Colors for form validity */
 input:invalid, textarea:invalid { background-color: #f0dddd; }
 
-/* =============================================================================
-   Tables
-   ========================================================================== */
-table { border-collapse: collapse; border-spacing: 0; 
-	td { vertical-align: top; }
-}
+
 
 
 /* ==|== non-semantic helper classes ======================================= */
@@ -150,16 +143,20 @@ table { border-collapse: collapse; border-spacing: 0;
 }
 
 /* Contain floats: h5bp.com/q */
-.clearfix {@include clearfix();}
+.clearfix { @include clearfix(); }
 
-.debug {background:#ffc}
-.clear {clear:both; margin:0}
-hr.clear {visibility:hidden}
+.debug { background:#ffc; }
+.clear {
+  clear: both; 
+  margin: 0
+}
+
+hr.clear { visibility:hidden; }
 
 .right {float:right}
-img.right, figure.right {margin-left:1em}
-.left {float:left}
-img.left, figure.left {margin-right:1em}
+img.right, figure.right {margin-left: $gutter; }
+.left { float:left }
+img.left, figure.left {margin-right: $gutter; }
 
 .ellipse{ 
   overflow: hidden;
@@ -167,9 +164,6 @@ img.left, figure.left {margin-right:1em}
   white-space: nowrap; 
   width:100% 
 }
-
-
-
 
 
 

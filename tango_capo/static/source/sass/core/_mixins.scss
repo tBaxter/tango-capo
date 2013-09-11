@@ -77,7 +77,7 @@
 }
 
 
-@mixin scroll_horiz() {
+@mixin scroll_horizontal() {
   &::-webkit-scrollbar {
     height: 8px;
     @include radius(10px);
@@ -95,11 +95,11 @@
   }
 }
 
-@mixin scroll_vert() {
+@mixin scroll_vertical() {
   &::-webkit-scrollbar {
     width: 8px;
     @include radius(10px);
-    margin:5px;
+    margin: 5px;
   }
   &::-webkit-scrollbar-track {
     @include radius(10px);
@@ -108,20 +108,61 @@
   &::-webkit-scrollbar-thumb {
     @include gradient($base); 
     @include radius(10px);
-    width:4px;
-    border:1px solid $inverse_alt;
+    width: 4px;
+    border: 1px solid $inverse_alt;
   }
 }
 
 // screen provides a boxedform-like screened gradient background, using the gradient_20 mixin
 @mixin screen {
-  border:1px solid $accent;
   @include gradient($base);
   @include radius(8px);
-  padding:.25em 10px;
+  border: 1px solid $accent;
+  padding: .25em 10px;
   margin-bottom:1em;
 }
 
+
+// Pull padding styles from typography so we don't have to extend.
+@mixin pad($side) {
+  @if $side == all {
+    padding: $baseline $halfGutter;
+  }
+  @if $side == top {
+    padding-top: $baseline;
+  }
+  @if $side == bottom {
+    padding-bottom: $baseline;
+  }
+  @if $side == top-bottom {
+    padding: $baseline 0;
+  }
+  @if $side == sides {
+    padding: 0 $halfGutter;
+  }
+}
+
+// Pull margin styles from typography so we don't have to extend.
+@mixin margin($side) {
+  @if $side == all {
+    margin: $gutter $defaultMargin; 
+  }
+  @if $side == top {
+    margin-top: $defaultMargin; 
+  }
+  @if $side == bottom {
+    margin-bottom: $defaultMargin;
+  }
+  @if $side == top-bottom {
+    padding: $baseline 0;
+  }
+  @if $side == sides {
+    margin: 0 $gutter;
+  }
+}
+
+
+// Define breakpoints
 @mixin breakpoint($point) {
   @if $point == xl {
     @media (min-width: $xl + px) { @content; }
@@ -140,13 +181,15 @@
   }
 }
 
+
+// create fancy horizontal rule.
 @mixin fancy_rule() {
-  content:"";
-  display:block;
-  clear:both;
-  height:5px; 
+  content: "";
+  display: block;
+  clear: both;
+  height: 5px; 
   background: rgba(255,255,255,.2); 
-  border-radius:6px;
+  border-radius: 5px;
   -webkit-box-shadow:inset 2px 2px 2px rgba(0,0,0,.5);
   -moz-box-shadow:inset 2px 2px 2px rgba(0,0,0,.4);  
   box-shadow:inset 2px 2px 2px rgba(0,0,0,.5);

@@ -3,12 +3,12 @@
 }
  
 [role=main] {
-  @include breakpoint(s) { width: 67%; } 
+  @include breakpoint(s) { width: 70%; } 
 }
 
 [role=complementary] {
   @include breakpoint(s) {
-    width: 32.2%;
+    width: 29%;
     padding-left: $gutter;
   } 
   @include breakpoint(l) { padding-left: $gutter * 2 } 
@@ -20,13 +20,13 @@
   [role=complementary] { padding-left: 0 }
 }
  
-// split page in two equal halves
+// with body class 'split', split page in two equal halves
 .split {
   [role=main], [role=complementary] { width: 49.8% }
   [role=complementary] { @extend .body-text }
 }
  
-// reverse moves complementary content to left side. 
+// body class reverse moves complementary content to left side. 
 // requires floats and is a bit dodgy, really.
 .reverse {
   [role=main] {
