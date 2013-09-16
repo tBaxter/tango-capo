@@ -34,6 +34,7 @@
 @import '_icons.scss';       // auto-inserted icons
 @import '_sideheads.scss';   // vertical headlines
 @import '_button.scss';      // buttons
+@import '_slideshow.scss';   // slideshows
 @import '../core/_typography.scss';
 
 hr.fancy {border:0; @include fancy_rule;}

@@ -19,11 +19,11 @@ html { font-size: 1em; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100
 
 .x-small-header, h5, .breakout-text, .breakout, .messages > li, .messages .message { font-size: 16px; font-size: 1.142857rem; }
 
-.larger-line-height, .small-header, .hero, .kicker, table caption, #top_stories_hold article + article h1, h4, .medium-header, #top_stories_hold #more_featured h1, #more_articles h1, h2.overline, h3, .subhead, .large-header, h2, .remote-tabs-nav, .tabbed > ul { line-height: 36px; line-height: 2.25rem; }
+.larger-line-height, .small-header, .hero, .kicker, table caption, #top_stories_hold article + article h1, h4, .medium-header, .rs-controls .rs-next, .rs-controls .rs-prev, #top_stories_hold #more_featured h1, #more_articles h1, h2.overline, h3, .subhead, .large-header, h2, .remote-tabs-nav, .tabbed > ul { line-height: 36px; line-height: 2.25rem; }
 
 .small-header, .hero, .kicker, table caption, #top_stories_hold article + article h1, h4 { font-size: 18px; font-size: 1.125rem; }
 
-.medium-header, #top_stories_hold #more_featured h1, #more_articles h1, h2.overline, h3, .subhead { font-size: 21px; font-size: 1.2857rem; }
+.medium-header, .rs-controls .rs-next, .rs-controls .rs-prev, #top_stories_hold #more_featured h1, #more_articles h1, h2.overline, h3, .subhead { font-size: 21px; font-size: 1.2857rem; }
 
 .large-header, h2 { font-size: 30px; font-size: 1.875rem; }
 
@@ -193,11 +193,11 @@ html { font-size: 1em; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100
 
 .x-small-header, h5, .breakout-text, .breakout, .messages > li, .messages .message { font-size: 16px; font-size: 1.142857rem; }
 
-.larger-line-height, .small-header, .hero, .kicker, table caption, #top_stories_hold article + article h1, h4, .medium-header, #top_stories_hold #more_featured h1, #more_articles h1, h2.overline, h3, .subhead, .large-header, h2, .remote-tabs-nav, .tabbed > ul { line-height: 36px; line-height: 2.25rem; }
+.larger-line-height, .small-header, .hero, .kicker, table caption, #top_stories_hold article + article h1, h4, .medium-header, .rs-controls .rs-next, .rs-controls .rs-prev, #top_stories_hold #more_featured h1, #more_articles h1, h2.overline, h3, .subhead, .large-header, h2, .remote-tabs-nav, .tabbed > ul { line-height: 36px; line-height: 2.25rem; }
 
 .small-header, .hero, .kicker, table caption, #top_stories_hold article + article h1, h4 { font-size: 18px; font-size: 1.125rem; }
 
-.medium-header, #top_stories_hold #more_featured h1, #more_articles h1, h2.overline, h3, .subhead { font-size: 21px; font-size: 1.2857rem; }
+.medium-header, .rs-controls .rs-next, .rs-controls .rs-prev, #top_stories_hold #more_featured h1, #more_articles h1, h2.overline, h3, .subhead { font-size: 21px; font-size: 1.2857rem; }
 
 .large-header, h2 { font-size: 30px; font-size: 1.875rem; }
 
@@ -691,6 +691,58 @@ select, input, textarea { color: #2b2b2b; }
 .button-bar > a:active { box-shadow: inset 0px -1px 0 #f2f2f2; background: #b9b9b9 none; background: none, -webkit-gradient(linear, left top, left bottom, color-stop(0%, lightgrey), color-stop(100%, #b9b9b9)); /* Chrome, Safari 4+ */ background: none, -moz-gradient(center top, lightgrey 0%, #b9b9b9 100%); background: none, -webkit-linear-gradient(top, lightgrey 0%, #b9b9b9); /* Chrome 10+, Safari 5.1+ */ background: none, -moz-linear-gradient(center top, lightgrey 0%, #b9b9b9 100%); /* FF 3.6+ */ background: none, -ms-linear-gradient(top, lightgrey 0%, #b9b9b9 100%); /* IE 10+ */ background: none, -o-linear-gradient(top, lightgrey 0%, #b9b9b9 100%); /* Opera 11.10+ */ background: none, linear-gradient(top, lightgrey 0%, #b9b9b9 100%); /* W3C */ }
 .button-bar > a:active else { box-shadow: inset 0px 1px 0 #f2f2f2, 0px 1px 0 rgba(0, 0, 0, 0.4); }
 
+.rs-wrap, .rs-slider, .rs-thumb-wrap, .rs-controls, .rs-caption { *zoom: 1; position: relative; }
+.rs-wrap:before, .rs-wrap:after, .rs-slider:before, .rs-slider:after, .rs-thumb-wrap:before, .rs-thumb-wrap:after, .rs-controls:before, .rs-controls:after, .rs-caption:before, .rs-caption:after { content: ""; display: table; }
+.rs-wrap:after, .rs-slider:after, .rs-thumb-wrap:after, .rs-controls:after, .rs-caption:after { clear: both; }
+
+.rs-wrap img { -ms-interpolation-mode: bicubic; }
+
+.rs-slider > * { opacity: 0; width: 100%; margin: 0 -100% 0 0; float: left; position: relative; }
+.rs-slider > * > a { display: block; }
+.rs-slider > * img { box-shadow: 0 0 4px rgba(249, 249, 249, 0.5); }
+.rs-slider > *.vertical img { width: 50%; }
+.rs-slider > * figcaption { padding: 12px 10px; background: rgba(249, 249, 249, 0.7); box-shadow: 0 1px 0 rgba(17, 17, 17, 0.12) inset; position: absolute; max-height: 100%; bottom: 0; left: 0; color: #ececec; text-shadow: 0 -1px 0 rgba(249, 249, 249, 0.7); border: 1px solid #f9f9f9; }
+.rs-slider > * figcaption.rs-top-left { top: 0; bottom: auto; }
+.rs-slider > * figcaption.rs-top-right, .vertical .rs-slider > * figcaption { top: 0; right: 0; left: auto; bottom: auto; }
+.rs-slider > * figcaption.rs-bottom-right { right: 0; left: auto; }
+.rs-slider > * figcaption.rs-top { top: 0; bottom: auto; }
+.rs-slider > * figcaption.rs-top, .rs-slider > * figcaption.rs-bottom { width: 100% !important; }
+.rs-slider > * figcaption.rs-left { top: 0; height: 100%; }
+.rs-slider > * figcaption.rs-right { top: 0; left: auto; right: 0; height: 100%; }
+.rs-slider > *.vertical figcaption { left: 50%; width: 50%; height: 100%; }
+
+.rs-thumb-wrap > a { display: inline-block; position: relative; overflow: hidden; -webkit-backface-visibility: hidden; /* Hardware accelerate to prevent jumps on transition */ text-align: center; opacity: 0.6; transition: opacity 0.2s ease-in-out; }
+.rs-thumb-wrap > a > img { vertical-align: bottom; }
+.rs-thumb-wrap > a > span { display: none; }
+.rs-thumb-wrap > a:first-child { margin-left: 0 !important; }
+.rs-thumb-wrap > a:hover, .rs-thumb-wrap > a.active { opacity: 1; }
+
+.rs-thumb-viewer { width: 100px; margin-left: -50px; border: 1px solid rgba(249, 249, 249, 0.7); position: absolute; top: 100%; z-index: 100; display: none; text-align: center; line-height: 2em; background: #111111; color: #f9f9f9; }
+.rs-thumb-viewer img { opacity: 1; }
+
+/* ===[ Grid ]=== */
+.rs-grid { position: absolute; overflow: hidden; width: 100%; height: 100%; display: none; }
+
+.rs-gridlet { position: absolute; opacity: 1; }
+
+/* Optional - remove captions at smaller screen widths
+@media screen and (max-width: 480px) { .rs-caption { opacity: 0!important; }
+}
+*/
+/* ===[ Arrows ]=== */
+.rs-controls .rs-next, .rs-controls .rs-prev { width: 10%; height: 65%; display: block; position: absolute; top: 10%; z-index: 10; background: transparent; border: 0; cursor: pointer; font-weight: bold; color: #f9f9f9; opacity: 0.2; text-shadow: 1px 1px 2px rgba(249, 249, 249, 0.7); transition: opacity .2s ease-in-out; }
+.rs-controls .rs-next:hover, .rs-controls .rs-prev:hover { opacity: 1; }
+.rs-controls .rs-next { right: 0; cursor: e-resize; }
+.rs-controls .rs-prev { left: 0; cursor: w-resize; }
+
+/* ===[ FULLSCREEN ]=== */
+.embiggen-toggle { padding: 12px 10px; float: right; }
+
+.rs-wrap.rs-fullscreen { position: fixed; width: 100%; height: 100%; background: #f9f9f9; padding: 0; }
+.rs-wrap.rs-fullscreen .rs-slider img { max-width: 1200px; max-height: 90% !important; margin: 0 auto; }
+.rs-wrap.rs-fullscreen .rs-slider .vertical img { margin: 0; width: auto; }
+.rs-wrap.rs-fullscreen .embiggen-toggle { background: #d56312; }
+
 /********************************************* Capo typography is defined by a handful of variables which create a 10 px baseline grid and size various typographic elements appropriately to remain on that grid.
  This file also defines variables that can be used for consistent margins, padding and gutters:
  - @gutter: for columns between content. 20px - @halfGutter: for padding in boxes, etc. Half of gutter. - @defaultMargin: For consistently setting top and bottom margins while staying on the baseline grid. Note: you can use multiples ( @defaultMargin * 2 );
@@ -709,11 +761,11 @@ html { font-size: 1em; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100
 
 .x-small-header, h5, .breakout-text, .breakout, .messages > li, .messages .message { font-size: 16px; font-size: 1.142857rem; }
 
-.larger-line-height, .small-header, .hero, .kicker, table caption, #top_stories_hold article + article h1, h4, .medium-header, #top_stories_hold #more_featured h1, #more_articles h1, h2.overline, h3, .subhead, .large-header, h2, .remote-tabs-nav, .tabbed > ul { line-height: 36px; line-height: 2.25rem; }
+.larger-line-height, .small-header, .hero, .kicker, table caption, #top_stories_hold article + article h1, h4, .medium-header, .rs-controls .rs-next, .rs-controls .rs-prev, #top_stories_hold #more_featured h1, #more_articles h1, h2.overline, h3, .subhead, .large-header, h2, .remote-tabs-nav, .tabbed > ul { line-height: 36px; line-height: 2.25rem; }
 
 .small-header, .hero, .kicker, table caption, #top_stories_hold article + article h1, h4 { font-size: 18px; font-size: 1.125rem; }
 
-.medium-header, #top_stories_hold #more_featured h1, #more_articles h1, h2.overline, h3, .subhead { font-size: 21px; font-size: 1.2857rem; }
+.medium-header, .rs-controls .rs-next, .rs-controls .rs-prev, #top_stories_hold #more_featured h1, #more_articles h1, h2.overline, h3, .subhead { font-size: 21px; font-size: 1.2857rem; }
 
 .large-header, h2 { font-size: 30px; font-size: 1.875rem; }
 
