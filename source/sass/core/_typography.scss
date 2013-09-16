@@ -1,3 +1,5 @@
+@import '_mixins.scss';
+
 /*********************************************
   Capo typography is defined by a handful
   of variables which create a 10 px baseline grid
@@ -55,6 +57,7 @@ html {
   font-size: 0.75rem;
   line-height: 1.125rem;
 }
+
 // slightly less important than default body text.
 .sub-text {
   @include sub-text;
@@ -73,10 +76,12 @@ html {
   font-size: 16px;
   font-size: 1.142857rem;
 }
+
 .larger-line-height {
   line-height: 36px;
   line-height: 2.25rem;
 }
+
 .small-header, h4 {
   font-size: 18px;
   font-size: 1.125rem;
@@ -99,9 +104,9 @@ html {
 
 // H1-style headers
 .xl-header, h1 {
-  font-size: 36px;
+  font-size: 42px;
   line-height: 48px;
-  font-size: 2.25rem;
+  font-size: 2.75rem;
   line-height: 3rem;
 }
 
@@ -170,28 +175,26 @@ sub, sup {
   vertical-align: baseline; 
 }
 sup { top: -0.5em; }
-sub { bottom: -0.25em;}
+sub { bottom: -0.25em; }
 
 h1, h2, h3, h4, h5, h6, p, ol, ul { margin: 0 }
 h1, h2, h3, h4, h5, h6 { font-weight: bold; }
 
 #content {
-  p, ol, ul { @extend .margin-bottom }
-  p+h2, p+h3 { margin-top: $wideMargin }
+  p, ol, ul, small { 
+    margin: $thinMargin 0;
+  }
+  p + h2, p + h3 { padding-top: $defaultMargin }
+
+  h3 + p { margin-top: 0}
 }
 
 // typically (but not always) used as small.meta
 .meta { color: $meta }
 
-label {
-  @extend .pad-all;
-  @extend .sub-text;
-}
-
 .hero { 
   @extend .small-header;
   h1 { @extend .super-text; }
-  p { margin: $defaultMargin 0; }
 }
 
 // special headlines
@@ -200,10 +203,24 @@ label {
   text-transform: uppercase; 
 }
 
-small { display: inline-block }
+small { 
+  display: inline-block;
+}
 
 // set sidebar smaller by default
-[role=complementary] { @extend .sub-text; }
+[role=complementary] { 
+  @extend .sub-text; 
+
+  h1 {
+    @extend .large-header;
+  }
+  h2 {
+    @extend .medium-header;
+  }
+  h3 {
+    @extend .small-header;
+  }
+}
 
 
 

@@ -1,19 +1,24 @@
 header[role=banner] {
+  @include pad(top-bottom);
+  @include margin(bottom);
+  @extend .clearfix;
+  background: $accent $texture;
   top: 0; 
   width: 100%; 
   z-index: 100; 
-  padding: 10px 0 8px; 
-  border-bottom: 2px solid $accent; 
   
   .site-name {
     padding-right: $gutter;
 
-    h1 { max-width:335px }
+    h1 { 
+      @extend .large-header;
+      max-width:335px;
+    }
     h2 { 
-      @extend .pad-top-bottom;
       display: none;
       
       @include breakpoint(s) {
+        @include pad(top-bottom);
         display:block
       }
     }
@@ -22,12 +27,16 @@ header[role=banner] {
     @extend .constrain;
   }
   nav {
-    @include breakpoint(s) { margin-left: 31%; }
     position: relative; 
+
+    @include breakpoint(s) { 
+      margin-left: 31%; 
+    }
 
     [role=menu] {
       @extend .columned;
       @extend .six-col;
+      @include pad(top);
     }
   }
 }

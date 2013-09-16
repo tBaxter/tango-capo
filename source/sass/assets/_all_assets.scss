@@ -42,7 +42,7 @@ hr.fancy {border:0; @include fancy_rule;}
 .hero { 
   position:relative; 
   z-index:10;
-  padding:2em 0 0;
+  padding: $defaultMargin 0 0;
 }
 
 // A kicker sits above a major heading and provies as a section name, 
@@ -58,7 +58,7 @@ hr.fancy {border:0; @include fancy_rule;}
 
 .hero .boxedform {
   @include gradient($base_alt, 10%, $texture);
-  label, legend, h2, {padding-left:20px}
+  label, legend, h2, {padding-left: $gutter}
   input[type=text], input[type=password], textarea {width:67%}
 }
 
@@ -128,9 +128,14 @@ blockquote, q {
     margin: 0; 
     background:transparent;
 
-    > li {background:transparent; padding:0;
-      a {background:$inverse_alt; @include radius(1em);
-        color:$base; padding:.25em .5em; text-shadow:none}
+    > li {background:transparent; padding: 0;
+      a {
+        background:$inverse_alt; 
+        @include pad(all);
+        @include radius(1em);
+        color:$base; 
+        text-shadow:none
+      }
     }
     > li.active {border:0;
       a {background:$accent}
