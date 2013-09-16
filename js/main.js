@@ -220,27 +220,6 @@ $('#comment-list article.toxic header').each(function() {
   });
 });
 
-if ($top_assets.length > 0) {
-  // functions specific to pages with top assets.
-  // note this is after the tabit() call, so it calculates
-  // based on tabbed top asset height, not default.
-  // create preview tooltips in story detail top assets
-  $top_assets.find('.tabbed ul li a:not(.no-tab)').each(function() {
-    "use strict";
-    var img = $(this.hash).find('img').eq(0),
-      preview = '<span class="preview"><img src="' + $(img).attr('src') + '"></span>';
-    if ($(img).size() === 0) {
-      img = $(this.hash).first('object');
-      preview = '<span class="preview">' + $(this).attr('title') + '</span>';
-    }
-    $(this).append(preview);
-  });
-  $top_assets.find('.tabbed ul li').hover(function() {
-    "use strict";
-    $(this).find('.preview').toggle();
-  });
-}
-
 // pickadate.js
 $('.datepicker').pickadate();
 

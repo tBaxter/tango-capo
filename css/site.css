@@ -352,7 +352,7 @@ section.list ul dt, section.list ul dd, section.list dl dt, section.list dl dd {
 .grid small.meta { display: block; }
 .grid > * { padding: 0 20px 24px 0; }
 
-.pager { margin-bottom: 24px; background: #f9f9f9; color: #2b2b2b; border-radius: .5em; min-height: 24px; margin: 0; list-style: none; padding: 0; text-align: center; }
+.pager { margin-bottom: 24px; background: #f9f9f9; color: #2b2b2b; border-radius: 0.5em; min-height: 24px; margin: 0; list-style: none; padding: 0; text-align: center; }
 .pager li { width: 40%; display: inline-block; padding: 0 10px; }
 .pager li span, .pager li a { color: #111111; }
 .pager li span:hover, .pager li a:hover { color: #d56312; }
