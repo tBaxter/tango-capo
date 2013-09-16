@@ -2,25 +2,29 @@
 .pager {
   @extend .sub-text;
   @include margin(bottom);
-  background:$base; color:$inverse_alt; 
-  border-radius:.5em; 
-  min-height: @baseline * 2; 
+  background: $base; 
+  color:$inverse_alt; 
+  border-radius: 0.5em; 
+  min-height: $baseline * 2; 
   margin: 0; 
   list-style:none; 
   padding: 0; 
   text-align:center;
-  li {width:40%; display:inline-block; padding:0 $halfGutter;
+  li {
+    width:40%; 
+    display:inline-block; 
+    padding:0 $halfGutter;
      span, a { 
-      color:$inverse;
+      color: $inverse;
       
-      &:hover {color:$accent;}
+      &:hover {color: $accent;}
      }
   }
   li.next, li.prev {
     @extend .sub-text;
     width: 29%; 
-    //margin-top: 2px
   }
+
   li.next {float: right; text-align: right; margin-left:-100%;
     & a:before {float: right; content:"►"; padding-left: $halfGutter; }
   }

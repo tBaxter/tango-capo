@@ -66,6 +66,7 @@ function getYOffset() {
           $header       = $(settings.header),
           $firstContent = $header.next(),
           defaultHeaderOffset  = Math.max($firstContent.offset().top, $header.outerHeight()),
+          collapsedHeaderOffset = 0,
           stickPoint    = 0,
           $footer       = $(settings.footer);
 
@@ -82,10 +83,6 @@ function getYOffset() {
 
         if (collapsed || settings.user_collapse_pref) {
           collapseHeader();
-          if (settings.user_collapse_pref) {
-            defaultHeaderOffset = Math.max($firstContent.offset().top, $header.outerHeight());
-            stickPoint = defaultHeaderOffset * 2;
-          }
         }
         // Init nav menu trigger expand/collapse
         $header.find('#menu-trigger').on('click', function(e){
@@ -103,6 +100,9 @@ function getYOffset() {
       function collapseHeader() {
         collapsed = true;
         $body.addClass('collapsed');
+        if (collapsedHeaderOffset === 0) {
+          collapsedHeaderOffset = Math.min($firstContent.offset().top, $header.outerHeight());
+        }
         stickPoint = defaultHeaderOffset - $header.outerHeight();
       }
       function unCollapseHeader() {

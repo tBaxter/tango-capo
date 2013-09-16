@@ -30,13 +30,11 @@ var screenSize = window.getComputedStyle(document.body, ':after').getPropertyVal
 // Reliably get window position.
 function getYOffset() {
   "use strict";
-  var pageY;
   if (typeof (window.pageYOffset) === 'number') {
-    pageY = window.pageYOffset;
+    return window.pageYOffset;
   } else {
-    pageY = document.documentElement.scrollTop;
+    return document.documentElement.scrollTop;
   }
-  return pageY;
 }
 
 /*************
@@ -221,27 +219,6 @@ $('#comment-list article.toxic header').each(function() {
     }
   });
 });
-
-if ($top_assets.length > 0) {
-  // functions specific to pages with top assets.
-  // note this is after the tabit() call, so it calculates
-  // based on tabbed top asset height, not default.
-  // create preview tooltips in story detail top assets
-  $top_assets.find('.tabbed ul li a:not(.no-tab)').each(function() {
-    "use strict";
-    var img = $(this.hash).find('img').eq(0),
-      preview = '<span class="preview"><img src="' + $(img).attr('src') + '"></span>';
-    if ($(img).size() === 0) {
-      img = $(this.hash).first('object');
-      preview = '<span class="preview">' + $(this).attr('title') + '</span>';
-    }
-    $(this).append(preview);
-  });
-  $top_assets.find('.tabbed ul li').hover(function() {
-    "use strict";
-    $(this).find('.preview').toggle();
-  });
-}
 
 // pickadate.js
 $('.datepicker').pickadate();

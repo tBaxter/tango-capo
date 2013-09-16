@@ -115,7 +115,7 @@ footer[role=contentinfo] {
 
 // applies to both main and complementary
 #content-wrapper {
-  @include breakpoint(s) { padding: 0 2em };
+  @include breakpoint(s) { padding: 0 $gutter };
   @include breakpoint(m) { padding: 0 };
   text-shadow: 1px 1px 2px $base;
 
@@ -147,20 +147,41 @@ footer[role=contentinfo] {
 
 
 
-/************************ COMMON CLASSES AND ELEMENTS ********************/
-select, input, textarea { color: $inverse_alt; }
+/************************ COMMON SEMI-SEMANTIC CLASSES ********************/
 
-a { 
-  color: $accent_alt;
-
-  &:link{ -webkit-tap-highlight-color: $accent_alt; }
-  &:hover { color: $accent }
+/* Hide from both screenreaders and browsers: h5bp.com/u */
+.hide { display: none !important; visibility: hidden;}
+/* Hide visually and from screenreaders, but maintain layout */
+.invisible { visibility: hidden; }
+/* Hide only visually, but have it available for screenreaders: h5bp.com/v */
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; 
+  &.focusable:active, &.focusable:focus { /* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p */
+    clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; 
+  }
 }
 
-h1, h2, h3 { font-weight:normal }
+/* Contain floats: h5bp.com/q */
+.clearfix { @include clearfix(); }
 
-::-moz-selection { background: $inverse_alt; color:$base_alt }
-::selection      { background: $inverse_alt; color:$base_alt }
+.debug { background:#ffc; }
+.clear {
+  clear: both; 
+  margin: 0
+}
+
+hr.clear { visibility:hidden; }
+
+.right {float:right}
+img.right, figure.right {margin-left: $gutter; }
+.left { float:left }
+img.left, figure.left {margin-right: $gutter; }
+
+.ellipse{ 
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  white-space: nowrap; 
+  width:100% 
+}
 
 // control element width to available max size
 .constrain { 
@@ -169,12 +190,6 @@ h1, h2, h3 { font-weight:normal }
   @include breakpoint(m)  { width: ($m - 40) + px };
   @include breakpoint(l)  { width: ($l - 40) + px };
   @include breakpoint(xl) { width: ($xl - 40) + px };
-}
-
-time {
-  @extend .sub-text;
-  color: $inverse_alt; 
-  display: block;
 }
 
 .block { display: block }
@@ -216,7 +231,7 @@ time {
   font-weight: normal;
   color: $inverse_alt;
 
-  &.left { margin-right: 0.5em }
+  &.left { margin-right: $halfGutter; }
 }
 
 .avatar {
@@ -224,7 +239,9 @@ time {
   display: block;
   border: 1px solid $base_alt2;
 }
-a .avatar:hover {border-color: $accent}
+a .avatar:hover {
+  border-color: $accent
+}
 
 
 .errorlist {
@@ -250,11 +267,13 @@ a .avatar:hover {border-color: $accent}
     color: $base_alt2;
     text-shadow: 1px 1px 0 lighten($inverse, 20%);
     
-    &:before {font-size:1.5em}
+    &:before {
+      font-size:1.5em
+    }
 
     a { color: $base }
   }
-  .message h4 {margin:0}
+  .message h4 { margin:0 }
 
   .error {
     color: $error;
@@ -322,7 +341,7 @@ a .avatar:hover {border-color: $accent}
     @include breakpoint(s) {
       article {
         display: inline-block;
-        padding: 0.5em 10px 0 0; 
+        padding: $baseline $halfGutter 0 0; 
         border-top:1px solid $inverse_alt;
         width:49.5%;
         vertical-align: top;
@@ -366,14 +385,14 @@ h2.overline {
 }
 
 .sociallinks {
+  @include pad(top-bottom);
   border: solid $base_alt; 
   border-width: 2px 0; 
-  padding: 0.25em 0; 
 
   li {
+    @include pad(sides);
     list-style: none;
     display: inline-block; 
-    padding: 0 0.5em;
     margin: 0;
     font-size: 70%;
     width: 24%;
@@ -407,9 +426,9 @@ h2.overline {
     font-weight: bold;
     margin-top: 0.45em;
     &:after {
+      @include pad(sides);
       content: '|'; 
       color: $inverse_alt;
-      padding: 0 0.5em;
       font-weight: normal
     }
   }
@@ -461,20 +480,20 @@ h2.overline {
 
     header, footer { @extend .small-text }
     header {
+      @include pad(sides);
+      @include margin(bottom);
       letter-spacing: 1px;
-      padding-left: .5em; 
-      margin-bottom:1em;
       border-bottom: 1px solid $base_alt2; 
       color: $accent;
       @include breakpoint(s) {
-        padding-left:100px;
+        padding-left: 100px;
       }
 
       time { 
         float:right; 
-        margin-left:.5em 
+        margin-left: $halfGutter; 
       }
-      .counter { float:right; margin-left:.5em }
+      .counter { float:right; margin-left: $halfGutter; }
       a[rel=author] { font-weight:bold; }
     } 
     .avatar {
@@ -491,7 +510,7 @@ h2.overline {
       position: absolute;
       top: 0;
       left: 100px;
-      padding: 0 1em;
+      padding: 0 $gutter;
       z-index:200;
       width: 200px;
       font-weight: normal;

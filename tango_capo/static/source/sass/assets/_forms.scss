@@ -18,19 +18,25 @@ form, fieldset, button, input, select, textarea { margin: 0; }
 fieldset, legend { padding: 0; }
 
 /* Indicate that 'label' will shift focus to the associated form element */
-label { cursor: pointer; }
+label { 
+  @extend .pad-all; 
+  @extend .sub-text;
+  cursor: pointer; 
+}
 legend { white-space: normal; }
 
 /* Consistent box sizing and appearance */
-input[type="checkbox"], input[type="radio"] { box-sizing: border-box; padding: 0; *width: 13px; *height: 13px; }
-input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
-input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-search-cancel-button { -webkit-appearance: none; }
+input[type="checkbox"], input[type="radio"] { padding: 0; *width: 13px; *height: 13px; }
+input[type="search"] { -webkit-appearance: textfield; }
+input[type="search"]::-webkit-search-decoration, 
+input[type="search"]::-webkit-search-cancel-button { -webkit-appearance: none; }
 
 // Allow only vertical resizing
 textarea { overflow: auto; vertical-align: top; resize: vertical; }
 
 /* Colors for form validity */
-input:invalid, textarea:invalid { background-color: #f0dddd; }
+input:invalid, 
+textarea:invalid { background-color: #f0dddd; }
 
 select, input, textarea { color: $inverse_alt; }
 
@@ -44,23 +50,20 @@ select, input, textarea { color: $inverse_alt; }
     padding: 0.5em 10px 0; 
     color: $accent_alt; 
     font-weight: bold; 
-    text-transform: uppercase
   }
   label {
     color: $meta; 
     font-weight: bold; 
-    padding: 10px;
 
     &.nofloat {
       float: none; 
       width: 100%;
     }
   }
-  .breakout { margin: 0 10px; }
 
   p {
+    @include pad(top-bottom);
     border-bottom: 1px dotted $base_alt2; 
-    padding: 0.5em 0; 
     margin-bottom: 0; 
     clear: left;
 
@@ -72,8 +75,8 @@ select, input, textarea { color: $inverse_alt; }
     
     input[type=text], input[type=password], textarea {
       @include radius(.5em); 
+      @include pad(all);
       border: 1px solid $base_alt2; 
-      padding: 5px 10px;
       background: $base;
 
       &:active, &:focus {
