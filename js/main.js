@@ -2,8 +2,7 @@
 /*global  $*/
 /*global  Modernizr*/
 
-var $top_assets  = $('#top_assets'),
-  didScroll    = false,
+var didScroll    = false,
   touchable    = Modernizr.touch;
 
 // Ugly IE8 hack to force getComputedStyle.
@@ -228,4 +227,46 @@ if (screenSize === 'small' || screenSize === 'x-small') {
   var $header = $('#header');
   $header.style.position = 'fixed';
   $('body').style.paddingTop = $header.outerHeight();
+}
+
+
+
+
+// initialize slideshows
+if ($('.slideshow').length > 0) {
+  var $slideThumbs = $('.rs-thumb-wrap a');
+  $('.slideshow').refineSlide({
+    transition : 'cubeH',
+    thumbMargin: 0,
+    useArrows: true,
+    transitionDuration: 500,
+  });
+  $slideThumbs.css('height', $slideThumbs.eq(0).outerWidth() * 0.65);
+
+  if ($slideThumbs.outerWidth() < 80) {
+    var $previewer = $('<span class="rs-thumb-viewer"></span>');
+    $('.rs-thumb-wrap').prepend($previewer);
+      
+    $slideThumbs.hover(function() {
+      var $this = $(this);
+      if ($this.find('map-canvas').length > 0) {
+          $previewer.html('map');
+      }
+      else {
+          $previewer.html($this.html());
+      }
+      $previewer.css('left', (this.offsetLeft + this.offsetWidth/2)).toggle();
+    });
+  }
+  $('.rs-slider').hammer().on("swipeleft", function() {
+      $('.rs-prev').click();
+  });
+  $('.rs-slider').hammer().on("swiperight", function() {
+      $('.rs-next').click();
+  });
+  $('.embiggen-toggle').click(function() {
+      $('.rs-wrap').toggleClass('rs-fullscreen');
+      $('.rs-thumb-wrap a').css('height', 50);
+
+  });
 }

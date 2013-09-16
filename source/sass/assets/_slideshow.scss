@@ -102,7 +102,7 @@
     -webkit-backface-visibility: hidden; /* Hardware accelerate to prevent jumps on transition */
     text-align: center;
     opacity: 0.6;
-    transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out; 
   
     > img { vertical-align: bottom; }
     > span { display: none; }
