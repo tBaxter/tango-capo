@@ -96,15 +96,15 @@
 // Thumbnail elements
 .rs-thumb-wrap {
   > a {
+    @include trans(opacity);
     display: inline-block;
+    vertical-align: bottom;
     position: relative;
     overflow: hidden;
     -webkit-backface-visibility: hidden; /* Hardware accelerate to prevent jumps on transition */
     text-align: center;
     opacity: 0.6;
-    transition: opacity 0.2s ease-in-out; 
   
-    > img { vertical-align: bottom; }
     > span { display: none; }
     
     &:first-child { margin-left: 0 !important }
