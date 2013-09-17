@@ -51,11 +51,6 @@ header[role=banner] {
 }
 
 #content-wrapper {
-  [role=main] > h1, 
-  [role=main] > article > h1, 
-  [role=main] > header > h1 { 
-    @extend .super-text; 
-  }
   //@include breakpoint(s) { background-image: url(../img/grids/740.jpg); }
   //@include breakpoint(m) { background-image: url(../img/grids/940.jpg); }
   //@include breakpoint(l) { background-image: url(../img/grids/1180.jpg); }
