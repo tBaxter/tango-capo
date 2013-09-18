@@ -234,13 +234,14 @@ if (screenSize === 'small' || screenSize === 'x-small') {
 
 // initialize slideshows
 if ($('.slideshow').length > 0) {
-  var $slideThumbs = $('.rs-thumb-wrap a');
   $('.slideshow').refineSlide({
     transition : 'cubeH',
     thumbMargin: 0,
     useArrows: true,
     transitionDuration: 500,
   });
+
+  var $slideThumbs = $('.rs-thumb-wrap a');
   $slideThumbs.css('height', $slideThumbs.eq(0).outerWidth() * 0.65);
 
   if ($slideThumbs.outerWidth() < 80) {
@@ -264,7 +265,7 @@ if ($('.slideshow').length > 0) {
   $('.rs-slider').hammer().on("swiperight", function() {
       $('.rs-next').click();
   });
-  $('.embiggen-toggle').click(function() {
+  $('.fullscreen-toggle').click(function() {
       $('.rs-wrap').toggleClass('rs-fullscreen');
       $('.rs-thumb-wrap a').css('height', 50);
 
