@@ -23,7 +23,7 @@ html { font-size: 1em; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100
 
 .small-header, .hero, .kicker, [role=complementary] h3, table caption, #top_stories_hold article + article h1, h4 { font-size: 18px; font-size: 1.125rem; line-height: 24px; line-height: 1.25rem; }
 
-.medium-header, [role=complementary] h2, #top_stories_hold #more_featured h1, #more_articles h1, h2.overline, h3, .subhead { font-size: 21px; font-size: 1.2857rem; line-height: 24px; line-height: 1.5rem; }
+.medium-header, [role=complementary] h2, #top_stories_hold #more_featured h1, #more_articles h1, h2.overline, #more_featured h1, h3, .subhead { font-size: 21px; font-size: 1.2857rem; line-height: 24px; line-height: 1.5rem; }
 
 .large-header, [role=complementary] h1, .rs-controls .rs-next, .rs-controls .rs-prev, header[role=banner] .site-name h1, h2 { font-size: 30px; font-size: 1.875rem; }
 
@@ -196,7 +196,7 @@ html { font-size: 1em; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100
 
 .small-header, .hero, .kicker, [role=complementary] h3, table caption, #top_stories_hold article + article h1, h4 { font-size: 18px; font-size: 1.125rem; line-height: 24px; line-height: 1.25rem; }
 
-.medium-header, [role=complementary] h2, #top_stories_hold #more_featured h1, #more_articles h1, h2.overline, h3, .subhead { font-size: 21px; font-size: 1.2857rem; line-height: 24px; line-height: 1.5rem; }
+.medium-header, [role=complementary] h2, #top_stories_hold #more_featured h1, #more_articles h1, h2.overline, #more_featured h1, h3, .subhead { font-size: 21px; font-size: 1.2857rem; line-height: 24px; line-height: 1.5rem; }
 
 .large-header, [role=complementary] h1, .rs-controls .rs-next, .rs-controls .rs-prev, header[role=banner] .site-name h1, h2 { font-size: 30px; font-size: 1.875rem; }
 
@@ -766,7 +766,7 @@ html { font-size: 1em; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100
 
 .small-header, .hero, .kicker, [role=complementary] h3, table caption, #top_stories_hold article + article h1, h4 { font-size: 18px; font-size: 1.125rem; line-height: 24px; line-height: 1.25rem; }
 
-.medium-header, [role=complementary] h2, #top_stories_hold #more_featured h1, #more_articles h1, h2.overline, h3, .subhead { font-size: 21px; font-size: 1.2857rem; line-height: 24px; line-height: 1.5rem; }
+.medium-header, [role=complementary] h2, #top_stories_hold #more_featured h1, #more_articles h1, h2.overline, #more_featured h1, h3, .subhead { font-size: 21px; font-size: 1.2857rem; line-height: 24px; line-height: 1.5rem; }
 
 .large-header, [role=complementary] h1, .rs-controls .rs-next, .rs-controls .rs-prev, header[role=banner] .site-name h1, h2 { font-size: 30px; font-size: 1.875rem; }
 
@@ -1085,15 +1085,18 @@ h2.overline { margin-bottom: 0; }
 
 a.new { -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; display: inline-block; background: #d56312; border: 1px inset #363636; text-shadow: none; color: #dddddd; }
 
+#top-content .vertical img { float: right; width: 50%; margin-left: 20px; }
+
+#more_featured h1 { margin: 0; }
+
 body { -webkit-transition: all 0.2s ease-in; -moz-transition: all 0.2s ease-in; -ms-transition: all 0.2s ease-in; -o-transition: all 0.2s ease-in; transition: all 0.2s ease-in; backgound-image: url(../../img/site/texture-overlay.png); }
 
 header[role=banner] > div, header[role=banner] .navicon, footer[role=contentinfo] > div, footer[role=contentinfo] .navicon { position: relative; }
 
 header[role=banner] { -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3); -moz-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3); box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3); }
 header[role=banner] .navicon { background: #d56312; z-index: 1000; }
-@media (min-width: 780px) { header[role=banner] .navicon { padding: 12px 10px; position: absolute; bottom: -2em; right: 0; border-width: 0 1px 1px; border-radius: 0 0 5px 5px; display: block; } }
+@media (min-width: 780px) { header[role=banner] .navicon { padding: 12px 10px; position: absolute; top: 100%; right: 0; border-width: 0 1px 1px; border-radius: 0 0 5px 5px; display: block; } }
 header[role=banner] [role=menu] > li { -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; padding: 0 10px; }
-header[role=banner] [role=menu] > li a { color: #101010; }
 header[role=banner] [role=menu] > li:hover { background: rgba(16, 16, 16, 0.9); border-color: #1d1d1d; }
 header[role=banner] [role=menu] > li:hover a { color: #d1b78b; }
 
