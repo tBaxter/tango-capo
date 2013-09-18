@@ -24,8 +24,9 @@
         startSlide            : 0,        // Int (default 0): First slide
         keyNav                : true,     // Bool (default true): Use left/right arrow keys to switch slide
         captionWidth          : 50,       // Int (default 50): Percentage of slide taken by caption
-        //arrowTemplate         : '<div class="rs-arrows"><button class="rs-prev" title="Previous"><</button><button class="rs-next" title="Next"></button></div>', // String: The markup used for arrow controls (if arrows are used). Must use classes '.rs-next' & '.rs-prev'
-        controlsTemplate      : '<div class="rs-controls"><button class="rs-prev" title="Previous">◅</button><button class="rs-next" title="Next">▻</button><span class="rs-current-index"></span> of <span class="rs-count"></span><button class="embiggen-toggle" title="full-screen">⤄</button></div>', // String: The markup used for arrow controls (if arrows are used). Must use classes '.rs-next' & '.rs-prev'
+        controlsTemplate      : '<div class="rs-controls"><button class="rs-prev" title="Previous">◅</button><button class="rs-next" title="Next">▻</button>'+
+                                '<span class="rs-counter"><span class="rs-current-index"></span> of <span class="rs-count"></span></span>' +
+                                '<button class="fullscreen-toggle" title="full-screen">⤄</button></div>', // String: The markup used for arrow controls (if arrows are used). Must use classes '.rs-next' & '.rs-prev'
         onInit                : function () {}, // Func: User-defined, fires with slider initialisation
         onChange              : function () {}, // Func: User-defined, fires with transition start
         afterChange           : function () {}  // Func: User-defined, fires after transition end
@@ -181,8 +182,8 @@
                         marginLeft : this.settings.thumbMargin + '%'
                     })
                     .attr('href', '#')
-                    .data('rs-num', i)
-                    .appendTo(this.$thumbWrap);
+                    .data('rs-num', i);
+                this.$thumbWrap.append($thumb);
 
                 //this.$slides.eq(i).clone().removeAttr('style').wrap($thumb);
             }
@@ -474,11 +475,11 @@
             } else {
                 this.cube(dimension, 0, dimension, -90, 0, 90, 0);
             }
-        }
-
-        // grid() method is used by many transitions - not for calling directly
-        // Grid calculations are based on those in the awesome flux slider (joelambert.co.uk/flux)
-        ,grid: function (cols, rows, ro, tx, ty, sc, op) { // Args: columns, rows, rotate, translateX, translateY, scale, opacity
+        },
+        grid: function (cols, rows, ro, tx, ty, sc, op) {
+            // grid() method is used by many transitions - not for calling directly
+            // Grid calculations are based on those in the awesome flux slider (joelambert.co.uk/flux)
+            // Args: columns, rows, rotate, translateX, translateY, scale, opacity
             // Fallback if browser does not support CSS transitions
             if (!this.RS.cssTransitions) {
                 return this[this['fallback']]();
