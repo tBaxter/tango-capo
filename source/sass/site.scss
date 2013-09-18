@@ -1,6 +1,7 @@
 
 @import 'core/_vars.scss';
 @import 'core/_common.scss';
+@import 'layout_snippets/_section_fronts.scss';
 
 // Now override any vars you need to...
 // $accent: #A91616;
@@ -27,7 +28,7 @@ header[role=banner] {
     @include breakpoint(s) {
       @include pad(all);
       position: absolute;
-      bottom: -2em;
+      top: 100%;
       right: 0;
       border-width: 0 1px 1px;
       border-radius: 0 0 5px 5px;
@@ -38,8 +39,6 @@ header[role=banner] {
   [role=menu] > li {
     @include radius($default_radius);
     @include pad(sides);
-
-    a { color: $base }
     
     &:hover {
       background: transparentize($base, .1);
@@ -51,7 +50,7 @@ header[role=banner] {
 }
 
 #content-wrapper {
-  //@include breakpoint(s) { background-image: url(../img/grids/740.jpg); }
-  //@include breakpoint(m) { background-image: url(../img/grids/940.jpg); }
-  //@include breakpoint(l) { background-image: url(../img/grids/1180.jpg); }
+  //@include breakpoint(s) { background-image: url(../../img/site/740.jpg); }
+  //@include breakpoint(m) { background-image: url(../../img/site/940.jpg); }
+  //@include breakpoint(l) { background-image: url(../../img/site/1180.jpg); }
 }

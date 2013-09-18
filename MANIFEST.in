@@ -1,4 +1,4 @@
-include README.md
+include README.md CHANGES
 recursive-include capo *.py *.html *.js
 recursive-include css/ *
 recursive-include js/ *

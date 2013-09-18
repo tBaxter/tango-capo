@@ -52,6 +52,7 @@ body {
 header[role=banner], 
 footer[role=contentinfo] {
   clear: both; 
+  
   nav {
     [role=menu] { 
       margin: 0;
@@ -73,22 +74,6 @@ header[role=banner] {
 
   &, > * {
     @include trans(all, .3s, ease);
-  }
-
-  h1, h2, nav { display: block; }
-  
-  h1, h2  { 
-    margin: 0;
-    color: $inverse; 
-    text-shadow: 0 1px 2px rgba(0,0,0,.7); 
-    @include breakpoint(xs) { padding-left: $gutter; }
-
-    a { color: $base }
-  }
-
-  h1 { 
-      float: left; 
-      width: 32%;
   }
 
   .navicon {
@@ -115,9 +100,8 @@ footer[role=contentinfo] {
 
 // applies to both main and complementary
 #content-wrapper {
-  @include breakpoint(s) { padding: 0 $gutter };
-  @include breakpoint(m) { padding: 0 };
-  text-shadow: 1px 1px 2px $base;
+  @include breakpoint(xs) { padding: 0 $gutter };
+  @include breakpoint(s) { padding: 0 };
 
   figure {
     img { border: 1px solid $accent_alt; }
@@ -424,7 +408,8 @@ h2.overline {
   .dateline {
     @extend .sub-text;
     font-weight: bold;
-    margin-top: 0.45em;
+    margin-top: $baseline;
+
     &:after {
       @include pad(sides);
       content: '|'; 
@@ -441,35 +426,6 @@ h2.overline {
     margin: 0;
   }
 }
-
-
-/******************** GALLERIES **********************/
-#gallery_thumbs_hold {
-  display: none;
-  width: 100%;
-  overflow: hidden;
-  height: 70px;
-  position: relative;
-  
-  li {
-    height: 65px; 
-    width: 65px;
-    margin: 0 5px 0.5em 0;
-    border: 1px solid $inverse;
-    &.current {
-      border-color: $accent;
-      border-width: 4px
-    }
-    img {border:0}
-  } 
-}
-#gallery_slides_hold {
-  figure.vertical  { text-align: center; }
-  figcaption { display: none }
-}
-#gallery_info .sociallinks li { width: auto }
-
-
 
 /******************** user posts and comments **********/
 #comment-list {

@@ -14,6 +14,7 @@
   list-style: none; 
   position: relative;
   padding-right: 0 !important; // in case it inherits from parent
+  
   > * {
     position: relative; 
     display: inline-block; 
@@ -31,8 +32,8 @@
     @include breakpoint(s) { width: 33%; }
   }
   &.divided > * {
+    @include pad(sides);
     border-left: 1px solid $base_alt2;
-    padding-left: $gutter;
 
     &:first-child { // completely naive. Re-do
       border-left: 0;
@@ -56,21 +57,22 @@
     @include breakpoint(m) { width: 33.0%; } 
     @include breakpoint(l) { width: 19.9%; } 
   }
-  &.phi > * { // loosely based on golden ratio
-    &:nth-child(odd) { width:64.8%; }
+  &.phi > * { // very loosely based on golden ratio
+    &:nth-child(odd) { 
+      width: 71.8%; 
+      padding-right: 0;
+    }
     &:nth-child(even) {
-      width: 35.19%; 
-      @include breakpoint(l) { padding-left: $gutter * 2 }
+      width: 28.19%; 
+      padding-left: $gutter;
+      padding-right: 0;
     }
   }
   &.phi.reverse > * {
-    &:nth-child(odd)  { width: 38.19% }
+    &:nth-child(odd)  { width: 28.19% }
     &:nth-child(even) {
-      width: 61.8%; 
-      @include breakpoint(l) {
-        padding-left: 0;
-        padding-right: $gutter * 2
-      }
+      width: 71.8%; 
+      padding: 0;
     }
   }
 }

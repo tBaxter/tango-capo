@@ -75,6 +75,8 @@ html {
 .x-small-header, h5, .breakout-text {
   font-size: 16px;
   font-size: 1.142857rem;
+  line-height: 24px;
+  line-height: 1.33rem;
 }
 
 .larger-line-height {
@@ -85,14 +87,16 @@ html {
 .small-header, h4 {
   font-size: 18px;
   font-size: 1.125rem;
-  @extend .larger-line-height;
+  line-height: 24px;
+  line-height: 1.25rem;
 }
 
 // H3-style headers
 .medium-header, h3, .subhead {
   font-size: 21px;
   font-size: 1.2857rem;
-  @extend .larger-line-height;
+  line-height: 24px;
+  line-height: 1.5rem;
 }
 
 // H2-style headers
