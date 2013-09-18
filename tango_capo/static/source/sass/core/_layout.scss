@@ -3,15 +3,26 @@
 }
  
 [role=main] {
-  @include breakpoint(s) { width: 70%; } 
+  width: 100%;
+
+  @include breakpoint(m) {
+    padding-right: $halfGutter;
+    width: 630px;
+    margin-right: -2px;
+  }
+  @include breakpoint(l) {
+    width: 870px;
+  }
+  @include breakpoint(xl) {
+    width: 1250px;
+  }
 }
 
 [role=complementary] {
   @include breakpoint(s) {
-    width: 29%;
-    padding-left: $gutter;
+    width: 308px;
+    padding-left: $halfGutter;
   } 
-  @include breakpoint(l) { padding-left: $gutter * 2 } 
 }
  
 // with body class 'wide', only main content shown.

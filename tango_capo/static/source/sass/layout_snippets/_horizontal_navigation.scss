@@ -1,14 +1,17 @@
 header[role=banner] {
+  @include pad(top);
+  @include margin(bottom);
   top: 0; 
   width: 100%; 
   z-index: 100; 
-  padding: 10px 0 8px; 
-  border-bottom: 2px solid $accent; 
   
   .site-name {
     padding-right: $gutter;
 
-    h1 { max-width:335px }
+    h1 { 
+      @extend .large-header;
+    }
+
     h2 { 
       @extend .pad-top-bottom;
       display: none;
@@ -18,16 +21,26 @@ header[role=banner] {
       }
     }
   }
+  
   > div {
     @extend .constrain;
+    @extend .clearfix;
+    
+    // mimic phi reversed
+    .site-name {width: 25%; float: left; }
+    nav { width: 74%; float: right;}
   }
   nav {
-    @include breakpoint(s) { margin-left: 31%; }
-    position: relative; 
+    //@include breakpoint(s) { margin-left: 31%; }
+    //position: relative; 
 
     [role=menu] {
       @extend .columned;
       @extend .six-col;
     }
   }
+}
+
+footer[role=contentinfo] {
+  @include margin(top);
 }

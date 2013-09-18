@@ -12,3 +12,6 @@
 /tango_capo.egg-info/top_level.txt
 /tango_capo/__init__.pyc
 /tango_capo/static/source/css/
+/tango_capo/static/MANIFEST.in
+/tango_capo/static/setup.py
+/tango_capo/static/CHANGES

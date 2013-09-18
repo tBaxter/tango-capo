@@ -23,7 +23,7 @@ $button-font-size: 1rem !default;
 //$button-radius: $button-font-size;
 $button-radius: 4px;
 
-$button-margin: $button-font-size/2 !default;
+$button-margin: $baseline !default;
 
 // Determines the space around the button when using the inset effect.
 $button-inset: $button-font-size/3 !default;
@@ -44,14 +44,13 @@ $button-lowlight: rgba(0,0,0, .1) !default;
 }
 
 @mixin button() {
+  @include pad(all);
   position: relative;
   font-size: $button-font-size;
-  text-align:center;
-  //text-shadow: 0 1px 1px $button-highlight;
+  text-align: center;
   margin: $button-margin;
-  padding: 0 .5em 1px;
-  //height:           $button-font-size * 2;
-  line-height:      $button-font-size * 2;
+  padding: $baseline/2 $halfGutter;
+  //line-height:      $button-font-size * 2;
   border-radius:    $button-radius;
   background-color: $button-base;
   
@@ -115,13 +114,13 @@ $button-lowlight: rgba(0,0,0, .1) !default;
 
   // Thinner buttons
   &.thinline {
-    font-size: $button-font-size * .8;
-    line-height: $button-font-size * 1.5;
+    @include pad(sides);
+    @extend .sub-text;
   }
   
   // Text + icon
-  &.icon-text {padding: 0 1em }
-  &.icon-text:before {padding-right:.5em;}
+  &.icon-text {padding: 0 $halfGutter }
+  &.icon-text:before {padding-right: $halfGutter;}
 
   // sub-buttons
   .sub-button {

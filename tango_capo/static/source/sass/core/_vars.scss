@@ -12,7 +12,7 @@ $base_alt     : darken($base, 5%) !default;
 $base_alt2    : #aaa !default;
 
 // Your text and other items needing high-contrast from base. Default is almost black.
-$inverse      : #111 !default;
+$inverse      : #101010 !default;
 
 // lower contrast items. Default is dark gray.
 $inverse_alt  : lighten($inverse, 10%) !default; 
@@ -30,7 +30,7 @@ $alert        : #FFDC59;
 $error        : #c63314;
 
 // a translucent texture overlay, if you'd like one.
-$texture      : url(../img/site/texture-overlay.png) !default;
+$texture      : url(../../img/site/texture-overlay.png) !default;
 
 $base_font    : "Helvetica", "Calibri", "Lucida Sans Unicode", "Arial Unicode MS", Verdana, Arial, sans-serif !default;
 $alt_font     : Georgia, serif !default; 
