@@ -16,7 +16,6 @@ body {
   font-family: $base_font;     // root font stack.
   color: $inverse;
   height: 100%;
-  margin-top: 0;
 
   &.collapsed {
     header[role=banner] { 
@@ -27,26 +26,22 @@ body {
       h1 { max-width: 200px; }
       h2 { display: none }
       
-      [role="navigation"] { 
-        @include breakpoint(xs) { display: none }; 
-        
+      [role="navigation"] {        
         ul { 
           @include breakpoint(s) { 
             height: 0;
             overflow:hidden;
-            margin:0 
+            margin: 0 
           }; 
         }
       }
     }
   }
 
-  &:after { display: none; }
-  @include breakpoint(xs) { &:after { content: 'x-small'; } };
-  @include breakpoint(s)  { &:after { content: 'small'; } };
-  @include breakpoint(m)  { &:after { content: 'medium'; } };
-  @include breakpoint(l)  { &:after { content: 'large'; } };
-  @include breakpoint(xl) { &:after { content: 'x-large'; } };
+  &:after { 
+    display: none;
+    content: "default";
+  }
 }
 
 header[role=banner], 
@@ -75,20 +70,30 @@ header[role=banner] {
   &, > * {
     @include trans(all, .3s, ease);
   }
-
+  // Navicon is a scalable menu navigation icon
+  // generally, you'll want to put it inside a button element of some kind.
+  // Example: <span class="button"><span class='navicon'>≡≡</span></span>
   .navicon {
+    @include pad(sides);
     @include radius(5px);
-    @include breakpoint(s) { padding: 0.5em auto; }
-    float: right; 
+    
+    display: block;
+    position: absolute;
+    right: 0;
     font-weight: bold; 
+    letter-spacing: -0.33em;
     border: 1px inset $accent; 
-    color: $base; 
-    margin-right: $gutter;
+    text-align: center;
+
+    &:before {
+      content: "≡";
+      width: .33em; 
+      overflow: hidden; 
+      display: inline-block;
+      vertical-align: top;
+    }
 
     &.activated { background: $accent_alt }
-  }
-  [role=menu] {
-    @include breakpoint(xs) { display: none; }
   }
 }
 
@@ -100,9 +105,6 @@ footer[role=contentinfo] {
 
 // applies to both main and complementary
 #content-wrapper {
-  @include breakpoint(xs) { padding: 0 $gutter };
-  @include breakpoint(s) { padding: 0 };
-
   figure {
     img { border: 1px solid $accent_alt; }
     figcaption {
@@ -169,11 +171,24 @@ img.left, figure.left {margin-right: $gutter; }
 
 // control element width to available max size
 .constrain { 
-  @include breakpoint(xs) { margin: 0 20px; width: auto;  };
-  @include breakpoint(s)  { margin: 0 auto; width: ($s - 20) + px };
-  @include breakpoint(m)  { width: ($m - 40) + px };
-  @include breakpoint(l)  { width: ($l - 40) + px };
-  @include breakpoint(xl) { width: ($xl - 40) + px };
+  margin: 0 $halfGutter; 
+  width: auto; 
+  @include breakpoint(s)  { 
+    margin: 0 auto; 
+    width: $s;
+  }
+  @include breakpoint(m)  { 
+    width: $m;
+  }
+  @include breakpoint(l)  { 
+    width: $l;
+}
+  @include breakpoint(xl) { 
+    width: $xl;
+  }
+  @include breakpoint(xxl) { 
+    width: $xxl;
+ }
 }
 
 .block { display: block }
@@ -281,74 +296,6 @@ a .avatar:hover {
   border-bottom: 1px solid $base_alt2;
   text-align: right;
 }
-
-
-
-/********************* CONTENT SECTION FRONTS *****************************/
-#top_stories_hold {
-  a { color: $inverse }
-  a:hover, a:active { color: $accent_alt }
-  
-  #lead_item { 
-    @include breakpoint(s) {
-       figure.vertical {
-        width: 57%;
-        figcaption { display: none }
-      }
-      figure {
-        float: right;
-        margin: 0 0 $defaultMargin $gutter;
-      }
-    }
-    @include breakpoint(l) {
-      width: 450px;
-      float: left;
-      p { @extend .breakout-text; }
-    }
-    @include breakpoint(xl) {
-      width: 700px;
-    }
-  } 
-    article+article { 
-      border-top: 2px solid $base_alt;
-      margin-top: 1em;
-      h1, p { font-weight: normal }
-      h1 { @extend .small-header }
-      p { @extend .body-text }
-    }
-
-  #more_featured {
-    h1 { @extend .medium-header }
-    p { @extend .sub-text }
-    img { width:110px }
-
-    @include breakpoint(s) {
-      article {
-        display: inline-block;
-        padding: $baseline $halfGutter 0 0; 
-        border-top:1px solid $inverse_alt;
-        width:49.5%;
-        vertical-align: top;
-      }
-    }
-     @include breakpoint(l) {
-      width: 300px; 
-      float: right;
-      article {
-        display: block;
-        width: auto;
-        padding-right: 0;
-        clear:right
-      }
-      article:first-child { border: 0 }
-    }
-  }
-}
-#more_articles {
-    h1 { @extend .medium-header }
-    figure { width: 32% }
-  }
-
 
 /**************************** STORY PAGES  *********************************/
 p.vcard { line-height: 1em }

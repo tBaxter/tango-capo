@@ -5,15 +5,15 @@
 [role=main] {
   width: 100%;
 
-  @include breakpoint(m) {
+  @include breakpoint(l) {
     padding-right: $halfGutter;
     width: 630px;
     margin-right: -2px;
   }
-  @include breakpoint(l) {
+  @include breakpoint(xl) {
     width: 870px;
   }
-  @include breakpoint(xl) {
+  @include breakpoint(xxl) {
     width: 1250px;
   }
 }

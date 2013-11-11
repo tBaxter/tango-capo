@@ -13,28 +13,13 @@ body {
 
 header[role=banner], 
 footer[role=contentinfo] {
-  > div, .navicon {
+  > div {
     position:relative; 
   }
 }
 
 header[role=banner] {
   @include box-shadow(0, 2px, 2px, .3);
-
-  .navicon {
-    background: $accent;
-    z-index: 1000;
-    
-    @include breakpoint(s) {
-      @include pad(all);
-      position: absolute;
-      top: 100%;
-      right: 0;
-      border-width: 0 1px 1px;
-      border-radius: 0 0 5px 5px;
-      display: block; // overrides normal hidden
-    }
-  }
 
   [role=menu] > li {
     @include radius($default_radius);
@@ -50,7 +35,7 @@ header[role=banner] {
 }
 
 #content-wrapper {
-  //@include breakpoint(s) { background-image: url(../../img/site/740.jpg); }
-  //@include breakpoint(m) { background-image: url(../../img/site/940.jpg); }
-  //@include breakpoint(l) { background-image: url(../../img/site/1180.jpg); }
+  @include breakpoint(m) { background-image: url(../../img/site/grids/770.png); }
+  @include breakpoint(l) { background-image: url(../../img/site/940.jpg); }
+  @include breakpoint(xl) { background-image: url(../../img/site/1180.jpg); }
 }

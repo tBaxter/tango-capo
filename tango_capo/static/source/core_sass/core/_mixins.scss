@@ -163,21 +163,56 @@
 
 
 // Define breakpoints
+// Ems are based on default font size.
+$s   : 540px;     // larger, but still single-column devices.
+$m   : 760px;     // approximately ipad portrait.    
+$l   : 940px;     // approximately ipad landscape or small desktop.
+$xl  : 1240px;    // approximately 1200px-ish.
+$xxl : 1620px;    // approximately 1550-ish.
+
+
 @mixin breakpoint($point) {
-  @if $point == xl {
-    @media (min-width: $xl + px) { @content; }
-  }
-  @if $point == l {
-    @media (min-width: $l + px) { @content; }
+  @if $point == s {
+    @media (min-width: $s)  {
+      @content; 
+      body:after {
+        content: "small"; 
+      }
+    }
   }
   @if $point == m {
-    @media (min-width: $m + px) { @content; }
+    @media (min-width: $m)  { 
+      @content; 
+      body:after {
+        content: "medium"; 
+      }
+    }
   }
-  @else if $point == s {
-    @media (min-width: $s + px)  { @content; }
+  @if $point == l {
+    @media (min-width: $l)  { 
+      @content; 
+      body:after {
+        content: "large"; 
+      }
+    }
   }
-  @else if $point == xs {
-    @media (max-width: $xs + px)  { @content; }
+  @if $point == xl {
+    @media (min-width: $xl)  { 
+      @content; 
+
+      body:after {
+        content: "xl"; 
+      }
+    }
+  }
+  @if $point == xxl {
+    @media (min-width: $xxl)  { 
+      @content; 
+
+      body:after {
+        content: "xxl"; 
+      }
+    }
   }
 }
 

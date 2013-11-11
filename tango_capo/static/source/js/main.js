@@ -1,17 +1,36 @@
 /*jslint browser: true*/
-/*global  $*/
-/*global  Modernizr*/
+/*jshint browser:true */
+/*global  $, Modernizr, confirm */
 
 var didScroll    = false,
   touchable    = Modernizr.touch;
 
+
+
+// set extra assets offset
+function setExtraAssetsTop() {
+  if (screenSize === 'large' || screenSize === 'x-large') {
+    var $extraAssets = $('#extra-assets'),
+        $topAssets   = $('#top_assets');
+    if ($extraAssets.length > 0 && $topAssets.length > 0) {
+      $extraAssets.css('margin-top', $topAssets.outerHeight() + 'px');
+    }
+  }
+}
+setExtraAssetsTop();
+
+
+
+
 // Ugly IE8 hack to force getComputedStyle.
 if (!window.getComputedStyle) {
-  window.getComputedStyle = function(el, pseudo) {
+  window.getComputedStyle = function(el) {
     this.el = el;
     this.getPropertyValue = function(prop) {
         var re = /(\-([a-z]){1})/g;
-        if (prop == 'float') prop = 'styleFloat';
+        if (prop === 'float') {
+          prop = 'styleFloat';
+        }
         if (re.test(prop)) {
             prop = prop.replace(re, function () {
                 return arguments[2].toUpperCase();
@@ -24,6 +43,22 @@ if (!window.getComputedStyle) {
 }
 
 var screenSize = window.getComputedStyle(document.body, ':after').getPropertyValue('content');
+
+
+function setNavicon() {
+  if (screenSize == 'default' || screenSize == 'small') {
+    var $nav     = $('nav[role=navigation]'),
+        $navicon = $('<a href="#nav-menu" id="menu-trigger" title="Menu" class="navicon">≡≡</a>');
+
+    $nav.hide().parent().prepend($navicon);
+    $navicon.click(function(e) {
+      $navicon.toggleClass('activated');
+      $nav.slideToggle('fast');
+      e.preventDefault();
+    });
+  }
+}
+setNavicon();
 
 
 // Reliably get window position.
@@ -68,7 +103,7 @@ $('a.trigger').each(function() {
 });
 
 // Simple URL jumpbox
-$(document).on('change', '.url-selector', function(e) {
+$(document).on('change', '.url-selector', function() {
   "use strict";
   window.location = $(this).val();
 });
@@ -223,13 +258,12 @@ $('#comment-list article.toxic header').each(function() {
 $('.datepicker').pickadate();
 
 
-if (screenSize === 'small' || screenSize === 'x-small') {
-  var $header = $('#header');
-  $header.style.position = 'fixed';
-  $('body').style.paddingTop = $header.outerHeight();
+/*if (screenSize === 'small' || screenSize === 'x-small') {
+  var $header = $('header[role="banner"]');
+  $header.css('position', 'fixed');
+  $('body').css('padding-top', $header.outerHeight());
 }
-
-
+*/
 
 
 // initialize slideshows
@@ -271,3 +305,5 @@ if ($('.slideshow').length > 0) {
 
   });
 }
+
+setTimeout(setExtraAssetsTop, 400);

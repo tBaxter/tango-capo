@@ -15,4 +15,5 @@ setup(
     long_description=open('README.md').read(),
     include_package_data=True,
     zip_safe=False,
+    dependency_links = ['http://github.com/tBaxter/capo/tarball/master#egg=capo-0.3']
 )

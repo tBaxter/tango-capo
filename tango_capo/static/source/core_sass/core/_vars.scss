@@ -37,14 +37,9 @@ $alt_font     : Georgia, serif !default;
 
 $default_radius: 4px; // a default border radius, to help encourage consistency.
 
-// Default typography variables are set in typography.scss
-
-// Breakpoints
-$xl : 1600;
-$l  : 1220;
-$m  : 980;
-$s  : 780;
-$xs : 779; // < $s
-
 // Column width
 $col_width: 60;
+
+// Default typography variables are set in typography.scss
+// Breakpoint vars are defined in breakpoint mixin.
+
