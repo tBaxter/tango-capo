@@ -97,9 +97,9 @@ html {
 }
 
 @mixin xl-header {
-  font-size: 42px;
+  font-size: 36px;
   line-height: 48px;
-  font-size: 2.75rem;
+  font-size: 2.25rem;
   line-height: 3rem;
 }
 @mixin super-text {
@@ -173,6 +173,11 @@ html {
   @include breakpoint(m) {
     @include xl-header();
   }
+}
+
+[role=banner] h1 {
+  font-size: 42px;
+  font-size: 3rem;
 }
 
 // Large call-out headlines

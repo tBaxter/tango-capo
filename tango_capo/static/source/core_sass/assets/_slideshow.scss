@@ -10,9 +10,64 @@
 }
 
 .rs-wrap img { 
+  display: block; 
+  width: 100%; 
   -ms-interpolation-mode: bicubic;
 }
 
+//
+// Thumbnail elements
+.rs-thumb-wrap {
+  > a {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    text-align: center;
+    -webkit-backface-visibility: hidden; /* Hardware accelerate to prevent jumps on transition */
+    opacity: .7;
+    transition: opacity .2s ease-in-out;
+    
+    &:hover,
+    &.active { 
+      opacity: 1;
+    }
+
+    &:first-child { 
+      margin-left: 0 !important 
+    }
+
+    > img {
+      width: 120%;
+      vertical-align: bottom;
+    }
+
+    > span {
+      display: none;
+    }
+  }
+
+}
+
+.rs-thumb-viewer {
+  width: 100px;
+  margin-left: -50px;
+  border: 1px solid rgba(0,0,0,0.7);
+  position: absolute;
+  top: 100%;
+  z-index: 100;
+  display: none;
+  text-align: center;
+  line-height: 2em;
+  background: black;
+  color: white;
+
+  img {
+    width: 100%; 
+    display: block; 
+    opacity: 1;
+  }
+}
 
 // Slide elements
 .rs-slider > * {
@@ -21,15 +76,13 @@
   margin: 0 -100% 0 0;
   float: left;
   position: relative;
-  background: $base_alt;
+  //background: $base_alt;
   
   > a {
     display: block;
   }
 
   img {
-    //box-shadow: 0 0 4px rgba($base, 0.5);
-    display: block;
     margin: 0 auto;
   }
 
@@ -169,7 +222,7 @@
 
 /* ===[ Arrows ]=== */
 .rs-controls {
-  @extend .small-text;
+  @extend .pager;
   position: static;
 
   button {
@@ -189,7 +242,7 @@
       @extend .large-header;
       @include trans();
       position: absolute;
-      width: 10%;
+      width: 8%;
       height: 75%;
       top: 15%;
       z-index: 15;

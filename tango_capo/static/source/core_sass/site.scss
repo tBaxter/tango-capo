@@ -14,13 +14,14 @@ body {
 header[role=banner], 
 footer[role=contentinfo] {
   > div {
-    position:relative; 
+    position:relative;
+    padding: $baseline 0;
+    clear: both;
   }
 }
 
 header[role=banner] {
-  @include box-shadow(0, 2px, 2px, .3);
-
+  
   [role=menu] > li {
     @include radius($default_radius);
     @include pad(sides);
@@ -35,7 +36,7 @@ header[role=banner] {
 }
 
 #content-wrapper {
-  @include breakpoint(m) { background-image: url(../../img/site/grids/770.png); }
-  @include breakpoint(l) { background-image: url(../../img/site/940.jpg); }
-  @include breakpoint(xl) { background-image: url(../../img/site/1180.jpg); }
+  //@include breakpoint(m) { background-image: url(../../img/site/grids/770.png); }
+  //@include breakpoint(l) { background-image: url(../../img/site/940.jpg); }
+  //@include breakpoint(xl) { background-image: url(../../img/site/1180.jpg); }
 }

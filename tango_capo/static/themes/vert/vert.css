@@ -11,11 +11,11 @@ button, input, select, textarea { font-size: 100%; }
 
 html { font-size: 1em; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
 
-.small-text, sub, sup, table td, dl.specs, .boxedform .helptext, .rs-controls, .counter, .signature, p.source-org, .story_detail .shirttail, #comment-list article header, #comment-list article footer, .markdown .markItUpHeader ul li, a.new, small { font-size: 12px; line-height: 18px; font-size: 0.75rem; line-height: 1.125rem; }
+.small-text, sub, sup, table td, dl.specs, .boxedform .helptext, .counter, .signature, p.source-org, .story_detail .shirttail, #comment-list article header, #comment-list article footer, .markdown .markItUpHeader ul li, a.new, small { font-size: 12px; line-height: 18px; font-size: 0.75rem; line-height: 1.125rem; }
 
-.sub-text, [role=complementary], q, time, table, dl, section.list ul dt, section.list ul dd, section.list dl dt, section.list dl dd, .grid, .pager, .pager li.next, .pager li.prev, .button.thinline, button.thinline, input[type="submit"].thinline, .button-bar.thinline, .remote-tabs-nav, .tabbed > ul, label, .boxedform p.required label, blockquote, header[role=banner] nav [role=menu] > li li, footer[role=contentinfo] nav [role=menu] > li li, #content-wrapper figure figcaption, .errorlist, p.author, .story_detail .dateline, .markdown .markItUpHeader ul li.thinline { font-size: 12px; line-height: 18px; font-size: 0.75rem; line-height: 1.125rem; }
-@media (min-width: 760px) { .sub-text, [role=complementary], q, time, table, dl, section.list ul dt, section.list ul dd, section.list dl dt, section.list dl dd, .grid, .pager, .pager li.next, .pager li.prev, .button.thinline, button.thinline, input[type="submit"].thinline, .button-bar.thinline, .remote-tabs-nav, .tabbed > ul, label, .boxedform p.required label, blockquote, header[role=banner] nav [role=menu] > li li, footer[role=contentinfo] nav [role=menu] > li li, #content-wrapper figure figcaption, .errorlist, p.author, .story_detail .dateline, .markdown .markItUpHeader ul li.thinline { font-size: 14px; font-size: 0.875rem; line-height: 18px; line-height: 1.125rem; }
-  .sub-text body:after, [role=complementary] body:after, q body:after, time body:after, table body:after, dl body:after, section.list ul dt body:after, section.list ul dd body:after, section.list dl dt body:after, section.list dl dd body:after, .grid body:after, .pager body:after, .button.thinline body:after, button.thinline body:after, input[type="submit"].thinline body:after, .button-bar.thinline body:after, .remote-tabs-nav body:after, .tabbed > ul body:after, label body:after, .boxedform p.required label body:after, blockquote body:after, header[role=banner] nav [role=menu] > li li body:after, footer[role=contentinfo] nav [role=menu] > li li body:after, #content-wrapper figure figcaption body:after, .errorlist body:after, p.author body:after, .story_detail .dateline body:after, .markdown .markItUpHeader ul li.thinline body:after { content: "medium"; } }
+.sub-text, [role=complementary], q, time, table, dl, section.list ul dt, section.list ul dd, section.list dl dt, section.list dl dd, .grid, .pager, .rs-controls, .pager li.next, .rs-controls li.next, .pager li.prev, .rs-controls li.prev, .button.thinline, button.thinline, input[type="submit"].thinline, .button-bar.thinline, .remote-tabs-nav, .tabbed > ul, label, .boxedform p.required label, blockquote, header[role=banner] nav [role=menu] > li li, footer[role=contentinfo] nav [role=menu] > li li, #content-wrapper figure figcaption, .errorlist, p.author, .story_detail .dateline, .markdown .markItUpHeader ul li.thinline { font-size: 12px; line-height: 18px; font-size: 0.75rem; line-height: 1.125rem; }
+@media (min-width: 760px) { .sub-text, [role=complementary], q, time, table, dl, section.list ul dt, section.list ul dd, section.list dl dt, section.list dl dd, .grid, .pager, .rs-controls, .pager li.next, .rs-controls li.next, .pager li.prev, .rs-controls li.prev, .button.thinline, button.thinline, input[type="submit"].thinline, .button-bar.thinline, .remote-tabs-nav, .tabbed > ul, label, .boxedform p.required label, blockquote, header[role=banner] nav [role=menu] > li li, footer[role=contentinfo] nav [role=menu] > li li, #content-wrapper figure figcaption, .errorlist, p.author, .story_detail .dateline, .markdown .markItUpHeader ul li.thinline { font-size: 14px; font-size: 0.875rem; line-height: 18px; line-height: 1.125rem; }
+  .sub-text body:after, [role=complementary] body:after, q body:after, time body:after, table body:after, dl body:after, section.list ul dt body:after, section.list ul dd body:after, section.list dl dt body:after, section.list dl dd body:after, .grid body:after, .pager body:after, .rs-controls body:after, .pager li.next body:after, .rs-controls li.next body:after, .pager li.prev body:after, .rs-controls li.prev body:after, .button.thinline body:after, button.thinline body:after, input[type="submit"].thinline body:after, .button-bar.thinline body:after, .remote-tabs-nav body:after, .tabbed > ul body:after, label body:after, .boxedform p.required label body:after, blockquote body:after, header[role=banner] nav [role=menu] > li li body:after, footer[role=contentinfo] nav [role=menu] > li li body:after, #content-wrapper figure figcaption body:after, .errorlist body:after, p.author body:after, .story_detail .dateline body:after, .markdown .markItUpHeader ul li.thinline body:after { content: "medium"; } }
 
 .body-text, .split [role=complementary], body { font-size: 14px; font-size: 0.875rem; line-height: 18px; line-height: 1.125rem; }
 @media (min-width: 760px) { .body-text, .split [role=complementary], body { font-size: 16px; font-size: 1em; line-height: 24px; line-height: 1.5rem; }
@@ -29,19 +29,21 @@ html { font-size: 1em; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100
 @media (min-width: 760px) { .small-header, .hero, .kicker, [role=complementary] h3, table caption, h4 { font-size: 18px; font-size: 1.125rem; line-height: 24px; line-height: 1.25rem; }
   .small-header body:after, .hero body:after, .kicker body:after, [role=complementary] h3 body:after, table caption body:after, h4 body:after { content: "medium"; } }
 
-.medium-header, [role=complementary] h2, h2.overline, #top-content #more-featured h1, #more_articles h1, #more-featured h1, h3, .subhead { font-size: 18px; font-size: 1.125rem; line-height: 24px; line-height: 1.25rem; }
-@media (min-width: 760px) { .medium-header, [role=complementary] h2, h2.overline, #top-content #more-featured h1, #more_articles h1, #more-featured h1, h3, .subhead { font-size: 21px; font-size: 1.2857rem; line-height: 24px; line-height: 1.5rem; }
-  .medium-header body:after, [role=complementary] h2 body:after, h2.overline body:after, #top-content #more-featured h1 body:after, #more_articles h1 body:after, #more-featured h1 body:after, h3 body:after, .subhead body:after { content: "medium"; } }
+.medium-header, [role=complementary] h2, h2.overline, #top-content #more-featured h1, #more_articles h1, h3, .subhead { font-size: 18px; font-size: 1.125rem; line-height: 24px; line-height: 1.25rem; }
+@media (min-width: 760px) { .medium-header, [role=complementary] h2, h2.overline, #top-content #more-featured h1, #more_articles h1, h3, .subhead { font-size: 21px; font-size: 1.2857rem; line-height: 24px; line-height: 1.5rem; }
+  .medium-header body:after, [role=complementary] h2 body:after, h2.overline body:after, #top-content #more-featured h1 body:after, #more_articles h1 body:after, h3 body:after, .subhead body:after { content: "medium"; } }
 
 .large-header, [role=complementary] h1, .rs-controls .rs-next, .rs-controls .rs-prev, h2 { font-size: 21px; font-size: 1.2857rem; line-height: 24px; line-height: 1.5rem; }
 @media (min-width: 760px) { .large-header, [role=complementary] h1, .rs-controls .rs-next, .rs-controls .rs-prev, h2 { font-size: 30px; font-size: 1.875rem; line-height: 36px; line-height: 2.25rem; }
   .large-header body:after, [role=complementary] h1 body:after, .rs-controls .rs-next body:after, .rs-controls .rs-prev body:after, h2 body:after { content: "medium"; } }
 
 .xl-header, h1 { font-size: 30px; font-size: 1.875rem; line-height: 36px; line-height: 2.25rem; }
-@media (min-width: 760px) { .xl-header, h1 { font-size: 42px; line-height: 48px; font-size: 2.75rem; line-height: 3rem; }
+@media (min-width: 760px) { .xl-header, h1 { font-size: 36px; line-height: 48px; font-size: 2.25rem; line-height: 3rem; }
   .xl-header body:after, h1 body:after { content: "medium"; } }
 
-.super-text, .hero h1 { font-size: 42px; line-height: 48px; font-size: 2.75rem; line-height: 3rem; }
+[role=banner] h1 { font-size: 42px; font-size: 3rem; }
+
+.super-text, .hero h1 { font-size: 36px; line-height: 48px; font-size: 2.25rem; line-height: 3rem; }
 @media (min-width: 760px) { .super-text, .hero h1 { font-size: 48px; line-height: 60px; font-size: 3.42857rem; line-height: 4.2857rem; }
   .super-text body:after, .hero h1 body:after { content: "medium"; } }
 
@@ -55,7 +57,7 @@ html { font-size: 1em; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100
 
 .margin-all { margin: 20px 24px; }
 
-.pad-top, footer[role=contentinfo] { padding-top: 12px; }
+.pad-top { padding-top: 12px; }
 
 .pad-bottom, #content-wrapper figure figcaption { padding-bottom: 12px; }
 
@@ -198,11 +200,11 @@ button, input, select, textarea { font-size: 100%; }
 
 html { font-size: 1em; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
 
-.small-text, sub, sup, table td, dl.specs, .boxedform .helptext, .rs-controls, .counter, .signature, p.source-org, .story_detail .shirttail, #comment-list article header, #comment-list article footer, .markdown .markItUpHeader ul li, a.new, small { font-size: 12px; line-height: 18px; font-size: 0.75rem; line-height: 1.125rem; }
+.small-text, sub, sup, table td, dl.specs, .boxedform .helptext, .counter, .signature, p.source-org, .story_detail .shirttail, #comment-list article header, #comment-list article footer, .markdown .markItUpHeader ul li, a.new, small { font-size: 12px; line-height: 18px; font-size: 0.75rem; line-height: 1.125rem; }
 
-.sub-text, [role=complementary], q, time, table, dl, section.list ul dt, section.list ul dd, section.list dl dt, section.list dl dd, .grid, .pager, .pager li.next, .pager li.prev, .button.thinline, button.thinline, input[type="submit"].thinline, .button-bar.thinline, .remote-tabs-nav, .tabbed > ul, label, .boxedform p.required label, blockquote, header[role=banner] nav [role=menu] > li li, footer[role=contentinfo] nav [role=menu] > li li, #content-wrapper figure figcaption, .errorlist, p.author, .story_detail .dateline, .markdown .markItUpHeader ul li.thinline { font-size: 12px; line-height: 18px; font-size: 0.75rem; line-height: 1.125rem; }
-@media (min-width: 760px) { .sub-text, [role=complementary], q, time, table, dl, section.list ul dt, section.list ul dd, section.list dl dt, section.list dl dd, .grid, .pager, .pager li.next, .pager li.prev, .button.thinline, button.thinline, input[type="submit"].thinline, .button-bar.thinline, .remote-tabs-nav, .tabbed > ul, label, .boxedform p.required label, blockquote, header[role=banner] nav [role=menu] > li li, footer[role=contentinfo] nav [role=menu] > li li, #content-wrapper figure figcaption, .errorlist, p.author, .story_detail .dateline, .markdown .markItUpHeader ul li.thinline { font-size: 14px; font-size: 0.875rem; line-height: 18px; line-height: 1.125rem; }
-  .sub-text body:after, [role=complementary] body:after, q body:after, time body:after, table body:after, dl body:after, section.list ul dt body:after, section.list ul dd body:after, section.list dl dt body:after, section.list dl dd body:after, .grid body:after, .pager body:after, .button.thinline body:after, button.thinline body:after, input[type="submit"].thinline body:after, .button-bar.thinline body:after, .remote-tabs-nav body:after, .tabbed > ul body:after, label body:after, .boxedform p.required label body:after, blockquote body:after, header[role=banner] nav [role=menu] > li li body:after, footer[role=contentinfo] nav [role=menu] > li li body:after, #content-wrapper figure figcaption body:after, .errorlist body:after, p.author body:after, .story_detail .dateline body:after, .markdown .markItUpHeader ul li.thinline body:after { content: "medium"; } }
+.sub-text, [role=complementary], q, time, table, dl, section.list ul dt, section.list ul dd, section.list dl dt, section.list dl dd, .grid, .pager, .rs-controls, .pager li.next, .rs-controls li.next, .pager li.prev, .rs-controls li.prev, .button.thinline, button.thinline, input[type="submit"].thinline, .button-bar.thinline, .remote-tabs-nav, .tabbed > ul, label, .boxedform p.required label, blockquote, header[role=banner] nav [role=menu] > li li, footer[role=contentinfo] nav [role=menu] > li li, #content-wrapper figure figcaption, .errorlist, p.author, .story_detail .dateline, .markdown .markItUpHeader ul li.thinline { font-size: 12px; line-height: 18px; font-size: 0.75rem; line-height: 1.125rem; }
+@media (min-width: 760px) { .sub-text, [role=complementary], q, time, table, dl, section.list ul dt, section.list ul dd, section.list dl dt, section.list dl dd, .grid, .pager, .rs-controls, .pager li.next, .rs-controls li.next, .pager li.prev, .rs-controls li.prev, .button.thinline, button.thinline, input[type="submit"].thinline, .button-bar.thinline, .remote-tabs-nav, .tabbed > ul, label, .boxedform p.required label, blockquote, header[role=banner] nav [role=menu] > li li, footer[role=contentinfo] nav [role=menu] > li li, #content-wrapper figure figcaption, .errorlist, p.author, .story_detail .dateline, .markdown .markItUpHeader ul li.thinline { font-size: 14px; font-size: 0.875rem; line-height: 18px; line-height: 1.125rem; }
+  .sub-text body:after, [role=complementary] body:after, q body:after, time body:after, table body:after, dl body:after, section.list ul dt body:after, section.list ul dd body:after, section.list dl dt body:after, section.list dl dd body:after, .grid body:after, .pager body:after, .rs-controls body:after, .pager li.next body:after, .rs-controls li.next body:after, .pager li.prev body:after, .rs-controls li.prev body:after, .button.thinline body:after, button.thinline body:after, input[type="submit"].thinline body:after, .button-bar.thinline body:after, .remote-tabs-nav body:after, .tabbed > ul body:after, label body:after, .boxedform p.required label body:after, blockquote body:after, header[role=banner] nav [role=menu] > li li body:after, footer[role=contentinfo] nav [role=menu] > li li body:after, #content-wrapper figure figcaption body:after, .errorlist body:after, p.author body:after, .story_detail .dateline body:after, .markdown .markItUpHeader ul li.thinline body:after { content: "medium"; } }
 
 .body-text, .split [role=complementary], body { font-size: 14px; font-size: 0.875rem; line-height: 18px; line-height: 1.125rem; }
 @media (min-width: 760px) { .body-text, .split [role=complementary], body { font-size: 16px; font-size: 1em; line-height: 24px; line-height: 1.5rem; }
@@ -216,19 +218,21 @@ html { font-size: 1em; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100
 @media (min-width: 760px) { .small-header, .hero, .kicker, [role=complementary] h3, table caption, h4 { font-size: 18px; font-size: 1.125rem; line-height: 24px; line-height: 1.25rem; }
   .small-header body:after, .hero body:after, .kicker body:after, [role=complementary] h3 body:after, table caption body:after, h4 body:after { content: "medium"; } }
 
-.medium-header, [role=complementary] h2, h2.overline, #top-content #more-featured h1, #more_articles h1, #more-featured h1, h3, .subhead { font-size: 18px; font-size: 1.125rem; line-height: 24px; line-height: 1.25rem; }
-@media (min-width: 760px) { .medium-header, [role=complementary] h2, h2.overline, #top-content #more-featured h1, #more_articles h1, #more-featured h1, h3, .subhead { font-size: 21px; font-size: 1.2857rem; line-height: 24px; line-height: 1.5rem; }
-  .medium-header body:after, [role=complementary] h2 body:after, h2.overline body:after, #top-content #more-featured h1 body:after, #more_articles h1 body:after, #more-featured h1 body:after, h3 body:after, .subhead body:after { content: "medium"; } }
+.medium-header, [role=complementary] h2, h2.overline, #top-content #more-featured h1, #more_articles h1, h3, .subhead { font-size: 18px; font-size: 1.125rem; line-height: 24px; line-height: 1.25rem; }
+@media (min-width: 760px) { .medium-header, [role=complementary] h2, h2.overline, #top-content #more-featured h1, #more_articles h1, h3, .subhead { font-size: 21px; font-size: 1.2857rem; line-height: 24px; line-height: 1.5rem; }
+  .medium-header body:after, [role=complementary] h2 body:after, h2.overline body:after, #top-content #more-featured h1 body:after, #more_articles h1 body:after, h3 body:after, .subhead body:after { content: "medium"; } }
 
 .large-header, [role=complementary] h1, .rs-controls .rs-next, .rs-controls .rs-prev, h2 { font-size: 21px; font-size: 1.2857rem; line-height: 24px; line-height: 1.5rem; }
 @media (min-width: 760px) { .large-header, [role=complementary] h1, .rs-controls .rs-next, .rs-controls .rs-prev, h2 { font-size: 30px; font-size: 1.875rem; line-height: 36px; line-height: 2.25rem; }
   .large-header body:after, [role=complementary] h1 body:after, .rs-controls .rs-next body:after, .rs-controls .rs-prev body:after, h2 body:after { content: "medium"; } }
 
 .xl-header, h1 { font-size: 30px; font-size: 1.875rem; line-height: 36px; line-height: 2.25rem; }
-@media (min-width: 760px) { .xl-header, h1 { font-size: 42px; line-height: 48px; font-size: 2.75rem; line-height: 3rem; }
+@media (min-width: 760px) { .xl-header, h1 { font-size: 36px; line-height: 48px; font-size: 2.25rem; line-height: 3rem; }
   .xl-header body:after, h1 body:after { content: "medium"; } }
 
-.super-text, .hero h1 { font-size: 42px; line-height: 48px; font-size: 2.75rem; line-height: 3rem; }
+[role=banner] h1 { font-size: 42px; font-size: 3rem; }
+
+.super-text, .hero h1 { font-size: 36px; line-height: 48px; font-size: 2.25rem; line-height: 3rem; }
 @media (min-width: 760px) { .super-text, .hero h1 { font-size: 48px; line-height: 60px; font-size: 3.42857rem; line-height: 4.2857rem; }
   .super-text body:after, .hero h1 body:after { content: "medium"; } }
 
@@ -242,7 +246,7 @@ html { font-size: 1em; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100
 
 .margin-all { margin: 20px 24px; }
 
-.pad-top, footer[role=contentinfo] { padding-top: 12px; }
+.pad-top { padding-top: 12px; }
 
 .pad-bottom, #content-wrapper figure figcaption { padding-bottom: 12px; }
 
@@ -300,9 +304,9 @@ small { display: inline-block; }
   [role=main] body:after, [role=complementary] body:after { content: "small"; } }
 
 [role=main] { width: 100%; }
-@media (min-width: 940px) { [role=main] { padding-right: 10px; width: 630px; margin-right: -2px; }
+@media (min-width: 940px) { [role=main] { width: 630px; margin-right: -2px; }
   [role=main] body:after { content: "large"; } }
-@media (min-width: 1240px) { [role=main] { width: 870px; }
+@media (min-width: 1240px) { [role=main] { width: 860px; padding-right: 10px; }
   [role=main] body:after { content: "xl"; } }
 @media (min-width: 1620px) { [role=main] { width: 1250px; }
   [role=main] body:after { content: "xxl"; } }
@@ -381,18 +385,18 @@ section.list ul dt, section.list ul dd, section.list dl dt, section.list dl dd {
 .grid small.meta { display: block; }
 .grid > * { padding: 0 20px 24px 0; }
 
-.pager { margin-bottom: 24px; background: #f9f9f9; color: #292929; border-radius: 0.5em; min-height: 24px; margin: 0; list-style: none; padding: 0; text-align: center; }
-.pager li { width: 40%; display: inline-block; padding: 0 10px; }
-.pager li span, .pager li a { color: #101010; }
-.pager li span:hover, .pager li a:hover { color: #006600; }
-.pager li.next, .pager li.prev { width: 29%; }
-.pager li.next { float: right; text-align: right; margin-left: -100%; }
-.pager li.next a:before { float: right; content: "►"; padding-left: 10px; }
-.pager li.prev { float: left; text-align: left; margin-right: -100%; }
-.pager li.prev a:before { float: left; content: "◀"; padding-right: 10px; }
-.pager li.next a:before, .pager li.prev a:after { display: inline-block; }
-.pager.prev-next li.next, .pager.prev-next li.prev { width: 49%; float: none; margin: 0; }
-.pager.prev-next li > a { display: block; padding: 12px 0; }
+.pager, .rs-controls { margin-bottom: 24px; background: #f9f9f9; color: #292929; border-radius: 0.5em; min-height: 24px; margin: 0; list-style: none; padding: 0; text-align: center; }
+.pager li, .rs-controls li { width: 40%; display: inline-block; padding: 0 10px; }
+.pager li span, .rs-controls li span, .pager li a, .rs-controls li a { color: #101010; }
+.pager li span:hover, .rs-controls li span:hover, .pager li a:hover, .rs-controls li a:hover { color: #006600; }
+.pager li.next, .rs-controls li.next, .pager li.prev, .rs-controls li.prev { width: 29%; }
+.pager li.next, .rs-controls li.next { float: right; text-align: right; margin-left: -100%; }
+.pager li.next a:before, .rs-controls li.next a:before { float: right; content: "►"; padding-left: 10px; }
+.pager li.prev, .rs-controls li.prev { float: left; text-align: left; margin-right: -100%; }
+.pager li.prev a:before, .rs-controls li.prev a:before { float: left; content: "◀"; padding-right: 10px; }
+.pager li.next a:before, .rs-controls li.next a:before, .pager li.prev a:after, .rs-controls li.prev a:after { display: inline-block; }
+.pager.prev-next li.next, .prev-next.rs-controls li.next, .pager.prev-next li.prev, .prev-next.rs-controls li.prev { width: 49%; float: none; margin: 0; }
+.pager.prev-next li > a, .prev-next.rs-controls li > a { display: block; padding: 12px 0; }
 
 .button-bar { padding: 0; }
 .button-bar.divided { padding-right: 0; }
@@ -724,11 +728,20 @@ select, input, textarea { color: #292929; }
 .rs-wrap:before, .rs-wrap:after, .rs-slider:before, .rs-slider:after, .rs-thumb-wrap:before, .rs-thumb-wrap:after, .rs-controls:before, .rs-controls:after, .rs-caption:before, .rs-caption:after { content: ""; display: table; }
 .rs-wrap:after, .rs-slider:after, .rs-thumb-wrap:after, .rs-controls:after, .rs-caption:after { clear: both; }
 
-.rs-wrap img { -ms-interpolation-mode: bicubic; }
+.rs-wrap img { display: block; width: 100%; -ms-interpolation-mode: bicubic; }
 
-.rs-slider > * { opacity: 0; width: 100%; margin: 0 -100% 0 0; float: left; position: relative; background: #ececec; }
+.rs-thumb-wrap > a { display: inline-block; position: relative; overflow: hidden; box-sizing: border-box; text-align: center; -webkit-backface-visibility: hidden; /* Hardware accelerate to prevent jumps on transition */ opacity: .7; transition: opacity .2s ease-in-out; }
+.rs-thumb-wrap > a:hover, .rs-thumb-wrap > a.active { opacity: 1; }
+.rs-thumb-wrap > a:first-child { margin-left: 0 !important; }
+.rs-thumb-wrap > a > img { width: 120%; vertical-align: bottom; }
+.rs-thumb-wrap > a > span { display: none; }
+
+.rs-thumb-viewer { width: 100px; margin-left: -50px; border: 1px solid rgba(0, 0, 0, 0.7); position: absolute; top: 100%; z-index: 100; display: none; text-align: center; line-height: 2em; background: black; color: white; }
+.rs-thumb-viewer img { width: 100%; display: block; opacity: 1; }
+
+.rs-slider > * { opacity: 0; width: 100%; margin: 0 -100% 0 0; float: left; position: relative; }
 .rs-slider > * > a { display: block; }
-.rs-slider > * img { display: block; margin: 0 auto; }
+.rs-slider > * img { margin: 0 auto; }
 .rs-slider > *.vertical img { width: 50%; }
 .rs-slider > *.vertical.has-caption img { margin: 0; }
 .rs-slider > * figcaption { padding: 12px 10px; background: rgba(236, 236, 236, 0.7); box-shadow: 0 1px 0 rgba(16, 16, 16, 0.12) inset; position: absolute; max-height: 100%; bottom: 0; left: 0; color: #ececec; border: 1px solid #f9f9f9; }
@@ -762,7 +775,7 @@ select, input, textarea { color: #292929; }
 .rs-controls { position: static; }
 .rs-controls button { box-shadow: none; margin: 0; display: block; background: transparent; border: 0; }
 .rs-controls button:before, .rs-controls button:after { display: none; }
-.rs-controls .rs-next, .rs-controls .rs-prev { -webkit-transition: all 0.2s ease-in; -moz-transition: all 0.2s ease-in; -ms-transition: all 0.2s ease-in; -o-transition: all 0.2s ease-in; transition: all 0.2s ease-in; position: absolute; width: 10%; height: 75%; top: 15%; z-index: 15; cursor: pointer; font-weight: bold; opacity: 0.2; color: #101010; text-shadow: 0 0 3px rgba(249, 249, 249, 0.8); }
+.rs-controls .rs-next, .rs-controls .rs-prev { -webkit-transition: all 0.2s ease-in; -moz-transition: all 0.2s ease-in; -ms-transition: all 0.2s ease-in; -o-transition: all 0.2s ease-in; transition: all 0.2s ease-in; position: absolute; width: 8%; height: 75%; top: 15%; z-index: 15; cursor: pointer; font-weight: bold; opacity: 0.2; color: #101010; text-shadow: 0 0 3px rgba(249, 249, 249, 0.8); }
 .rs-controls .rs-next:hover, .rs-controls .rs-prev:hover { opacity: 1; }
 .rs-controls .rs-next { right: 0; cursor: e-resize; }
 .rs-controls .rs-prev { left: 0; cursor: w-resize; }
@@ -786,11 +799,11 @@ button, input, select, textarea { font-size: 100%; }
 
 html { font-size: 1em; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
 
-.small-text, sub, sup, table td, dl.specs, .boxedform .helptext, .rs-controls, .counter, .signature, p.source-org, .story_detail .shirttail, #comment-list article header, #comment-list article footer, .markdown .markItUpHeader ul li, a.new, small { font-size: 12px; line-height: 18px; font-size: 0.75rem; line-height: 1.125rem; }
+.small-text, sub, sup, table td, dl.specs, .boxedform .helptext, .counter, .signature, p.source-org, .story_detail .shirttail, #comment-list article header, #comment-list article footer, .markdown .markItUpHeader ul li, a.new, small { font-size: 12px; line-height: 18px; font-size: 0.75rem; line-height: 1.125rem; }
 
-.sub-text, [role=complementary], q, time, table, dl, section.list ul dt, section.list ul dd, section.list dl dt, section.list dl dd, .grid, .pager, .pager li.next, .pager li.prev, .button.thinline, button.thinline, input[type="submit"].thinline, .button-bar.thinline, .remote-tabs-nav, .tabbed > ul, label, .boxedform p.required label, blockquote, header[role=banner] nav [role=menu] > li li, footer[role=contentinfo] nav [role=menu] > li li, #content-wrapper figure figcaption, .errorlist, p.author, .story_detail .dateline, .markdown .markItUpHeader ul li.thinline { font-size: 12px; line-height: 18px; font-size: 0.75rem; line-height: 1.125rem; }
-@media (min-width: 760px) { .sub-text, [role=complementary], q, time, table, dl, section.list ul dt, section.list ul dd, section.list dl dt, section.list dl dd, .grid, .pager, .pager li.next, .pager li.prev, .button.thinline, button.thinline, input[type="submit"].thinline, .button-bar.thinline, .remote-tabs-nav, .tabbed > ul, label, .boxedform p.required label, blockquote, header[role=banner] nav [role=menu] > li li, footer[role=contentinfo] nav [role=menu] > li li, #content-wrapper figure figcaption, .errorlist, p.author, .story_detail .dateline, .markdown .markItUpHeader ul li.thinline { font-size: 14px; font-size: 0.875rem; line-height: 18px; line-height: 1.125rem; }
-  .sub-text body:after, [role=complementary] body:after, q body:after, time body:after, table body:after, dl body:after, section.list ul dt body:after, section.list ul dd body:after, section.list dl dt body:after, section.list dl dd body:after, .grid body:after, .pager body:after, .button.thinline body:after, button.thinline body:after, input[type="submit"].thinline body:after, .button-bar.thinline body:after, .remote-tabs-nav body:after, .tabbed > ul body:after, label body:after, .boxedform p.required label body:after, blockquote body:after, header[role=banner] nav [role=menu] > li li body:after, footer[role=contentinfo] nav [role=menu] > li li body:after, #content-wrapper figure figcaption body:after, .errorlist body:after, p.author body:after, .story_detail .dateline body:after, .markdown .markItUpHeader ul li.thinline body:after { content: "medium"; } }
+.sub-text, [role=complementary], q, time, table, dl, section.list ul dt, section.list ul dd, section.list dl dt, section.list dl dd, .grid, .pager, .rs-controls, .pager li.next, .rs-controls li.next, .pager li.prev, .rs-controls li.prev, .button.thinline, button.thinline, input[type="submit"].thinline, .button-bar.thinline, .remote-tabs-nav, .tabbed > ul, label, .boxedform p.required label, blockquote, header[role=banner] nav [role=menu] > li li, footer[role=contentinfo] nav [role=menu] > li li, #content-wrapper figure figcaption, .errorlist, p.author, .story_detail .dateline, .markdown .markItUpHeader ul li.thinline { font-size: 12px; line-height: 18px; font-size: 0.75rem; line-height: 1.125rem; }
+@media (min-width: 760px) { .sub-text, [role=complementary], q, time, table, dl, section.list ul dt, section.list ul dd, section.list dl dt, section.list dl dd, .grid, .pager, .rs-controls, .pager li.next, .rs-controls li.next, .pager li.prev, .rs-controls li.prev, .button.thinline, button.thinline, input[type="submit"].thinline, .button-bar.thinline, .remote-tabs-nav, .tabbed > ul, label, .boxedform p.required label, blockquote, header[role=banner] nav [role=menu] > li li, footer[role=contentinfo] nav [role=menu] > li li, #content-wrapper figure figcaption, .errorlist, p.author, .story_detail .dateline, .markdown .markItUpHeader ul li.thinline { font-size: 14px; font-size: 0.875rem; line-height: 18px; line-height: 1.125rem; }
+  .sub-text body:after, [role=complementary] body:after, q body:after, time body:after, table body:after, dl body:after, section.list ul dt body:after, section.list ul dd body:after, section.list dl dt body:after, section.list dl dd body:after, .grid body:after, .pager body:after, .rs-controls body:after, .pager li.next body:after, .rs-controls li.next body:after, .pager li.prev body:after, .rs-controls li.prev body:after, .button.thinline body:after, button.thinline body:after, input[type="submit"].thinline body:after, .button-bar.thinline body:after, .remote-tabs-nav body:after, .tabbed > ul body:after, label body:after, .boxedform p.required label body:after, blockquote body:after, header[role=banner] nav [role=menu] > li li body:after, footer[role=contentinfo] nav [role=menu] > li li body:after, #content-wrapper figure figcaption body:after, .errorlist body:after, p.author body:after, .story_detail .dateline body:after, .markdown .markItUpHeader ul li.thinline body:after { content: "medium"; } }
 
 .body-text, .split [role=complementary], body { font-size: 14px; font-size: 0.875rem; line-height: 18px; line-height: 1.125rem; }
 @media (min-width: 760px) { .body-text, .split [role=complementary], body { font-size: 16px; font-size: 1em; line-height: 24px; line-height: 1.5rem; }
@@ -804,19 +817,21 @@ html { font-size: 1em; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100
 @media (min-width: 760px) { .small-header, .hero, .kicker, [role=complementary] h3, table caption, h4 { font-size: 18px; font-size: 1.125rem; line-height: 24px; line-height: 1.25rem; }
   .small-header body:after, .hero body:after, .kicker body:after, [role=complementary] h3 body:after, table caption body:after, h4 body:after { content: "medium"; } }
 
-.medium-header, [role=complementary] h2, h2.overline, #top-content #more-featured h1, #more_articles h1, #more-featured h1, h3, .subhead { font-size: 18px; font-size: 1.125rem; line-height: 24px; line-height: 1.25rem; }
-@media (min-width: 760px) { .medium-header, [role=complementary] h2, h2.overline, #top-content #more-featured h1, #more_articles h1, #more-featured h1, h3, .subhead { font-size: 21px; font-size: 1.2857rem; line-height: 24px; line-height: 1.5rem; }
-  .medium-header body:after, [role=complementary] h2 body:after, h2.overline body:after, #top-content #more-featured h1 body:after, #more_articles h1 body:after, #more-featured h1 body:after, h3 body:after, .subhead body:after { content: "medium"; } }
+.medium-header, [role=complementary] h2, h2.overline, #top-content #more-featured h1, #more_articles h1, h3, .subhead { font-size: 18px; font-size: 1.125rem; line-height: 24px; line-height: 1.25rem; }
+@media (min-width: 760px) { .medium-header, [role=complementary] h2, h2.overline, #top-content #more-featured h1, #more_articles h1, h3, .subhead { font-size: 21px; font-size: 1.2857rem; line-height: 24px; line-height: 1.5rem; }
+  .medium-header body:after, [role=complementary] h2 body:after, h2.overline body:after, #top-content #more-featured h1 body:after, #more_articles h1 body:after, h3 body:after, .subhead body:after { content: "medium"; } }
 
 .large-header, [role=complementary] h1, .rs-controls .rs-next, .rs-controls .rs-prev, h2 { font-size: 21px; font-size: 1.2857rem; line-height: 24px; line-height: 1.5rem; }
 @media (min-width: 760px) { .large-header, [role=complementary] h1, .rs-controls .rs-next, .rs-controls .rs-prev, h2 { font-size: 30px; font-size: 1.875rem; line-height: 36px; line-height: 2.25rem; }
   .large-header body:after, [role=complementary] h1 body:after, .rs-controls .rs-next body:after, .rs-controls .rs-prev body:after, h2 body:after { content: "medium"; } }
 
 .xl-header, h1 { font-size: 30px; font-size: 1.875rem; line-height: 36px; line-height: 2.25rem; }
-@media (min-width: 760px) { .xl-header, h1 { font-size: 42px; line-height: 48px; font-size: 2.75rem; line-height: 3rem; }
+@media (min-width: 760px) { .xl-header, h1 { font-size: 36px; line-height: 48px; font-size: 2.25rem; line-height: 3rem; }
   .xl-header body:after, h1 body:after { content: "medium"; } }
 
-.super-text, .hero h1 { font-size: 42px; line-height: 48px; font-size: 2.75rem; line-height: 3rem; }
+[role=banner] h1 { font-size: 42px; font-size: 3rem; }
+
+.super-text, .hero h1 { font-size: 36px; line-height: 48px; font-size: 2.25rem; line-height: 3rem; }
 @media (min-width: 760px) { .super-text, .hero h1 { font-size: 48px; line-height: 60px; font-size: 3.42857rem; line-height: 4.2857rem; }
   .super-text body:after, .hero h1 body:after { content: "medium"; } }
 
@@ -830,7 +845,7 @@ html { font-size: 1em; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100
 
 .margin-all { margin: 20px 24px; }
 
-.pad-top, footer[role=contentinfo] { padding-top: 12px; }
+.pad-top { padding-top: 12px; }
 
 .pad-bottom, #content-wrapper figure figcaption { padding-bottom: 12px; }
 
@@ -936,7 +951,6 @@ body.collapsed header[role=banner] h2 { display: none; }
   body.collapsed header[role=banner] [role="navigation"] ul body:after { content: "small"; } }
 body:after { display: none; content: "default"; }
 
-header[role=banner], footer[role=contentinfo] { clear: both; }
 header[role=banner] nav [role=menu], footer[role=contentinfo] nav [role=menu] { margin: 0; }
 header[role=banner] nav [role=menu] > li, footer[role=contentinfo] nav [role=menu] > li { font-weight: bold; }
 header[role=banner] nav [role=menu] > li li, footer[role=contentinfo] nav [role=menu] > li li { font-weight: normal; }
@@ -945,8 +959,6 @@ header[role=banner], header[role=banner] > * { -webkit-transition: all 0.3s ease
 header[role=banner] .navicon { padding: 0 10px; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; display: block; position: absolute; right: 0; font-weight: bold; letter-spacing: -0.33em; border: 1px inset #006600; text-align: center; }
 header[role=banner] .navicon:before { content: "≡"; width: .33em; overflow: hidden; display: inline-block; vertical-align: top; }
 header[role=banner] .navicon.activated { background: #003300; }
-
-footer[role=contentinfo] { -webkit-box-shadow: 0 -2px 2px rgba(0, 0, 0, 0.3); -moz-box-shadow: 0 -2px 2px rgba(0, 0, 0, 0.3); box-shadow: 0 -2px 2px rgba(0, 0, 0, 0.3); border-top: 2px solid #006600; }
 
 #content-wrapper figure img { border: 1px solid #003300; }
 #content-wrapper figure figcaption { color: #292929; font-weight: normal; }
@@ -987,17 +999,17 @@ img.left, figure.left { margin-right: 20px; }
 
 .ellipse { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 100%; }
 
-.constrain, #wrapper { margin: 0 10px; width: auto; }
-@media (min-width: 540px) { .constrain, #wrapper { margin: 0 auto; width: 540px; }
-  .constrain body:after, #wrapper body:after { content: "small"; } }
-@media (min-width: 760px) { .constrain, #wrapper { width: 760px; }
-  .constrain body:after, #wrapper body:after { content: "medium"; } }
-@media (min-width: 940px) { .constrain, #wrapper { width: 940px; }
-  .constrain body:after, #wrapper body:after { content: "large"; } }
-@media (min-width: 1240px) { .constrain, #wrapper { width: 1240px; }
-  .constrain body:after, #wrapper body:after { content: "xl"; } }
-@media (min-width: 1620px) { .constrain, #wrapper { width: 1620px; }
-  .constrain body:after, #wrapper body:after { content: "xxl"; } }
+.constrain { padding: 0; width: auto; }
+@media (min-width: 540px) { .constrain { margin: 0 auto; width: 540px; }
+  .constrain body:after { content: "small"; } }
+@media (min-width: 760px) { .constrain { width: 760px; }
+  .constrain body:after { content: "medium"; } }
+@media (min-width: 940px) { .constrain { width: 940px; }
+  .constrain body:after { content: "large"; } }
+@media (min-width: 1240px) { .constrain { width: 1240px; }
+  .constrain body:after { content: "xl"; } }
+@media (min-width: 1620px) { .constrain { width: 1620px; }
+  .constrain body:after { content: "xxl"; } }
 
 .block { display: block; }
 
@@ -1120,52 +1132,179 @@ h2.overline { margin-bottom: 0; }
 
 a.new { -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; display: inline-block; background: #006600; border: 1px inset #aaaaaa; text-shadow: none; color: #101010; }
 
-@media (min-width: 760px) { #top-content { margin: 0; padding: 0; list-style: none; position: relative; padding-right: 0 !important; background: aqua; }
+/********************************************* Capo typography is defined by a handful of variables which create a 10 px baseline grid and size various typographic elements appropriately to remain on that grid.
+ This file also defines variables that can be used for consistent margins, padding and gutters:
+ - @gutter: for columns between content. 20px - @halfGutter: for padding in boxes, etc. Half of gutter. - @defaultMargin: For consistently setting top and bottom margins while staying on the baseline grid. Note: you can use multiples ( @defaultMargin * 2 );
+**********************************************/
+html, button, input, select, textarea { font-family: "Helvetica", "Calibri", "Lucida Sans Unicode", "Arial Unicode MS", Verdana, Arial, sans-serif; }
+
+button, input, select, textarea { font-size: 100%; }
+
+html { font-size: 1em; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+
+.small-text, sub, sup, table td, dl.specs, .boxedform .helptext, .counter, .signature, p.source-org, .story_detail .shirttail, #comment-list article header, #comment-list article footer, .markdown .markItUpHeader ul li, a.new, small { font-size: 12px; line-height: 18px; font-size: 0.75rem; line-height: 1.125rem; }
+
+.sub-text, [role=complementary], q, time, table, dl, section.list ul dt, section.list ul dd, section.list dl dt, section.list dl dd, .grid, .pager, .rs-controls, .pager li.next, .rs-controls li.next, .pager li.prev, .rs-controls li.prev, .button.thinline, button.thinline, input[type="submit"].thinline, .button-bar.thinline, .remote-tabs-nav, .tabbed > ul, label, .boxedform p.required label, blockquote, header[role=banner] nav [role=menu] > li li, footer[role=contentinfo] nav [role=menu] > li li, #content-wrapper figure figcaption, .errorlist, p.author, .story_detail .dateline, .markdown .markItUpHeader ul li.thinline { font-size: 12px; line-height: 18px; font-size: 0.75rem; line-height: 1.125rem; }
+@media (min-width: 760px) { .sub-text, [role=complementary], q, time, table, dl, section.list ul dt, section.list ul dd, section.list dl dt, section.list dl dd, .grid, .pager, .rs-controls, .pager li.next, .rs-controls li.next, .pager li.prev, .rs-controls li.prev, .button.thinline, button.thinline, input[type="submit"].thinline, .button-bar.thinline, .remote-tabs-nav, .tabbed > ul, label, .boxedform p.required label, blockquote, header[role=banner] nav [role=menu] > li li, footer[role=contentinfo] nav [role=menu] > li li, #content-wrapper figure figcaption, .errorlist, p.author, .story_detail .dateline, .markdown .markItUpHeader ul li.thinline { font-size: 14px; font-size: 0.875rem; line-height: 18px; line-height: 1.125rem; }
+  .sub-text body:after, [role=complementary] body:after, q body:after, time body:after, table body:after, dl body:after, section.list ul dt body:after, section.list ul dd body:after, section.list dl dt body:after, section.list dl dd body:after, .grid body:after, .pager body:after, .rs-controls body:after, .pager li.next body:after, .rs-controls li.next body:after, .pager li.prev body:after, .rs-controls li.prev body:after, .button.thinline body:after, button.thinline body:after, input[type="submit"].thinline body:after, .button-bar.thinline body:after, .remote-tabs-nav body:after, .tabbed > ul body:after, label body:after, .boxedform p.required label body:after, blockquote body:after, header[role=banner] nav [role=menu] > li li body:after, footer[role=contentinfo] nav [role=menu] > li li body:after, #content-wrapper figure figcaption body:after, .errorlist body:after, p.author body:after, .story_detail .dateline body:after, .markdown .markItUpHeader ul li.thinline body:after { content: "medium"; } }
+
+.body-text, .split [role=complementary], body { font-size: 14px; font-size: 0.875rem; line-height: 18px; line-height: 1.125rem; }
+@media (min-width: 760px) { .body-text, .split [role=complementary], body { font-size: 16px; font-size: 1em; line-height: 24px; line-height: 1.5rem; }
+  .body-text body:after, .split [role=complementary] body:after, body body:after { content: "medium"; } }
+
+.x-small-header, .rs-controls .fullscreen-toggle, .rs-wrap.rs-fullscreen .rs-controls .rs-counter, h5, .breakout-text, .breakout, .messages > li, .messages .message { font-size: 16px; font-size: 1em; line-height: 24px; line-height: 1.5rem; }
+@media (min-width: 760px) { .x-small-header, .rs-controls .fullscreen-toggle, .rs-wrap.rs-fullscreen .rs-controls .rs-counter, h5, .breakout-text, .breakout, .messages > li, .messages .message { font-size: 16px; font-size: 1.142857rem; line-height: 24px; line-height: 1.33rem; }
+  .x-small-header body:after, .rs-controls .fullscreen-toggle body:after, .rs-wrap.rs-fullscreen .rs-controls .rs-counter body:after, h5 body:after, .breakout-text body:after, .breakout body:after, .messages > li body:after, .messages .message body:after { content: "medium"; } }
+
+.small-header, .hero, .kicker, [role=complementary] h3, table caption, h4 { font-size: 16px; font-size: 1.142857rem; line-height: 24px; line-height: 1.33rem; }
+@media (min-width: 760px) { .small-header, .hero, .kicker, [role=complementary] h3, table caption, h4 { font-size: 18px; font-size: 1.125rem; line-height: 24px; line-height: 1.25rem; }
+  .small-header body:after, .hero body:after, .kicker body:after, [role=complementary] h3 body:after, table caption body:after, h4 body:after { content: "medium"; } }
+
+.medium-header, [role=complementary] h2, h2.overline, #top-content #more-featured h1, #more_articles h1, h3, .subhead { font-size: 18px; font-size: 1.125rem; line-height: 24px; line-height: 1.25rem; }
+@media (min-width: 760px) { .medium-header, [role=complementary] h2, h2.overline, #top-content #more-featured h1, #more_articles h1, h3, .subhead { font-size: 21px; font-size: 1.2857rem; line-height: 24px; line-height: 1.5rem; }
+  .medium-header body:after, [role=complementary] h2 body:after, h2.overline body:after, #top-content #more-featured h1 body:after, #more_articles h1 body:after, h3 body:after, .subhead body:after { content: "medium"; } }
+
+.large-header, [role=complementary] h1, .rs-controls .rs-next, .rs-controls .rs-prev, h2 { font-size: 21px; font-size: 1.2857rem; line-height: 24px; line-height: 1.5rem; }
+@media (min-width: 760px) { .large-header, [role=complementary] h1, .rs-controls .rs-next, .rs-controls .rs-prev, h2 { font-size: 30px; font-size: 1.875rem; line-height: 36px; line-height: 2.25rem; }
+  .large-header body:after, [role=complementary] h1 body:after, .rs-controls .rs-next body:after, .rs-controls .rs-prev body:after, h2 body:after { content: "medium"; } }
+
+.xl-header, h1 { font-size: 30px; font-size: 1.875rem; line-height: 36px; line-height: 2.25rem; }
+@media (min-width: 760px) { .xl-header, h1 { font-size: 36px; line-height: 48px; font-size: 2.25rem; line-height: 3rem; }
+  .xl-header body:after, h1 body:after { content: "medium"; } }
+
+[role=banner] h1 { font-size: 42px; font-size: 3rem; }
+
+.super-text, .hero h1 { font-size: 36px; line-height: 48px; font-size: 2.25rem; line-height: 3rem; }
+@media (min-width: 760px) { .super-text, .hero h1 { font-size: 48px; line-height: 60px; font-size: 3.42857rem; line-height: 4.2857rem; }
+  .super-text body:after, .hero h1 body:after { content: "medium"; } }
+
+.margin-top { margin-top: 24px; }
+
+.margin-bottom, dl, header[role=banner] nav [role=menu] > li, footer[role=contentinfo] nav [role=menu] > li { margin-bottom: 24px; }
+
+.margin-top-bottom, blockquote, q { margin: 24px 0; }
+
+.margin-sides, .breakout { margin: 0 20px; }
+
+.margin-all { margin: 20px 24px; }
+
+.pad-top { padding-top: 12px; }
+
+.pad-bottom, #content-wrapper figure figcaption { padding-bottom: 12px; }
+
+.pad-top-bottom, section.list > div > *, section.list > ul > li > *, .story_detail .shirttail { padding: 12px 0; }
+
+.pad-sides { padding: 0 10px; }
+
+.pad-all, label, .breakout, .errorlist, .messages > li, .messages .message { padding: 12px 10px; }
+
+/*
+h1, h2, h3, h4 { font-family: 'OpenSansSemibold'; }
+
+
+
+.bold-text { font-family: 'OpenSansSemiBold'; }
+.unbold-text { font-family: 'OpenSansRegular'; }
+.light-text { font-family: 'OpenSansLight'; }
+
+b, strong { .bold-text;
+}
+
+p + p,
+p + div,
+p + h2,
+p + h3 { margin-top: @defaultMargin;
+}
+p + p.small-text { margin: 0.875em 0 0.25em;
+}
+.sidebar-wrapper { font-size: .9em;}
+
+*/
+pre, code, kbd, samp { font-family: monospace, serif; _font-family: 'courier new', monospace; font-size: 1em; }
+
+sub, sup { line-height: 0; position: relative; vertical-align: baseline; }
+
+sup { top: -0.5em; }
+
+sub { bottom: -0.25em; }
+
+h1, h2, h3, h4, h5, h6, p, ol, ul { margin: 0; }
+
+h1, h2, h3, h4, h5, h6 { font-weight: bold; }
+
+#content-wrapper p, #content-wrapper ol, #content-wrapper ul, #content-wrapper small { margin: 12px 0; }
+#content-wrapper p + h2, #content-wrapper p + h3 { padding-top: 24px; }
+#content-wrapper h3 + p { margin-top: 0; }
+
+.meta { color: #888888; }
+
+.kicker { text-transform: uppercase; }
+
+small { display: inline-block; }
+
+@media (min-width: 1240px) { #top-content { margin: 0; padding: 0; list-style: none; position: relative; padding-right: 0 !important; }
   #top-content > * { display: inline-block; width: auto; width: 33%; position: relative; vertical-align: top; padding-right: 20px; margin-right: -4px; *zoom: 1; *display: inline; }
   #top-content > *:nth-child(odd) { width: 72%; padding-right: 0; }
   #top-content > *:nth-child(even) { width: 28%; padding-left: 20px; padding-right: 0; }
-  #top-content body:after { content: "medium"; } }
+  #top-content body:after { content: "xl"; } }
 #top-content article { clear: right; }
+#top-content figure { margin-bottom: 12px; }
+@media (min-width: 760px) { #top-content figure { width: 340px; float: right; margin-left: 10px; }
+  #top-content figure body:after { content: "medium"; } }
+@media (min-width: 940px) { #top-content figure { width: 100%; float: none; margin-left: 0; }
+  #top-content figure body:after { content: "large"; } }
 #top-content figure.vertical { float: right; width: 40%; margin-left: 10px; }
 #top-content figure.vertical figcaption { display: none; }
 @media (min-width: 540px) { #top-content figure.vertical { width: 50%; }
   #top-content figure.vertical body:after { content: "small"; } }
-@media (min-width: 940px) { #top-content #lead-item body:after { content: "large"; } }
-@media (min-width: 1240px) { #top-content #lead-item body:after { content: "xl"; } }
-@media (min-width: 760px) { #top-content #more-featured article { display: inline-block; padding: 12px 10px 0 0; border-top: 1px solid #292929; width: 49.5%; vertical-align: top; }
-  #top-content #more-featured body:after { content: "medium"; } }
-@media (min-width: 940px) { #top-content #more-featured { width: 300px; float: right; }
-  #top-content #more-featured article { display: block; width: auto; padding-right: 0; clear: right; }
-  #top-content #more-featured article:first-child { border: 0; }
-  #top-content #more-featured body:after { content: "large"; } }
+@media (min-width: 760px) { #top-content #lead-item figure { max-width: 380px; float: right; margin-left: 20px; }
+  #top-content #lead-item body:after { content: "medium"; } }
+@media (min-width: 1240px) { #top-content #lead-item { width: 540px; float: left; }
+  #top-content #lead-item p { font-size: 16px; font-size: 1.142857rem; line-height: 24px; line-height: 1.33rem; }
+  #top-content #lead-item figure { max-width: 100%; float: none; margin-left: 0; }
+  #top-content #lead-item body:after { content: "xl"; } }
+@media (min-width: 1620px) { #top-content #lead-item { width: 940px; }
+  #top-content #lead-item figure { max-width: 620px; float: right; margin-left: 20px; }
+  #top-content #lead-item body:after { content: "xxl"; } }
 #top-content #more-featured figure { float: right; width: 40%; }
 @media (min-width: 540px) { #top-content #more-featured figure { width: 50%; }
   #top-content #more-featured figure body:after { content: "small"; } }
+@media (min-width: 760px) { #top-content #more-featured article { margin: 0; padding: 0; list-style: none; position: relative; padding-right: 0 !important; }
+  #top-content #more-featured article > * { display: inline-block; width: auto; width: 33%; position: relative; vertical-align: top; padding-right: 20px; margin-right: -4px; *zoom: 1; *display: inline; width: 49.5%; }
+  #top-content #more-featured body:after { content: "medium"; } }
+@media (min-width: 760px) and (min-width: 540px) { #top-content #more-featured article { padding: 0 10px; border-left: 1px solid #aaaaaa; }
+  #top-content #more-featured article:first-child { border-left: 0; padding-left: 0; }
+  #top-content #more-featured article body:after { content: "small"; } }
+@media (min-width: 940px) { #top-content #more-featured article { margin: 0; padding: 0; list-style: none; position: relative; padding-right: 0 !important; }
+  #top-content #more-featured article > * { display: inline-block; width: auto; width: 33%; position: relative; vertical-align: top; padding-right: 20px; margin-right: -4px; *zoom: 1; *display: inline; width: auto; clear: none; }
+  #top-content #more-featured body:after { content: "large"; } }
+@media (min-width: 940px) and (min-width: 540px) { #top-content #more-featured article { padding: 0 10px; border-left: 1px solid #aaaaaa; }
+  #top-content #more-featured article:first-child { border-left: 0; padding-left: 0; }
+  #top-content #more-featured article body:after { content: "small"; } }
+@media (min-width: 1240px) { #top-content #more-featured { width: 300px; float: right; }
+  #top-content #more-featured body:after { content: "xl"; } }
 
 #more_articles figure { width: 32%; }
 
-#top-contentxxxx img { width: 50%; float: right; margin: 0 0 12px 10px; }
-#top-contentxxxx .vertical img { width: 33%; }
-
-#more-featured h1 { margin: 0; }
-
 body { -webkit-transition: all 0.2s ease-in; -moz-transition: all 0.2s ease-in; -ms-transition: all 0.2s ease-in; -o-transition: all 0.2s ease-in; transition: all 0.2s ease-in; backgound-image: url(../../img/site/texture-overlay.png); }
 
-header[role=banner] > div, footer[role=contentinfo] > div { position: relative; }
+header[role=banner] > div, footer[role=contentinfo] > div { position: relative; padding: 12px 0; clear: both; }
 
-header[role=banner] { -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3); -moz-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3); box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3); }
 header[role=banner] [role=menu] > li { -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; padding: 0 10px; }
 header[role=banner] [role=menu] > li:hover { background: rgba(249, 249, 249, 0.9); border-color: #ececec; }
 header[role=banner] [role=menu] > li:hover a { color: #003300; }
 
-@media (min-width: 760px) { #content-wrapper { background-image: url(../../img/site/grids/770.png); }
-  #content-wrapper body:after { content: "medium"; } }
-@media (min-width: 940px) { #content-wrapper { background-image: url(../../img/site/940.jpg); }
-  #content-wrapper body:after { content: "large"; } }
-@media (min-width: 1240px) { #content-wrapper { background-image: url(../../img/site/1180.jpg); }
-  #content-wrapper body:after { content: "xl"; } }
-
-header[role=banner] { width: 240px; padding: 0 10px; float: left; }
+header[role=banner] { padding: 0; width: auto; }
+@media (min-width: 540px) { header[role=banner] { margin: 0 auto; width: 540px; }
+  header[role=banner] body:after { content: "small"; } }
+@media (min-width: 760px) { header[role=banner] { width: 760px; }
+  header[role=banner] body:after { content: "medium"; } }
+@media (min-width: 940px) { header[role=banner] { width: 940px; }
+  header[role=banner] body:after { content: "large"; } }
+@media (min-width: 1240px) { header[role=banner] { width: 1240px; }
+  header[role=banner] body:after { content: "xl"; } }
+@media (min-width: 1620px) { header[role=banner] { width: 1620px; }
+  header[role=banner] body:after { content: "xxl"; } }
+@media (min-width: 940px) { header[role=banner] > div { width: 300px; margin-right: 20px; float: left; }
+  header[role=banner] > div body:after { content: "large"; } }
 header[role=banner] .navicon:before { color: #292929; }
-
-#content { margin-left: 260px; }

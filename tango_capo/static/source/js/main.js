@@ -2,9 +2,9 @@
 /*jshint browser:true */
 /*global  $, Modernizr, confirm */
 
-var didScroll    = false,
-  touchable    = Modernizr.touch;
-
+var didScroll = false,
+  touchable   = Modernizr.touch,
+  screenSize  = window.getComputedStyle(document.body, ':after').getPropertyValue('content');
 
 
 // set extra assets offset
@@ -21,7 +21,6 @@ setExtraAssetsTop();
 
 
 
-
 // Ugly IE8 hack to force getComputedStyle.
 if (!window.getComputedStyle) {
   window.getComputedStyle = function(el) {
@@ -32,21 +31,18 @@ if (!window.getComputedStyle) {
           prop = 'styleFloat';
         }
         if (re.test(prop)) {
-            prop = prop.replace(re, function () {
-                return arguments[2].toUpperCase();
-            });
+          prop = prop.replace(re, function () {
+            return arguments[2].toUpperCase();
+          });
         }
         return el.currentStyle[prop] ? el.currentStyle[prop] : null;
-    };
+      };
     return this;
   };
 }
 
-var screenSize = window.getComputedStyle(document.body, ':after').getPropertyValue('content');
-
-
 function setNavicon() {
-  if (screenSize == 'default' || screenSize == 'small') {
+  if (screenSize === 'default' || screenSize === 'small') {
     var $nav     = $('nav[role=navigation]'),
         $navicon = $('<a href="#nav-menu" id="menu-trigger" title="Menu" class="navicon">≡≡</a>');
 
@@ -63,7 +59,7 @@ setNavicon();
 
 // Reliably get window position.
 function getYOffset() {
-  "use strict";
+  'use strict';
   if (typeof (window.pageYOffset) === 'number') {
     return window.pageYOffset;
   } else {
@@ -83,15 +79,15 @@ function getYOffset() {
 // It will toggle any matching children of the main selector.
 ********************************/
 $('a.trigger').each(function() {
-  "use strict";
+  'use strict';
   var hash = this.hash,
       $this = $(this);
 
-  if (hash.split(">").length > 1) {
+  if (hash.split('>').length > 1) {
     if (document.width > 1000) {
-      hash = hash.split(">")[0] + ' ' + hash.split(">")[1];
+      hash = hash.split('>')[0] + ' ' + hash.split('>')[1];
     } else {
-      hash = hash.split(">")[0];
+      hash = hash.split('>')[0];
     }
   }
   $(hash).hide();
@@ -104,14 +100,14 @@ $('a.trigger').each(function() {
 
 // Simple URL jumpbox
 $(document).on('change', '.url-selector', function() {
-  "use strict";
+  'use strict';
   window.location = $(this).val();
 });
 
 // Allows deferred loading of images.
 // Parent element must have data-deferred-load=" <src>"
 function load_images() {
-  "use strict";
+  'use strict';
   $('*[data-deferred-load]').each(function() {
     if ($(this).find('img').length === 0) {
       $(this).prepend(function() {
@@ -154,9 +150,8 @@ load_images();
   And remember to call tabit()
  */
 function tabit() {
-  "use strict";
+  'use strict';
   $('.tabs').each(function() {
-    //console.log('tabbing');
     var tabbed       = $(this),
       active       = '',
       nav_height   = 0;
@@ -213,7 +208,7 @@ tabit();
 
 // Post admin
 $(document).on('click', '.post-admin a', function() {
-  "use strict";
+  'use strict';
   var $command = $(this),
     confirm_msg = $command.data('confirm');
   if (confirm_msg) {
@@ -226,7 +221,7 @@ $(document).on('click', '.post-admin a', function() {
 
 // Voting
 $(document).on('click touchend', 'a[href*="/vote/"]', function(e) {
-  "use strict";
+  'use strict';
   e.preventDefault();
   var container = $(this).parent().find('.votes');
   $.post(
@@ -264,46 +259,5 @@ $('.datepicker').pickadate();
   $('body').css('padding-top', $header.outerHeight());
 }
 */
-
-
-// initialize slideshows
-if ($('.slideshow').length > 0) {
-  $('.slideshow').refineSlide({
-    transition : 'cubeH',
-    thumbMargin: 0,
-    useArrows: true,
-    transitionDuration: 500,
-  });
-
-  var $slideThumbs = $('.rs-thumb-wrap a');
-  $slideThumbs.css('height', $slideThumbs.eq(0).outerWidth() * 0.65);
-
-  if ($slideThumbs.outerWidth() < 80) {
-    var $previewer = $('<span class="rs-thumb-viewer"></span>');
-    $('.rs-thumb-wrap').prepend($previewer);
-      
-    $slideThumbs.hover(function() {
-      var $this = $(this);
-      if ($this.find('map-canvas').length > 0) {
-          $previewer.html('map');
-      }
-      else {
-          $previewer.html($this.html());
-      }
-      $previewer.css('left', (this.offsetLeft + this.offsetWidth/2)).toggle();
-    });
-  }
-  $('.rs-slider').hammer().on("swipeleft", function() {
-      $('.rs-prev').click();
-  });
-  $('.rs-slider').hammer().on("swiperight", function() {
-      $('.rs-next').click();
-  });
-  $('.fullscreen-toggle').click(function() {
-      $('.rs-wrap').toggleClass('rs-fullscreen');
-      $('.rs-thumb-wrap a').css('height', 50);
-
-  });
-}
 
 setTimeout(setExtraAssetsTop, 400);

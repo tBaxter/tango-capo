@@ -1,11 +1,11 @@
+@import '../core/_mixins.scss'; 
+@import '../core/_typography.scss'; 
 
-// Top content lays out the top items on a section front
+// Top content lays out the top items on a section front.
 // It includes #lead-item, and #more-featured
-
 #top-content {  
-	@include breakpoint(m) {
+	@include breakpoint(xl) {
   	@include columned(phi);
-		background: aqua;
 	}	
 
 	article { 
@@ -13,12 +13,24 @@
   }
 
   figure {
-    //float: right;
-    //margin: 0 0 $defaultMargin $gutter;
+    margin-bottom: $baseline;
+
+    @include breakpoint(m) {
+      width: 340px;
+      float: right;
+      margin-left: $halfGutter;
+    }
+    @include breakpoint(l) {
+      width: 100%;
+      float: none;
+      margin-left: 0;
+    }
+
     &.vertical {
     	float: right;
     	width: 40%;
     	margin-left: $halfGutter;
+
     	figcaption { display: none }
 
     	@include breakpoint(s) {
@@ -28,77 +40,75 @@
   }
 
   #lead-item { 
-    
-    @include breakpoint(l) {
-      //width: 450px;
-      //float: left;
-      p { @extend .breakout-text; }
+    @include breakpoint(m) {
+      & figure {
+        max-width: 380px;
+        float: right;
+        margin-left: $gutter;
+      }
     }
+
     @include breakpoint(xl) {
-      //width: 700px;
+      width: 540px;
+      float: left;
+      
+      p { 
+        @include breakout-text();
+      }
+      & figure {
+        max-width: 100%;
+        float: none;
+        margin-left: 0;
+      }
+    }
+
+    @include breakpoint(xxl) {
+      width: 940px;
+
+      & figure {
+        max-width: 620px;
+        float: right;
+        margin-left: $gutter;
+      }
     }
   }
 
   #more-featured {
-    h1 { @extend .medium-header }
+    h1 { 
+      @extend .medium-header;
+    }
+
+    figure {
+      float: right;
+      width: 40%;
+
+      @include breakpoint(s) {
+        width: 50%;
+      }
+    }
 
     @include breakpoint(m) {
       article {
-        display: inline-block;
-        padding: $baseline $halfGutter 0 0; 
-        border-top:1px solid $inverse_alt;
-        width: 49.5%;
-        vertical-align: top;
+        @include columned($columns:2, $divided: true);
       }
     }
     @include breakpoint(l) {
+      article {
+        @include columned($columns:1, $divided: true);
+      }
+    }
+    @include breakpoint(xl) {
       width: 300px; 
       float: right;
-      article {
-        display: block;
-        width: auto;
-        padding-right: 0;
-        clear:right
-      }
-      article:first-child { border: 0 }
     }
-    figure {
-    	float: right;
-    	width: 40%;
-    	@include breakpoint(s) {
-    		width: 50%;
-    	}
-  	}
   }
 }
 
 #more_articles {
-    h1 { @extend .medium-header }
-    figure { width: 32% }
+  h1 { 
+    @extend .medium-header 
   }
-
-///////
-
-
-
-
-#top-contentxxxx {
-	
-	img {
-		width: 50%; 
-		float: right;
-		margin: 0 0 $baseline $halfGutter;
-	}
-	.vertical img {
-		width: 33%;
-	}
-
-	
-}
-
-#more-featured {
-	h1 {
-		@extend .medium-header;
-		margin: 0;
-	}
+  figure {
+    width: 32% 
+  }
 }

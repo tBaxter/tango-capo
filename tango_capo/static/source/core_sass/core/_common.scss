@@ -45,9 +45,7 @@ body {
 }
 
 header[role=banner], 
-footer[role=contentinfo] {
-  clear: both; 
-  
+footer[role=contentinfo] {  
   nav {
     [role=menu] { 
       margin: 0;
@@ -66,7 +64,6 @@ footer[role=contentinfo] {
 
 // regular masthead styles.
 header[role=banner] { 
-
   &, > * {
     @include trans(all, .3s, ease);
   }
@@ -95,12 +92,6 @@ header[role=banner] {
 
     &.activated { background: $accent_alt }
   }
-}
-
-footer[role=contentinfo] {
-  @include box-shadow(0, -2px, 2px, .3);
-  @extend .pad-top;
-  border-top: 2px solid $accent; 
 }
 
 // applies to both main and complementary
@@ -171,24 +162,8 @@ img.left, figure.left {margin-right: $gutter; }
 
 // control element width to available max size
 .constrain { 
-  margin: 0 $halfGutter; 
-  width: auto; 
-  @include breakpoint(s)  { 
-    margin: 0 auto; 
-    width: $s;
-  }
-  @include breakpoint(m)  { 
-    width: $m;
-  }
-  @include breakpoint(l)  { 
-    width: $l;
-}
-  @include breakpoint(xl) { 
-    width: $xl;
-  }
-  @include breakpoint(xxl) { 
-    width: $xxl;
- }
+  @include constrain();
+  
 }
 
 .block { display: block }

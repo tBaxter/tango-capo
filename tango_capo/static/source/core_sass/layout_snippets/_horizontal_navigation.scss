@@ -1,3 +1,5 @@
+@import '../core/_mixins.scss'; 
+
 header[role=banner] {
   @include pad(top);
   @include margin(bottom);
@@ -28,7 +30,7 @@ header[role=banner] {
     
     @include breakpoint(m) {
       // mimic phi reversed
-      .site-name {width: 25%; float: left; }
+      //.site-name {width: 25%; float: left; }
       nav { width: 74%; float: right;}
     }
   }
