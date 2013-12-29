@@ -41,5 +41,12 @@ $default_radius: 4px; // a default border radius, to help encourage consistency.
 $col_width: 60;
 
 // Default typography variables are set in typography.scss
-// Breakpoint vars are defined in breakpoint mixin.
+
+// Define breakpoints
+$s   : 540px;     // larger, but still single-column devices.
+$m   : 760px;     // approximately ipad portrait.    
+$l   : 940px;     // approximately ipad landscape or small desktop.
+$xl  : 1240px;    // approximately 1200px-ish.
+$xxl : 1620px;    // approximately 1550-ish.
+
 

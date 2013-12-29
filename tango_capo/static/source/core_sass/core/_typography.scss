@@ -188,19 +188,6 @@ html {
   }
 }
 
-// padding and margin helpers
-.margin-top { margin-top: $defaultMargin; }
-.margin-bottom { margin-bottom: $defaultMargin; }
-.margin-top-bottom { margin: $defaultMargin 0; }
-.margin-sides { margin: 0 $gutter; }
-.margin-all { margin: $gutter $defaultMargin; }
-
-.pad-top { padding-top: $baseline; }
-.pad-bottom { padding-bottom: $baseline; }
-.pad-top-bottom { padding: $baseline 0; }
-.pad-sides { padding: 0 $halfGutter; }
-.pad-all { padding: $baseline $halfGutter; }
-
 /*
 h1, h2, h3, h4 { font-family: 'OpenSansSemibold'; }
 

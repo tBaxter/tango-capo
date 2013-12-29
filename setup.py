@@ -5,7 +5,7 @@ from setuptools import find_packages
 
 setup(
     name='tango-capo',
-    version='0.2',
+    version='0.3',
     author=u'Tim Baxter',
     author_email='mail.baxter@gmail.com',
     packages=find_packages(),

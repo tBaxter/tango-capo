@@ -20,10 +20,8 @@ footer[role=contentinfo] {
   }
 }
 
-header[role=banner] {
-  
+[role=navigation] {
   [role=menu] > li {
-    @include radius($default_radius);
     @include pad(sides);
     
     &:hover {
@@ -35,8 +33,12 @@ header[role=banner] {
   }
 }
 
+/*
 #content-wrapper {
-  //@include breakpoint(m) { background-image: url(../../img/site/grids/770.png); }
-  //@include breakpoint(l) { background-image: url(../../img/site/940.jpg); }
+  @include breakpoint(s) { background-image: url(../../img/site/grids/770.png); }
+  @include breakpoint(m) { background-image: url(../../img/site/grids/770.png); }
+  @include breakpoint(l) { background-image: url(../../img/site/940.jpg); }
   //@include breakpoint(xl) { background-image: url(../../img/site/1180.jpg); }
 }
+*/
+

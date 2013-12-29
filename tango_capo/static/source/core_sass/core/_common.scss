@@ -62,37 +62,27 @@ footer[role=contentinfo] {
   }
 }
 
-// regular masthead styles.
-header[role=banner] { 
-  &, > * {
-    @include trans(all, .3s, ease);
-  }
-  // Navicon is a scalable menu navigation icon
-  // generally, you'll want to put it inside a button element of some kind.
-  // Example: <span class="button"><span class='navicon'>≡≡</span></span>
-  .navicon {
-    @include pad(sides);
-    @include radius(5px);
-    
-    display: block;
-    position: absolute;
-    right: 0;
-    font-weight: bold; 
-    letter-spacing: -0.33em;
-    border: 1px inset $accent; 
-    text-align: center;
+// Navicon is a scalable menu navigation icon
+// generally, you'll want to put it inside a button element of some kind.
+// Example: <span class="button"><span class='navicon'>≡≡</span></span>
+.navicon {
+  @include pad(sides);
+  
+  display: block;
+  font-weight: bold; 
+  letter-spacing: -0.33em;
 
-    &:before {
-      content: "≡";
-      width: .33em; 
-      overflow: hidden; 
-      display: inline-block;
-      vertical-align: top;
-    }
-
-    &.activated { background: $accent_alt }
+  &:before {
+    content: "≡";
+    width: .33em; 
+    overflow: hidden; 
+    display: inline-block;
+    vertical-align: top;
   }
+
+  //&.activated { background: $accent_alt }
 }
+
 
 // applies to both main and complementary
 #content-wrapper {

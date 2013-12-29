@@ -1,5 +1,12 @@
 @import '../core/_mixins.scss'; 
 
+header[role=banner] > div,
+#content-wrapper,
+[role=contentinfo] {
+  @include constrain();
+}
+
+
 header[role=banner] {
   @include pad(top);
   @include margin(bottom);
@@ -25,7 +32,6 @@ header[role=banner] {
   }
   
   > div {
-    @extend .constrain;
     @extend .clearfix;
     
     @include breakpoint(m) {

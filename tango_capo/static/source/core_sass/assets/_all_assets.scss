@@ -44,22 +44,22 @@ blockquote, q {
   padding-left: $gutter;
   color: $meta; 
   display: block;
+
   footer {font-style: italic;}
   img {max-width:30% !important}
 }
 
-.content-body {
+.entry-content {
   @include breakpoint(l) {
     float: left;
     width: 620px;
-    background: rgba(0,0,0, 0.5);
   }
+
   @include breakpoint(xl) {
     width: 860px;
   }
 
   .datebox { margin-right: $gutter; }
-
 
   #top_assets { 
 

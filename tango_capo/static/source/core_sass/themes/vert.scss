@@ -1,19 +1,18 @@
 // Set vars as needed
 $accent: #060;
-$nav_width: 300px;
+$nav_width: 130px;
 
+
+@import '../core/vars.scss';
+
+/*$s   : $s+$nav_width;     // larger, but still single-column devices.
+$m   : $m+$nav_width;     // approximately ipad portrait.    
+$l   : $l+$nav_width;     // approximately ipad landscape or small desktop.
+$xl  : $xl+$nav_width;    // approximately 1200px-ish.
+$xxl : $xxl+$nav_width; 
+
+@import '../core/mixins.scss';
+*/
 // then import site css
 @import '../site.scss';
-
-header[role=banner] {
-  @include constrain();
-
-  > div {
-    @include breakpoint(l) { 
-      width: $nav_width;
-      margin-right: $gutter;
-      float: left;
-    }
-  }
-  .navicon:before {color: $inverse_alt}
-}
+@import '../layout_snippets/_vertical_navigation.scss';

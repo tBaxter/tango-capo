@@ -162,13 +162,7 @@
 }
 
 
-// Define breakpoints
-// Ems are based on default font size.
-$s   : 540px;     // larger, but still single-column devices.
-$m   : 760px;     // approximately ipad portrait.    
-$l   : 940px;     // approximately ipad landscape or small desktop.
-$xl  : 1240px;    // approximately 1200px-ish.
-$xxl : 1620px;    // approximately 1550-ish.
+
 
 
 @mixin breakpoint($point) {
@@ -238,24 +232,30 @@ $xxl : 1620px;    // approximately 1550-ish.
 }
 
 @mixin constrain() {
-  padding: 0;
   width: auto; 
+
   @include breakpoint(xs) {
     padding: 0 $gutter; 
   }
+
   @include breakpoint(s)  { 
     margin: 0 auto; 
     width: $s;
+    padding: 0;
   }
+
   @include breakpoint(m)  { 
     width: $m;
   }
+
   @include breakpoint(l)  { 
     width: $l;
   }
+
   @include breakpoint(xl) { 
     width: $xl;
   }
+  
   @include breakpoint(xxl) { 
     width: $xxl;
   }

@@ -201,7 +201,7 @@
                     // If the element isn't an input field
                     // ensure that we create a hidden element
                     if ( element.nodeName !== 'INPUT' ) {
-                        SETTINGS.format_submit = SETTINGS.format_submit || 'yyyy-mm-dd'
+                      SETTINGS.format_submit = SETTINGS.format_submit || 'yyyy-mm-dd'
                     }
 
                     // Otherwise check the focus state,
@@ -209,9 +209,9 @@
                     // to remove user-agent stylings,
                     // and set element as readonly
                     else {
-                        element.autofocus = ( element === document.activeElement )
-                        element.type = 'text'
-                        element.readOnly = true
+                      element.autofocus = ( element === document.activeElement )
+                      element.type = 'text'
+                      element.readOnly = false
                     }
 
                     return element

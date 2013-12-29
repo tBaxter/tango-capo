@@ -44,13 +44,28 @@ if (!window.getComputedStyle) {
 function setNavicon() {
   if (screenSize === 'default' || screenSize === 'small') {
     var $nav     = $('nav[role=navigation]'),
-        $navicon = $('<a href="#nav-menu" id="menu-trigger" title="Menu" class="navicon">≡≡</a>');
+        $navicon = $('<a href="#nav-menu" id="menu-trigger" title="Menu" class="navicon">≡≡</a>'),
+        $wrapper = $('#wrapper'),
+        $body    = $('body');
 
-    $nav.hide().parent().prepend($navicon);
-    $navicon.click(function(e) {
+    $nav.prepend($navicon);
+
+    // handle nav click events
+    $nav.on('click', function(e) {
       $navicon.toggleClass('activated');
-      $nav.slideToggle('fast');
+      $body.toggleClass('nav-active');
       e.preventDefault();
+    });
+
+    // and swipe events
+    $wrapper.hammer().on('swipeleft', function() {
+      $navicon.removeClass('activated');
+      $body.removeClass('nav-active');
+    });
+
+    $wrapper.hammer().on('swiperight', function() {
+      $navicon.addClass('activated');
+      $body.addClass('nav-active');
     });
   }
 }
@@ -250,7 +265,9 @@ $('#comment-list article.toxic header').each(function() {
 });
 
 // pickadate.js
-$('.datepicker').pickadate();
+$('.datepicker').pickadate({
+  format: 'yyyy-mm-dd'
+});
 
 
 /*if (screenSize === 'small' || screenSize === 'x-small') {
