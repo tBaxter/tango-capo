@@ -51,9 +51,10 @@ function setNavicon() {
     $nav.prepend($navicon);
 
     // handle nav click events
-    $nav.on('click', function(e) {
+    $navicon.on('click', function(e) {
       $navicon.toggleClass('activated');
       $body.toggleClass('nav-active');
+      e.stopPropagation();
       e.preventDefault();
     });
 

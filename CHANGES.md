@@ -1,5 +1,10 @@
 # Tango-Capo Change Log
 
+## 0.3.1
+* Added default image  
+* More work on responsive themes and vertical navigation
+
+
 ## 0.3
 * Vastly improved responsive 'vert' theme  
 * Removed background on .content-body  
