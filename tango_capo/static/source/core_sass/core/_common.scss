@@ -19,7 +19,6 @@ body {
 
   &.collapsed {
     header[role=banner] { 
-      @include box-shadow(0, 2px, 2px, .4); 
       position: fixed; 
       z-index: 1000;
       

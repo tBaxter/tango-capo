@@ -892,7 +892,7 @@ blockquote img, q img { max-width: 30% !important; }
 html { background: #f9f9f9 url(../../img/site/texture-overlay.png); }
 
 body { -webkit-transition: all 0.3s linear; -moz-transition: all 0.3s linear; -ms-transition: all 0.3s linear; -o-transition: all 0.3s linear; transition: all 0.3s linear; font-family: "Helvetica", "Calibri", "Lucida Sans Unicode", "Arial Unicode MS", Verdana, Arial, sans-serif; color: #101010; height: 100%; }
-body.collapsed header[role=banner] { -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4); -moz-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4); box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4); position: fixed; z-index: 1000; }
+body.collapsed header[role=banner] { position: fixed; z-index: 1000; }
 body.collapsed header[role=banner] h1 { max-width: 200px; }
 body.collapsed header[role=banner] h2 { display: none; }
 @media (min-width: 540px) { body.collapsed header[role=banner] [role="navigation"] ul { height: 0; overflow: hidden; margin: 0; }
@@ -1201,14 +1201,13 @@ small { display: inline-block; }
 @media (min-width: 760px) and (min-width: 540px) { #top-content #more-featured article { padding: 0 10px; border-left: 1px solid #aaaaaa; }
   #top-content #more-featured article:first-child { border-left: 0; padding-left: 0; }
   #top-content #more-featured article body:after { content: "small"; } }
-@media (min-width: 940px) { #top-content #more-featured article { margin: 0; padding: 0; list-style: none; position: relative; padding-right: 0 !important; }
+@media (min-width: 1240px) { #top-content #more-featured { width: 300px; float: right; }
+  #top-content #more-featured article { margin: 0; padding: 0; list-style: none; position: relative; padding-right: 0 !important; }
   #top-content #more-featured article > * { display: inline-block; width: auto; width: 33%; position: relative; vertical-align: top; padding-right: 20px; margin-right: -4px; *zoom: 1; *display: inline; width: auto; clear: none; }
-  #top-content #more-featured body:after { content: "large"; } }
-@media (min-width: 940px) and (min-width: 540px) { #top-content #more-featured article { padding: 0 10px; border-left: 1px solid #aaaaaa; }
+  #top-content #more-featured body:after { content: "xl"; } }
+@media (min-width: 1240px) and (min-width: 540px) { #top-content #more-featured article { padding: 0 10px; border-left: 1px solid #aaaaaa; }
   #top-content #more-featured article:first-child { border-left: 0; padding-left: 0; }
   #top-content #more-featured article body:after { content: "small"; } }
-@media (min-width: 1240px) { #top-content #more-featured { width: 300px; float: right; }
-  #top-content #more-featured body:after { content: "xl"; } }
 
 #more_articles figure { width: 32%; }
 
@@ -1220,8 +1219,8 @@ header[role=banner] > div, footer[role=contentinfo] > div { position: relative; 
 [role=navigation] [role=menu] > li:hover { background: rgba(249, 249, 249, 0.9); border-color: #ececec; }
 [role=navigation] [role=menu] > li:hover a { color: #003300; }
 
-/*
-#content-wrapper { @include breakpoint(s) { background-image: url(../../img/site/grids/770.png); } @include breakpoint(m) { background-image: url(../../img/site/grids/770.png); } @include breakpoint(l) { background-image: url(../../img/site/940.jpg); } //@include breakpoint(xl) { background-image: url(../../img/site/1180.jpg); }
+/* Activate grids 
+#wrapper { @include breakpoint(s) { background-image: url(../../img/site/grids/770.png); } @include breakpoint(m) { background-image: url(../../img/site/grids/770.png); } @include breakpoint(l) { background-image: url(../../img/site/940.jpg); } @include breakpoint(xl) { background: url(../../img/site/1180.jpg) top left; }
 }
 */
 /********** End mixins ************/
@@ -1272,5 +1271,39 @@ html, body { position: relative; height: 100%; }
 @media (min-width: 760px) { .nav-active #wrapper { left: inherit; position: relative; }
   .nav-active #wrapper body:after { content: "medium"; } }
 
+#content-wrapper { padding-top: 12px; }
+
 @media (min-width: 760px) { footer[role=contentinfo] { margin-left: -220px; padding-left: 220px; }
   footer[role=contentinfo] body:after { content: "medium"; } }
+
+[role=main] { width: 100%; }
+@media (min-width: 940px) { [role=main] { width: 700px; }
+  [role=main] body:after { content: "large"; } }
+@media (min-width: 1240px) { [role=main] { width: 1000px; padding-right: 0; }
+  [role=main] body:after { content: "xl"; } }
+@media (min-width: 1620px) { [role=main] { width: 1380px; }
+  [role=main] body:after { content: "xxl"; } }
+
+@media (min-width: 1240px) { #top-content #lead-item { width: 700px; }
+  #top-content #lead-item figure { max-width: 460px; float: right; margin-left: 20px; }
+  #top-content #lead-item body:after { content: "xl"; } }
+@media (min-width: 1620px) { #top-content #lead-item { width: 980px; }
+  #top-content #lead-item figure { max-width: 620px; }
+  #top-content #lead-item body:after { content: "xxl"; } }
+@media (min-width: 1240px) { #top-content #more-featured { width: 300px; float: right; }
+  #top-content #more-featured body:after { content: "xl"; } }
+@media (min-width: 1620px) { #top-content #more-featured { width: 400px; }
+  #top-content #more-featured body:after { content: "xxl"; } }
+
+[role=banner] { background-image: url(../../img/site/tango_bg.jpg); background-size: cover; border-bottom: 2px solid #101010; height: 80px; position: relative; }
+@media (min-width: 760px) { [role=banner] { padding-top: 260px; height: 320px; }
+  [role=banner] body:after { content: "medium"; } }
+.nav-active [role=banner] { left: 130px; }
+[role=banner] .site-name a { -webkit-transition: all 0.2s ease-in; -moz-transition: all 0.2s ease-in; -ms-transition: all 0.2s ease-in; -o-transition: all 0.2s ease-in; transition: all 0.2s ease-in; font-size: 30px; font-size: 1.875rem; line-height: 36px; line-height: 2.25rem; color: #f9f9f9; font-weight: normal; text-transform: uppercase; text-shadow: 0 0 3px #101010, 0 0 10px #101010; }
+@media (min-width: 760px) { [role=banner] .site-name a { letter-spacing: 0.1em; }
+  [role=banner] .site-name a body:after { content: "medium"; } }
+[role=banner] .site-name a:hover { color: #101010; text-shadow: 0 0 3px #f9f9f9, 0 0 10px #f9f9f9; }
+
+[role=navigation] { background: #101010; }
+.nav-active [role=navigation] { margin-top: -80px; }
+[role=navigation] a { color: #f9f9f9; }

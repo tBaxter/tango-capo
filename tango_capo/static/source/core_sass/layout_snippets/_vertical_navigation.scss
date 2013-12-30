@@ -105,20 +105,19 @@ header[role=banner] > div {
   min-height: 100%;
 
   @include breakpoint(m) { 
-    
-
     [role=navigation] {
       position: absolute;
       left: 0;
     }
   }
+
   @include breakpoint(m) {
     padding-left: $nav_width + ($gutter/2);
   }
+
   @include breakpoint(l) {
     padding-left: $wider_nav_width + $gutter;
   }
-
 
   .nav-active & {
     left: $nav_width;
@@ -131,6 +130,10 @@ header[role=banner] > div {
   } 
 }
 
+#content-wrapper {
+  @include pad(top);
+}
+
 footer[role=contentinfo] {
   @include breakpoint(m) { 
     margin-left: -($wider_nav_width);
@@ -138,4 +141,55 @@ footer[role=contentinfo] {
   }
 }
 
+
+// override main widths from layout
+[role=main] {
+  width: 100%;
+
+  @include breakpoint(l) {
+    width: 700px;
+  }
+  @include breakpoint(xl) {
+    width: 1000px;
+    padding-right: 0;
+  }
+  @include breakpoint(xxl) {
+    width: 1380px;
+  }
+}
+
+// override section front width from section_fronts
+// Top content lays out the top items on a section front.
+// It includes #lead-item, and #more-featured
+#top-content {  
+  #lead-item { 
+    @include breakpoint(xl) {
+      width: 700px;
+      
+      & figure {
+        max-width: 460px;
+        float: right;
+        margin-left: $gutter;
+      }
+    }
+
+    @include breakpoint(xxl) {
+      width: 980px;
+
+      & figure {
+        max-width: 620px;
+      }
+    }
+  }
+
+  #more-featured {
+    @include breakpoint(xl) {
+      width: 300px; 
+      float: right;
+    }
+    @include breakpoint(xxl) {
+      width: 400px; 
+    }
+  }
+}
 

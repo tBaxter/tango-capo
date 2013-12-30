@@ -92,14 +92,14 @@
         @include columned($columns:2, $divided: true);
       }
     }
-    @include breakpoint(l) {
-      article {
-        @include columned($columns:1, $divided: true);
-      }
-    }
+    
     @include breakpoint(xl) {
       width: 300px; 
       float: right;
+
+      article {
+        @include columned($columns:1, $divided: true);
+      }
     }
   }
 }

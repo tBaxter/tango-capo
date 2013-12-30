@@ -33,12 +33,11 @@ footer[role=contentinfo] {
   }
 }
 
-/*
-#content-wrapper {
+/* Activate grids 
+#wrapper {
   @include breakpoint(s) { background-image: url(../../img/site/grids/770.png); }
   @include breakpoint(m) { background-image: url(../../img/site/grids/770.png); }
   @include breakpoint(l) { background-image: url(../../img/site/940.jpg); }
-  //@include breakpoint(xl) { background-image: url(../../img/site/1180.jpg); }
+  @include breakpoint(xl) { background: url(../../img/site/1180.jpg) top left; }
 }
 */
-

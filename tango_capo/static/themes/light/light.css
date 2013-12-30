@@ -884,7 +884,7 @@ blockquote img, q img { max-width: 30% !important; }
 html { background: #f9f9f9 url(../../img/site/texture-overlay.png); }
 
 body { -webkit-transition: all 0.3s linear; -moz-transition: all 0.3s linear; -ms-transition: all 0.3s linear; -o-transition: all 0.3s linear; transition: all 0.3s linear; font-family: "Helvetica", "Calibri", "Lucida Sans Unicode", "Arial Unicode MS", Verdana, Arial, sans-serif; color: #101010; height: 100%; }
-body.collapsed header[role=banner] { -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4); -moz-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4); box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4); position: fixed; z-index: 1000; }
+body.collapsed header[role=banner] { position: fixed; z-index: 1000; }
 body.collapsed header[role=banner] h1 { max-width: 200px; }
 body.collapsed header[role=banner] h2 { display: none; }
 @media (min-width: 540px) { body.collapsed header[role=banner] [role="navigation"] ul { height: 0; overflow: hidden; margin: 0; }
@@ -1193,14 +1193,13 @@ small { display: inline-block; }
 @media (min-width: 760px) and (min-width: 540px) { #top-content #more-featured article { padding: 0 10px; border-left: 1px solid #aaaaaa; }
   #top-content #more-featured article:first-child { border-left: 0; padding-left: 0; }
   #top-content #more-featured article body:after { content: "small"; } }
-@media (min-width: 940px) { #top-content #more-featured article { margin: 0; padding: 0; list-style: none; position: relative; padding-right: 0 !important; }
+@media (min-width: 1240px) { #top-content #more-featured { width: 300px; float: right; }
+  #top-content #more-featured article { margin: 0; padding: 0; list-style: none; position: relative; padding-right: 0 !important; }
   #top-content #more-featured article > * { display: inline-block; width: auto; width: 33%; position: relative; vertical-align: top; padding-right: 20px; margin-right: -4px; *zoom: 1; *display: inline; width: auto; clear: none; }
-  #top-content #more-featured body:after { content: "large"; } }
-@media (min-width: 940px) and (min-width: 540px) { #top-content #more-featured article { padding: 0 10px; border-left: 1px solid #aaaaaa; }
+  #top-content #more-featured body:after { content: "xl"; } }
+@media (min-width: 1240px) and (min-width: 540px) { #top-content #more-featured article { padding: 0 10px; border-left: 1px solid #aaaaaa; }
   #top-content #more-featured article:first-child { border-left: 0; padding-left: 0; }
   #top-content #more-featured article body:after { content: "small"; } }
-@media (min-width: 1240px) { #top-content #more-featured { width: 300px; float: right; }
-  #top-content #more-featured body:after { content: "xl"; } }
 
 #more_articles figure { width: 32%; }
 
@@ -1212,8 +1211,8 @@ header[role=banner] > div, footer[role=contentinfo] > div { position: relative; 
 [role=navigation] [role=menu] > li:hover { background: rgba(249, 249, 249, 0.9); border-color: #ececec; }
 [role=navigation] [role=menu] > li:hover a { color: #a64d0e; }
 
-/*
-#content-wrapper { @include breakpoint(s) { background-image: url(../../img/site/grids/770.png); } @include breakpoint(m) { background-image: url(../../img/site/grids/770.png); } @include breakpoint(l) { background-image: url(../../img/site/940.jpg); } //@include breakpoint(xl) { background-image: url(../../img/site/1180.jpg); }
+/* Activate grids 
+#wrapper { @include breakpoint(s) { background-image: url(../../img/site/grids/770.png); } @include breakpoint(m) { background-image: url(../../img/site/grids/770.png); } @include breakpoint(l) { background-image: url(../../img/site/940.jpg); } @include breakpoint(xl) { background: url(../../img/site/1180.jpg) top left; }
 }
 */
 header[role=banner] > div, #content-wrapper, [role=contentinfo] { width: auto; }
@@ -1241,6 +1240,5 @@ header[role=banner] .site-name h2 { display: none; }
 
 footer[role=contentinfo] { margin-top: 24px; }
 
-header[role=banner], footer[role=contentinfo] { background-color: #f7f7f7; }
 header[role=banner] nav a:hover, footer[role=contentinfo] nav a:hover { color: #000; }
 header[role=banner] .navicon:before, footer[role=contentinfo] .navicon:before { color: #292929; }
