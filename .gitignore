@@ -16,3 +16,5 @@
 /tango_capo/static/setup.py
 /tango_capo/static/CHANGES
 dist/tango-capo-0.2.tar.gz
+
+*.gz
