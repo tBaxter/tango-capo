@@ -6,9 +6,9 @@
 @font-face {
   font-family: 'capo_fontello';
   src: url("/static/fonts/capo_icons_5.eot?69466803");
-  src: url("/static/fonts/capo_icons_5.eot?69466803#iefix") format('embedded-opentype'), 
-       url("/static/fonts/capo_icons_5.woff?69466803") format('woff'), 
-       url("/static/fonts/capo_icons_5.ttf?69466803") format('truetype'), 
+  src: url("/static/fonts/capo_icons_5.eot?69466803#iefix") format('embedded-opentype'),
+       url("/static/fonts/capo_icons_5.woff?69466803") format('woff'),
+       url("/static/fonts/capo_icons_5.ttf?69466803") format('truetype'),
        url("/static/fonts/capo_icons_5.svg?69466803#capo_fontello") format('svg');
 }
 @font-face {
@@ -67,7 +67,7 @@
 .icon-thumb-list:before { content: '\e801'; } /* '' */
 .icon-twitter:before      { content: '\f099'; } /* '' */
 .icon-user-1:before { content: '\e802'; } /* '' */
-.icon-lock:before { content: '\1f512'; }   // 🔒 
+.icon-lock:before { content: '\1f512'; }   // 🔒
 .icon-unlock:before { content: '\1f513'; } // 🔓
 .icon-link:before { content: '\1f517'; }   // 🔗
 //.icon-video:before {content: '🎦'}
@@ -107,4 +107,5 @@
 .emoticon-cry:before { content: '\e80f'; } /* '' */
 .emoticon-shoot:before { content: '\e810'; } /* '' */
 .emoticon-laugh:before { content: '\e812'; } /* '' */
-.emoticon-wink2:before { content: '\e813'; } /* '' */
+.emoticon-wink:before { content: '\e813'; } /* '' */
+.emoticon-wink2:before { content: '\e813'; } /* '' This is for legacy. */

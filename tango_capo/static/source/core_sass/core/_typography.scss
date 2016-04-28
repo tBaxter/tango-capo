@@ -34,10 +34,10 @@ html, button, input, select, textarea { font-family: $base_font }
 // Correct font-size not inheriting in all browsers
 button, input, select, textarea { font-size: 100%; }
 
-html { 
+html {
   font-size: 1em; // 16px
-  -webkit-text-size-adjust: 100%; 
-      -ms-text-size-adjust: 100%; 
+  -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
 }
 
 // Sizes are duplicated to support older browsers
@@ -125,7 +125,7 @@ html {
 // default body text size.
 .body-text, body {
   @include sub-text;
-  
+
   @include breakpoint(m) {
     @include body-text;
   }
@@ -215,20 +215,20 @@ p + p.small-text {
 */
 
 
-// Redeclare monospace font family: h5bp.com/j 
+// Redeclare monospace font family: h5bp.com/j
 // Improve readability of pre-formatted text in all browsers
-pre, code, kbd, samp { 
-  font-family: monospace, serif; 
-  _font-family: 'courier new', monospace; 
-  font-size: 1em; 
+pre, code, kbd, samp {
+  font-family: monospace, serif;
+  _font-family: 'courier new', monospace;
+  font-size: 1em;
 }
 
 // Position subscript and superscript content without affecting line-height: h5bp.com/k
-sub, sup { 
+sub, sup {
   @extend .small-text;
-  line-height: 0; 
-  position: relative; 
-  vertical-align: baseline; 
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
 }
 sup { top: -0.5em; }
 sub { bottom: -0.25em; }
@@ -237,7 +237,7 @@ h1, h2, h3, h4, h5, h6, p, ol, ul { margin: 0 }
 h1, h2, h3, h4, h5, h6 { font-weight: bold; }
 
 #content-wrapper {
-  p, ol, ul, small { 
+  p, ol, ul, small {
     margin: $thinMargin 0;
   }
   p + h2, p + h3 { padding-top: $defaultMargin }
@@ -248,7 +248,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: bold; }
 // typically (but not always) used as small.meta
 .meta { color: $meta }
 
-.hero { 
+.hero {
   @extend .small-header;
   h1 { @extend .super-text; }
 }
@@ -256,16 +256,16 @@ h1, h2, h3, h4, h5, h6 { font-weight: bold; }
 // special headlines
 .kicker {
   @extend .small-header;
-  text-transform: uppercase; 
+  text-transform: uppercase;
 }
 
-small { 
+small {
   display: inline-block;
 }
 
 // set sidebar smaller by default
-[role=complementary] { 
-  @extend .sub-text; 
+[role=complementary] {
+  @extend .sub-text;
 
   h1 {
     @extend .large-header;
